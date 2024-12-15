@@ -4,6 +4,9 @@ As a first experiment we show a **Schmitt-Trigger Relaxation Oscillator with LED
 ## Schmitt-Trigger Relaxation Oscillator
 ```{figure} img/IMG_2993.mov
 ```
+
+<video src="../_static/videos/IMG_2993.mov"></video>
+
 **Circuit Schematic:** 
 We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4x inverter providing positive feedback around the second stage, resulting in hysteresis in the input-output tranfer characteristic. Overall feedback around the Schmitt Trigger is created with an R-C network. LEDs are connected at the output of the second stage; the red LED ligths up when the output is high, and the green LED lights up when it is low. 
 ```{figure} img/relaxation_osc_v1.png
