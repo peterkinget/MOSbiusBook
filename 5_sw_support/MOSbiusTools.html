@@ -1,0 +1,720 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Programming the Chip Using the MOSBiusTools &#8212; MOSbius Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5_sw_support/MOSbiusTools';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Spice Simulations" href="../4_chapter_simulations/LTspice_simulations.html" />
+    <link rel="prev" title="3.2. Solutions" href="../6a_experiments/solutions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../0_front_matter/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/die.png" class="logo__image only-light" alt="MOSbius Book - Home"/>
+    <script>document.write(`<img src="../_static/die.png" class="logo__image only-dark" alt="MOSbius Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../0_front_matter/intro.html">
+                    Welcome to the MOSbius Project
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_chapter_description/description.html">1. MOSbius Platform for MOS Circuit Labs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_chapter_demonstrations/demonstrations.html">2. Demonstrations with the MOSbius Chip</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_chapter_blinky/blinky.html">2.1. First Experiment: Blinky</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_chapter_ring_oscillator/ring_oscillator.html">2.2. Ring Oscillator Experiments</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../3_chapter_ota/ota_experiments.html">2.3. Operational Transconductance Amplifier Experiments</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_chapter_ota/mota-se-p-16/mota-se-p-16.html">2.3.1. Two-Stage Miller-Compensated OTA with pMOS Input Stage</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../6_iv_characteristics/iv_characteristics.html">2.4. Transistor I-V Characteristics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../6_iv_characteristics/plotting_i_v_data_sims_nmos.html">Plotting nMOS I-V Data and Simulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../6_iv_characteristics/plotting_i_v_data_sims_pmos.html">Plotting pMOS I-V Data and Simulations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../6a_experiments/experiments.html">3. Lab Experiments Manual</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../6a_experiments/labs.html">3.1. Labs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../6a_experiments/Lab_1_introduction/introduction_PK.html">3.1.1. Lab 1: Basic Measurements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../6a_experiments/Lab_2_current_mirrors/current_mirrors_PK.html">3.1.2. Lab 2: Current Mirrors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../6a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_PK.html">3.1.3. Lab 3: Differential Pair DC Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../6a_experiments/Lab_4_differential_pair_AC/differential_pair_AC_PK.html">3.1.4. Lab 4: Differential Pair AC Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../6a_experiments/Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.html">3.1.5. Lab 5: One-stage OTA and Common-Source Amplifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../6a_experiments/Lab_6_compensation_two_stage_OTA/two_stage_OTA_PK.html">3.1.6. Lab 6: Frequency Compensation of a Two-Stage OTA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../6a_experiments/solutions.html">3.2. Solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Programming the Chip Using the MOSBiusTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_chapter_simulations/LTspice_simulations.html">5. Spice Simulations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../appendices/appendices.html">6. Appendices</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../app_pcb_test/pcb_test.html">6.1. Testing Your MOSbius PCB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8_chapter_chip_design_details/chip_design_details.html">6.2. MOSbius Chip Design Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app_adalm2000/adalm2000.html">6.3. ADALM2000 Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../9_back_matter/acknowledgments.html">7. Acknowledgments</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/peterkinget/MOSbiusBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/peterkinget/MOSbiusBook/issues/new?title=Issue%20on%20page%20%2F5_sw_support/MOSbiusTools.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/5_sw_support/MOSbiusTools.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Programming the Chip Using the MOSBiusTools</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executable-scripts">4.1. Executable Scripts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connections-to-bitstream">4.1.1. connections_to_bitstream</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cir-to-connections">4.1.2. cir_to_connections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-steps-to-create-bitstream-files">4.2. Basic Steps to Create Bitstream Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-ltspice-schematic">4.2.1. From LTspice Schematic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-connections-json-file">4.2.2. From Connections Json File</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-programming-a-three-stage-ring-oscillator">4.3. Example of Programming a Three-Stage Ring Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-ltspice-schematic">4.3.1. Starting from LTspice Schematic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-a-connections-file">4.3.2. Starting from a Connections File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-the-bitstream-file-into-the-mosbius-chip">4.3.3. Uploading the Bitstream File into the MOSbius Chip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-the-mosbius-chip">4.3.4. Enabling the MOSbius Chip</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="programming-the-chip-using-the-mosbiustools">
+<h1><span class="section-number">4. </span>Programming the Chip Using the MOSBiusTools<a class="headerlink" href="#programming-the-chip-using-the-mosbiustools" title="Link to this heading">#</a></h1>
+<p>We currently provide two tools to generate bitstream files that you can use to program the switch matrix on the MOSbius chip. The tools are available from Github and as a python package.</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/">Github repository</a> contains python modules and command-line scripts to interface with the Mobius chip.</p></li>
+<li><p>A python package is available from TestPyPI as <a class="reference external" href="https://test.pypi.org/project/MOSbiusTools">MOSbiusTools</a></p>
+<ul>
+<li><p>we advise to create a virtual environment to install the tools</p></li>
+<li><p>install using <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-i</span> <span class="pre">https://test.pypi.org/simple</span> <span class="pre">MOSbiusTools</span></code></p></li>
+<li><p>installs the <code class="docutils literal notranslate"><span class="pre">MOSbiusTools</span></code> module and two executable scripts described below.</p></li>
+</ul>
+</li>
+</ul>
+<section id="executable-scripts">
+<h2><span class="section-number">4.1. </span>Executable Scripts<a class="headerlink" href="#executable-scripts" title="Link to this heading">#</a></h2>
+<p>After installing the package the scripts should be executable from your command line.</p>
+<section id="connections-to-bitstream">
+<h3><span class="section-number">4.1.1. </span>connections_to_bitstream<a class="headerlink" href="#connections-to-bitstream" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">connections_to_bitstream</span></code> converts a connections.json file into a bitstream to program the MOSbius chip.</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">connections_to_bitstream</span> <span class="pre">-h</span></code> and you get a brief description of
+script usage.</p></li>
+<li><p>There is a blank <code class="docutils literal notranslate"><span class="pre">connections.json</span></code> file provided and some <a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/">examples</a>.</p></li>
+</ul>
+</section>
+<section id="cir-to-connections">
+<h3><span class="section-number">4.1.2. </span>cir_to_connections<a class="headerlink" href="#cir-to-connections" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cir_to_connections</span></code> converts an LTSpice netlist (<code class="docutils literal notranslate"><span class="pre">.cir</span></code>)
+into a <code class="docutils literal notranslate"><span class="pre">connections.json</span></code> file that the <code class="docutils literal notranslate"><span class="pre">connections_to_bitstream</span></code>
+script can convert into a bitstream file.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span> <span class="pre">-h</span></code> and you get a brief description of
+script usage.</p></li>
+<li><p>There are some example <code class="docutils literal notranslate"><span class="pre">.cir</span></code> files provided in
+<a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_cir">examples</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="basic-steps-to-create-bitstream-files">
+<h2><span class="section-number">4.2. </span>Basic Steps to Create Bitstream Files<a class="headerlink" href="#basic-steps-to-create-bitstream-files" title="Link to this heading">#</a></h2>
+<section id="from-ltspice-schematic">
+<h3><span class="section-number">4.2.1. </span>From LTspice Schematic<a class="headerlink" href="#from-ltspice-schematic" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>create an LTspice schematic using the <a class="reference internal" href="../4_chapter_simulations/LTspice_simulations.html"><span class="std std-doc">LTspice Library</span></a></p></li>
+<li><p>save your design as a <code class="docutils literal notranslate"><span class="pre">.cir</span></code> file, e.g. <code class="docutils literal notranslate"><span class="pre">my_circuit.cir</span></code>. You obtain a <code class="docutils literal notranslate"><span class="pre">.cir</span></code>
+netlist for your LTSpice circuit by right clicking on the schematic,
+then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
+<li><p>create a <code class="docutils literal notranslate"><span class="pre">connections.json</span></code> file:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cir_to_connections</span> <span class="pre">-i</span> <span class="pre">my_circuit.cir</span> <span class="pre">-o</span> <span class="pre">connections_my_circuit.json</span> <span class="pre">-d</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">-d</span></code> is not required but will provide some output to review the conversion process.</p></li>
+<li><p>you can choose your own filename for the json file, but a .json is recommended.</p></li>
+</ul>
+</li>
+<li><p>convert the <code class="docutils literal notranslate"><span class="pre">connections_my_circuit.json</span></code> to a bitstream file with <code class="docutils literal notranslate"><span class="pre">connections_to_bitstream</span></code> – see next topic.</p></li>
+</ul>
+</section>
+<section id="from-connections-json-file">
+<h3><span class="section-number">4.2.2. </span>From Connections Json File<a class="headerlink" href="#from-connections-json-file" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>prepare connections file:</p>
+<ul>
+<li><p>You can create a connections file in your text editor by starting from <a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections.json">connections.json</a>; for each <em>BUS</em> list the pcb pin numbers that need to be connected to it <a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections_Miller_OTA_pin.json">(OTA example)</a>; let’s assume you save it as <code class="docutils literal notranslate"><span class="pre">connections_my_circuit.json</span></code>.</p></li>
+<li><p>Or, you can use the <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span></code> script described above.</p></li>
+</ul>
+</li>
+<li><p>convert connections file to bitstream files:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">connections_to_bitstream</span> <span class="pre">-i</span> <span class="pre">connections_my_circuit.json</span> <span class="pre">-o</span> <span class="pre">my_circuit_bitstream.txt</span> <span class="pre">-d</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> is not required but will provide output so you can review the conversion.</p></li>
+<li><p>you can choose your own filename for the output file, but a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> extension is recommended; besides <code class="docutils literal notranslate"><span class="pre">my_circuit_bitstream.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">my_circuit_bitstream_clk.txt</span></code> will also be generated.</p></li>
+<li><p>the bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="example-of-programming-a-three-stage-ring-oscillator">
+<h2><span class="section-number">4.3. </span>Example of Programming a Three-Stage Ring Oscillator<a class="headerlink" href="#example-of-programming-a-three-stage-ring-oscillator" title="Link to this heading">#</a></h2>
+<section id="starting-from-ltspice-schematic">
+<h3><span class="section-number">4.3.1. </span>Starting from LTspice Schematic<a class="headerlink" href="#starting-from-ltspice-schematic" title="Link to this heading">#</a></h3>
+<p>We build the 3-stage 16-16-8 ring-oscillator circuit schematic in LTspice using the MOSbius library. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use <code class="docutils literal notranslate"><span class="pre">BUS9</span></code> for VSS and <code class="docutils literal notranslate"><span class="pre">BUS10</span></code> for VDD.
+<img alt="3stage_RO_8x_schematic" src="../_images/3stage_RO_8x_schematic.png" /></p>
+<p>We save the netlist of the circuit as a <code class="docutils literal notranslate"><span class="pre">.cir</span></code> file by right clicking on the schematic, then View Spice Netlist, and File Save as.</p>
+<p>Next, we translate the schematic <code class="docutils literal notranslate"><span class="pre">cir</span></code> file to <a class="reference download internal" download="" href="../_downloads/f4b5044828f5358d316dc7f05f2bb0a3/connections_3stage_RO_8x_vdd_10_vss_9.json"><span class="xref download myst">connections json file</span></a> (see instructions above):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; cir_to_connections -i 3stage_RO_8x_vdd_10_vss_9.cir -o connections_3stage_RO_8x_vdd_10_vss_9.json`
+</pre></div>
+</div>
+<p>Continue on with the next step.</p>
+</section>
+<section id="starting-from-a-connections-file">
+<h3><span class="section-number">4.3.2. </span>Starting from a Connections File<a class="headerlink" href="#starting-from-a-connections-file" title="Link to this heading">#</a></h3>
+<p>We can generate the <a class="reference download internal" download="" href="../_downloads/f4b5044828f5358d316dc7f05f2bb0a3/connections_3stage_RO_8x_vdd_10_vss_9.json"><span class="xref download myst">connections json file</span></a> from a schematic or create it manually in a text editor.</p>
+<p>Then we translate it into a <a class="reference download internal" download="" href="../_downloads/8f9a87260924670769a82b94adc17525/3stage_RO_8x_vdd_10_vss_9.txt"><span class="xref download myst">bitstream</span></a> and <a class="reference download internal" download="" href="../_downloads/d80a932f04ac907a7716515c2253a795/3stage_RO_8x_vdd_10_vss_9_clk.txt"><span class="xref download myst">clock file</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">connections_to_bitstream</span> <span class="o">-</span><span class="n">i</span> <span class="n">connections_3stage_RO_8x_vdd_10_vss_9</span><span class="o">.</span><span class="n">json</span> <span class="o">-</span><span class="n">o</span> <span class="mi">3</span><span class="n">stage_RO_8x_vdd_10_vss_9</span><span class="o">.</span><span class="n">txt</span> 
+</pre></div>
+</div>
+</section>
+<section id="uploading-the-bitstream-file-into-the-mosbius-chip">
+<h3><span class="section-number">4.3.3. </span>Uploading the Bitstream File into the MOSbius Chip<a class="headerlink" href="#uploading-the-bitstream-file-into-the-mosbius-chip" title="Link to this heading">#</a></h3>
+<p>The chip is connected to the ADALM2000 as shown here:
+<img alt="3stage_RO_ready_for_programming" src="../_images/3stage_RO_8x_ready_for_programming.jpeg" /></p>
+<p>DIO channels 8 and 9<a class="footnote-reference brackets" href="#dio-choice" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> are wired to the <code class="docutils literal notranslate"><span class="pre">CK</span></code> and <code class="docutils literal notranslate"><span class="pre">DT</span></code> headers respectively at the top of the PCB that are the inputs of the digital level converters. Jumpers are placed on the <code class="docutils literal notranslate"><span class="pre">DATA</span></code> and <code class="docutils literal notranslate"><span class="pre">CLK</span></code> headers on the top left to connect the level-converted digital signals to the MOSbius chip. In this example, we are using a <em>manual</em> <code class="docutils literal notranslate"><span class="pre">EN1</span></code>. A jumper is placed on the bottom header on the top left of the PCB. The <code class="docutils literal notranslate"><span class="pre">EMU_PU</span></code>is left open for now (short jumper cable is dangling in the air in the photo). Please review <a class="reference internal" href="../1_chapter_description/description.html"><span class="std std-doc">the PCB description</span></a>.</p>
+<figure class="align-default" id="id3">
+<img alt="../_images/jumpers.gif" src="../_images/jumpers.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Location of the digital signal connections and jumpers.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We configure the <strong>Pattern Generator</strong> function of the ADALM2000 to have two digital output channels: DIO 8 and 9 and upload the <em>clock</em> and the <em>bitstream</em> file to channel 8 and 9 respectively as shown below. The frequency for the clock waveform has to be twice the frequency for the bitstream waveform; we typically use <em>200kHz</em> for the frequency for <em>CLK</em> and <em>100kHz</em> for the frequency for <em>DATA</em>.</p>
+<figure class="align-default" id="id4">
+<img alt="../_images/pattern_generator_screenshot.png" src="../_images/pattern_generator_screenshot.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Screenshot of the <em>Pattern Generator</em> screen of Scopy controlling the ADALM2000 after the bitstream and clock file have been read in for channels 9 and 8 respectively.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="../_images/pattern_generator_screenshot_zoom.png" src="../_images/pattern_generator_screenshot_zoom.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Zoom in on the digital waveforms showing the alignment between the data and clock waveforms.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>During programming the <code class="docutils literal notranslate"><span class="pre">EN</span></code> needs to be LOW; we leave it floating so the internal pull-down will hold it LOW; and we also disconnect the <code class="docutils literal notranslate"><span class="pre">1+</span></code> and <code class="docutils literal notranslate"><span class="pre">2+</span></code> scope inputs, or any other connections from the ADALM2000.</p>
+<p>We <em>turn on</em> the 2.5V power supply for the MOSbius chip (the red LED on the PCB turns on) and then upload the bitstream into the MOSbius chip using the <strong>Single (Run)</strong> function. If you look closely you see the data/clock LEDs on the PCB flicker briefly.</p>
+</section>
+<section id="enabling-the-mosbius-chip">
+<h3><span class="section-number">4.3.4. </span>Enabling the MOSbius Chip<a class="headerlink" href="#enabling-the-mosbius-chip" title="Link to this heading">#</a></h3>
+<p><img alt="3stage_RO_ready_for_programming" src="../_images/3stage_RO_8x_in_operation.jpeg" /></p>
+<p>We now enable the connection matrix by asserting the <code class="docutils literal notranslate"><span class="pre">EN</span></code> signal by shorting the <code class="docutils literal notranslate"><span class="pre">EMU_PU</span></code> jumper connection<a class="footnote-reference brackets" href="#en-jumper" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. Notice that the red LED shows that the chip is powered and the orange LED shows the switch matrix is enabled.</p>
+<p>The measurements are further described <a class="reference internal" href="../2_chapter_ring_oscillator/ring_oscillator.html"><span class="std std-doc">here</span></a>.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="dio-choice" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>You can choose any DIO channels of your preference.</p>
+</aside>
+<aside class="footnote brackets" id="en-jumper" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>We chose to use a short jumper cable to short the <code class="docutils literal notranslate"><span class="pre">EMU_PU</span></code> jumper but you can use a standard jumper as well.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./5_sw_support"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../6a_experiments/solutions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Solutions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../4_chapter_simulations/LTspice_simulations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Spice Simulations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executable-scripts">4.1. Executable Scripts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connections-to-bitstream">4.1.1. connections_to_bitstream</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cir-to-connections">4.1.2. cir_to_connections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-steps-to-create-bitstream-files">4.2. Basic Steps to Create Bitstream Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-ltspice-schematic">4.2.1. From LTspice Schematic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-connections-json-file">4.2.2. From Connections Json File</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-programming-a-three-stage-ring-oscillator">4.3. Example of Programming a Three-Stage Ring Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-ltspice-schematic">4.3.1. Starting from LTspice Schematic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-a-connections-file">4.3.2. Starting from a Connections File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-the-bitstream-file-into-the-mosbius-chip">4.3.3. Uploading the Bitstream File into the MOSbius Chip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-the-mosbius-chip">4.3.4. Enabling the MOSbius Chip</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The MOSbius Crew
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
