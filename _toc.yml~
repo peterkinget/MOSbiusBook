@@ -1,0 +1,19 @@
+# MobiusBook
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: 0_front_matter/intro
+defaults:
+  numbered: 3
+chapters:
+- file: 1_chapter_description/description
+- file: 2_chapter_basic/basic_experiments
+- file: 3_chapter_ota/ota_experiments
+  sections:
+  - file: 3_chapter_ota/mota-single-ended/user-notebook
+  - file: 3_chapter_ota/mota-single-ended/designer-notebook
+- file: 4_chapter_simulations/LTspice_simulations
+- file: 8_chapter_chip_design_details/chip_design_details
+- file: 9_back_matter/acknowledgments
+- file: tmp/ring_oscillator

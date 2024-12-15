@@ -1,0 +1,55 @@
+# MobiusBook
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: 0_front_matter/intro
+options:
+  numbered: 3
+chapters:
+- file: 1_chapter_description/description
+- file: 5_sw_support/MOSbiusTools
+- file: 4_chapter_simulations/LTspice_simulations
+- file: 2_chapter_blinky/blinky
+- file: 2_chapter_ring_oscillator/ring_oscillator
+# - file: 2_chapter_basic/basic_experiments
+- file: 3_chapter_ota/ota_experiments
+  sections:
+  - file: 3_chapter_ota/mota-se-p-16/mota-se-p-16
+  - file: 3_chapter_ota/mota-single-ended/mota-single-ended
+    sections:
+    - file: 3_chapter_ota/mota-single-ended/user-notebook
+    - file: 3_chapter_ota/mota-single-ended/designer-notebook
+- file: 6_iv_characteristics/iv_characteristics
+  sections: 
+  - file: 6_iv_characteristics/plotting_i_v_data_sims_nmos
+  - file: 6_iv_characteristics/plotting_i_v_data_sims_pmos
+- file: 6a_experiments/experiments
+  sections:
+  - file: 6a_experiments/labs
+    sections:
+    - file: 6a_experiments/Lab_1_introduction/introduction_PK
+    - file: 6a_experiments/Lab_2_current_mirrors/current_mirrors_PK
+    - file: 6a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_PK
+    - file: 6a_experiments/Lab_4_differential_pair_AC/differential_pair_AC
+    - file: 6a_experiments/Lab_common_source_amplifier/common_source_amplifier
+    - file: 6a_experiments/Lab_simple_OTA/simple_OTA
+    - file: 6a_experiments/Lab_two_stage_OTA/two_stage_OTA
+  - file: 6a_experiments/solutions
+    sections:
+    - file: 6a_experiments/Lab_1_introduction/introduction_solution_PK
+    - file: 6a_experiments/Lab_2_current_mirrors/current_mirrors_solution_PK
+    - file: 6a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_solution
+- file: 4_chapter_demonstrations/demonstrations
+  sections:
+    -file: 2_chapter_blinky/blinky
+    -file: 2_chapter_ring_oscillator/ring_oscillator
+    -file: 6_iv_characteristics/iv_characteristics
+- file: 8_chapter_chip_design_details/chip_design_details
+- file: appendices/appendices
+  sections:
+  - file: app_pcb_test/pcb_test
+  - file: app_adalm2000/adalm2000
+- file: 9_back_matter/acknowledgments
+- file: 10_to_do_list/to_do_list
+
