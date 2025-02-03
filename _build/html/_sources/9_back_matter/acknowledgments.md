@@ -22,3 +22,7 @@
 ## Sponsors 
 - The chips have been fabricated as part of the [EE6350 VLSI Design Lab](https://www.ee.columbia.edu/~kinget/vlsidesignlab) at Columbia University, sponsored by Apple Inc. 
 - The [Electrical Engineering Department at Columbia University](https://www.ee.columbia.edu) has been providing partial support through teaching and course assistant funding.
+
+```{figure} img/cu_engineering.png
+:width: 600px
+```
