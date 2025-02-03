@@ -37,6 +37,7 @@ External components are added to the 555 timer realization with the MOSbius chip
 The process of creating a bitstream file to program the MOSbius chip from the simulation schematic is described in the [tools chapter](../5_sw_support/MOSbiusTools.md). 
 
 
+
 [^chipnumbers]: In the `old_symbols/library chip pin numbers tsmc025_public` folder in the repository you can find symbols using the chip numbers; however, the MOSbiusTools to generate bitstreams are currently written assuming the schematic is using PCB pin numbers. 
 
 [^ltspice_lib]: You can add the library as a custom library in LTspice and then start a schematic from scratch. However, by starting from the full schematic and using the available components, you will not by accident use more copies of transistor arrangements than are available on the chip. 
