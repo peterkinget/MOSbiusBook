@@ -13,6 +13,7 @@
     assembled some of the MOSbius PCBs
 - [Yuechen He](https://www.linkedin.com/in/yuechenhe/)
     helped develop the lab experiments
+- [Jianxun Zhu](https://www.linkedin.com/in/coiughdpjlpse797eloa) has updated the LTspice library and developed demonstrators
 
 ## Technical Discussions
 - We thank Prof. Yannis Tsividis for stimulating discussions at the cradle of this project and all throughout. Thanks also to Prof. Rikky Muller, Prof. Ali Niknejad, and John Pigott for exploratory discussions on a custom chip for circuit teaching that helped shape this project. 
