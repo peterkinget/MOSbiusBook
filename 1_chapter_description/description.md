@@ -4,9 +4,9 @@ The MOSbius platform offers the MOSbius chip, an adapter PCB to place the chip o
 
 ## MOSbius Chip
 ### Description
-```{figure} img/sch_two_numbers.png
+```{figure} img/block_diagram_pcb_v2.png
 :height: 600px
-Schematic of the MOSbius chip; blue pin numbers correspond to the numbering in the shift-register bitstream and the PCB labels; orange pin numbers correspond to the package pin numbers
+Schematic of the MOSbius chip; pin numbers correspond to the numbering in the shift-register bitstream and the PCB labels
 ```
 - The MOSbius chip is fabricated in a foundry 65nm CMOS technology and uses nMOS and pMOS thick-oxide transistors, i.e. the 2.5V I/O devices. It's packaged in a 68-pin PLCC package. 
 - The **max. supply voltage $V_{DD}$ is 2.5V**. When the chip is in use, the supply should **always** be provided for ESD protection.

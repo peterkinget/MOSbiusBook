@@ -1,5 +1,6 @@
 # MOSbius Chip Design Details
 `<This chapter is under construction>`
+
 ## Device Layouts
 ### Devices
 `<TBD>`
@@ -25,3 +26,9 @@ Organization of the layout of a stage in the shift register
 Layout view of the 1mm x 1mm MOSbius chip
 ```
 The chip includes 424pF of nMOS decoupling capacitance between VDD and VSS
+
+## Package Pins to Shift-Register Mapping
+```{figure} img/sch_two_numbers.png
+:height: 600px
+Schematic of the MOSbius chip; blue pin numbers correspond to the numbering in the shift-register bitstream and the PCB labels, while orange numbers correspond to chip package pin numbers.
+```
