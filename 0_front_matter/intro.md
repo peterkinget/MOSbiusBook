@@ -1,3 +1,14 @@
+<!-- 
+```{raw} html
+<center>
+<video controls width="320" autoplay muted>
+  <source src="../_static/videos/MOSbius.mp4" type="video/mp4">
+  Your browser does not support the video tag
+</video>
+</center>
+```
+-->
+
 # Welcome to the MOSbius Project
 
 The MOSbius chip contains nMOS and pMOS devices as individual transistors, as
@@ -17,7 +28,7 @@ The chip also contains a switch matrix so every pin can be connected to any of 1
 
 We will describe the operation of the MOSbius chip and show examples of experiments that can be conducted to learn transistor-level MOS circuit design. 
 
-```{figure} img/MobiusChip_overview.png
+```{figure} img/Mobius_platform_overview.png
 Overview of the MOSbius platform. Transistors and circuits on the MOSbius chip allow the student to create an electronic circuit that they can evaluate experimentally.
 ```
 

@@ -5,7 +5,7 @@ The MOSbius platform offers the MOSbius chip, an adapter PCB to place the chip o
 ## MOSbius Chip
 ### Description
 ```{figure} img/block_diagram_pcb_v2.png
-:height: 600px
+:height: 700px
 Schematic of the MOSbius chip; pin numbers correspond to the numbering in the shift-register bitstream and the PCB labels
 ```
 - The MOSbius chip is fabricated in a foundry 65nm CMOS technology and uses nMOS and pMOS thick-oxide transistors, i.e. the 2.5V I/O devices. It's packaged in a 68-pin PLCC package. 
@@ -97,15 +97,15 @@ The MOSbius PCB is a 'breakout' board that allows to connect the chip to a stand
 - Power Supply:
   - The MOSbius chip **always needs to be powered by 2.5V** to reverse bias the pad ESD protection diodes. All `GND` on the PCB are connected, but make sure to connect it correctly to your external power supply. 
   - You can apply a 2.5V supply to the `V+` pin on the top of the PCB; the PCB contains a protection circuit against supply voltages larger than 2.5V. The power supply is connected to the breadboard power rails as well. The 2.5V supply can be supplied from there also. 
-  - Or, you can use on the [LDO](./img/NCV8164-D.PDF) regulator[^ldo] on the PCB to convert an input voltage `LDOI` between 2.7V and 5.5V to 2.5V. In that case place a jumper between `LDOO` and `V+`. You can obtain the 'Power Good' logic signal by with a jumper on `LDO_PG` and measuring the voltage, but this is not required.
+  - Or you can use the [LDO](./img/NCV8164-D.PDF) regulator[^ldo] on the PCB to convert an input voltage `LDOI` between 2.7V and 5.5V to 2.5V. In that case place a jumper between `LDOO` and `V+`. You can obtain the 'Power Good' logic signal with a jumper on `LDO_PG` and measuring the voltage, but this is not required.
   - The red power LED indicates that 2.5V is applied to the chip. The PCB also contains supply decoupling. 
 - nMOS and pMOS Current Mirror Bias:
   - The 25K potentiometer on the top, close to `I_REFP` can be used to bias the pMOS current mirror. Connect a current meter across `I_REFP` with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer for the desired current and then replace the current meter with a jumper. The left terminal of the `I_REFP` header is connected to `pin 68` of the Mobius chip. 
-  - Similarly, The 25K potentiometer on the left, close to `I_REFN` can be used to bias the nMOS current mirror. Connect a current meter across `I_REFN` with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer for the desired current and then replace the current meter with a jumper. The left terminal of the `I_REFN` header is connected to `pin 19` of the Mobius chip. 
+  - Similarly, the 25K potentiometer on the left, close to `I_REFN` can be used to bias the nMOS current mirror. Connect a current meter across `I_REFN` with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer for the desired current and then replace the current meter with a jumper. The left terminal of the `I_REFN` header is connected to `pin 19` of the Mobius chip. 
 - Digital Interface Level Conversion:
   - The PCB contains resistive dividers to convert 3.3V logic signals to 2.5V logic signals compatible with the MOSbius chip.
   - Connect the `DATA`, `CLK`, and `EN` from your 3.3V digital signal source to the respective headers `DT`, `CK` and `EN` on the **top** of the PCB. 
-  - The 2.5V logic signals will appear on the right side on of the header in the upper right corner of the PCB. Place a jumper to connect the `DT`, `CK` and `EN` to the chip. The left side of the header is connected to the MOSbius chip `pins 3, 2, 1` respectively. 
+  - The 2.5V logic signals will appear on the right side on of the header in the upper left corner of the PCB. Place a jumper to connect the `DT`, `CK` and `EN` to the chip. The left side of the header is connected to the MOSbius chip `pins 3, 2, 1` respectively. 
   - The blue, yellow and green LED's will light up when you send the digital `DT`, `CLK` and `EN` signals to the chip: . 
 - Manual Enable:
   - If you want to control `EN` manually, then connect a jumper to connect `EM` to the chip; if you then connect a jumper at `EM_PU`, `EN` at the chip will go high enabling the switch matrix and the orange LED will light up; if you leave the `EM_PU` jumper open, `EN` at the chip will stay low and the on-chip switches in the switch matrix will remain open. 
