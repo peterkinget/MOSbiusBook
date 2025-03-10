@@ -39,12 +39,16 @@ chapters:
 #    - file: 6a_experiments/Lab_6_compensation_two_stage_OTA/two_stage_OTA_solution_PK
 - file: 5_sw_support/MOSbiusTools
 - file: 4_chapter_simulations/LTspice_simulations
+- file: ordering/ordering
+- file: mosbius_crew/mosbius_crew
+- file: 9_back_matter/acknowledgments
+
 - file: appendices/appendices
   sections:
   - file: app_pcb_test/pcb_test
   - file: 8_chapter_chip_design_details/chip_design_details
   - file: app_adalm2000/adalm2000
-- file: 9_back_matter/acknowledgments
+
 # - file: 10_to_do_list/to_do_list
 #   sections:
 #   - file: 3_chapter_ota/mota-single-ended/mota-single-ended

@@ -1,6 +1,11 @@
 # Acknowledgments
 
 ## The MOSbius Crew
+
+Many thanks to the [MOSbius Crew](../mosbius_crew/mosbius_crew.md) for their contributions, enthusiasm, and tireless energy.
+
+ 
+<!-- 
 - [Peter Kinget](https://www.ee.columbia.edu/~kinget)
     is the project lead
 - [Longyi Li](https://www.linkedin.com/in/longyi-li/)
@@ -14,6 +19,9 @@
 - [Yuechen He](https://www.linkedin.com/in/yuechenhe/)
     helped develop the lab experiments
 - [Jianxun Zhu](https://www.linkedin.com/in/coiughdpjlpse797eloa) has updated the LTspice library and developed demonstrators; he also made the beautiful MOSbius logo animation
+
+[mosbius crew](../mosbius_crew/mosbius_crew)
+-->
 
 ## Technical Discussions
 - We thank Prof. Yannis Tsividis for stimulating discussions at the cradle of this project and all throughout. Thanks also to Prof. Rikky Muller, Prof. Ali Niknejad, and John Pigott for exploratory discussions on a custom chip for circuit teaching that helped shape this project. 

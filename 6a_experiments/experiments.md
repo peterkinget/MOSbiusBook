@@ -12,6 +12,7 @@ This section of the manual focuses on lab experiments for senior undergraduates 
 ```{tableofcontents}
 ```
 
+**References**
 ```{bibliography}
 :style: unsrtalpha
 ```

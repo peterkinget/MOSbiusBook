@@ -33,7 +33,7 @@ Overview of the MOSbius platform. Transistors and circuits on the MOSbius chip a
 ```
 
 **Project Status:**
-- the project is still in full development and new materials are still under development. 
+- the project is still in full development and new materials are still under development. If you are interested in ordering MOSbius kits, review [the ordering page](../ordering/ordering).
 - If you find an error or have suggestions, please [open an issue on Github](https://github.com/peterkinget/MOSbiusBook/issues/new) or email [Peter Kinget](mailto:pk171+mosbius@columbia.edu).
 
 **Table of Contents**
