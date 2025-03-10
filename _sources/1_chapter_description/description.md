@@ -116,10 +116,7 @@ See [Testing the PCB](../app_pcb_test/pcb_test.md)
 ## Testbench
 The MOSbius chip can be measured using standard test equipment on a typical student lab bench. 
 
-We recommend the use of USB-based instrumentation since it allows the student to do the experiments in their dorm room or at home. 
-
-### USB-Based Instruments
-For many of the experiment demonstrations shown here we use the [ADALM 2000 Active Learning Module](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html). 
+We recommend the use of USB-based instrumentation since it allows the student to do the experiments in their dorm room or at home. For many of the experiment demonstrations shown here we use the [ADALM 2000 Active Learning Module](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html), but other modules can be used as well. 
 
 
 [^pulldown]: The MOSbius chip has a pulldown resistor on the `EN` pin. 
