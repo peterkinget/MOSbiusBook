@@ -10,7 +10,7 @@ The modulator consists of a CT integrator followed by a clocked comparator. The 
 
 ### Noise Transfer Function
 
-### Sizing
+### Modulator Design
 
 Choice of $f_{CLK}$, $\omega_{o,int}$ 
 
