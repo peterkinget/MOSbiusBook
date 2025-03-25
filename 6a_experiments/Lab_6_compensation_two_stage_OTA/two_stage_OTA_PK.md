@@ -2,7 +2,7 @@
 
  
 ## Objective
-In this experiment we build a two-stage OTA using the one-stage PMOS OTA and 4x nMOS common-source stage. We use the behavioral models measured in the [One Stage OTA and Common-Soruce Amplifier Lab](../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.md) to calculate the appropriate compensation capacitors to do a dominant-pole and a Miller compensation. Then the unity-gain closed-loop step responses are checked. 
+In this experiment we build a two-stage OTA using the one-stage PMOS OTA and 4x nMOS common-source stage. We use the behavioral models measured in the [One Stage OTA and Common-Source Amplifier Lab](../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.md) to calculate the appropriate compensation capacitors to do a dominant-pole and a Miller compensation. Then the unity-gain closed-loop step responses are checked. 
 
 ## Preparation
 * Review your course notes on two-stage OTAs and dominant-pole and Miller compensation. 
@@ -27,20 +27,20 @@ Schematic of the MOSbius chip with one-stage pMOS OTA, the 4x CS transistor and 
 
 ## Experiments
 
-The open-loop frequency response of the two-stage OTA is measured and compared with the expected response based on the behavioral models measured in [One Stage OTA and Common-Soruce Amplifier Lab](../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.md). The unity-gain step responses are reviewed. Then dominant-pole and Miller compensation are applied and the unity-gain step responses are reviewed again. 
+The open-loop frequency response of the two-stage OTA is measured and compared with the expected response based on the behavioral models measured in [One Stage OTA and Common-Source Amplifier Lab](../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.md). The unity-gain step responses are reviewed. Then dominant-pole and Miller compensation are applied and the unity-gain step responses are reviewed again. 
 
 ### Two-Stage pMOS-input OTA without Compensation
 
 #### Build the Test Circuit and Check the Bias Point
 
-```{figure} img/two_stage_OTA_setup.png
+```{figure} img/lab6_schematic_man.svg
 :name: fig-ota-open-loop-setup
 :height: 400px
 
-Test circuit setup to measure the open-loop gain of the two-stage pMOS-input OTA. The input is a one-stage OTA biased with a 2x $I_{REF}$ current bias; thej second stage is a 4x CS nMOS transistor biased with a 4x $I_{REF}$ current bias. The first and second stage are loaded by $C_{L1}$ and $C_{L2}$ respectively. The OTA is placed in negative DC feedback with $R_2$, $R_1$ and $C_{B1}$ and in AC feedback with $R_2$, $R_1$. The biasing of the input pin is not shown. 
+Test circuit setup to measure the open-loop gain of the two-stage pMOS-input OTA. The input is a one-stage OTA biased with a 2x $I_{REF}$ current bias; the second stage is a 4x CS nMOS transistor biased with a 4x $I_{REF}$ current bias. The first and second stage are loaded by $C_{L1}$ and $C_{L2}$ respectively. The OTA is placed in negative DC feedback with $R_2$, $R_1$ and $C_{B1}$ and in AC feedback with $R_2$, $R_1$. The biasing of the input pin is not shown. 
 ```
 - Build the test circuit:
-    - The pMOS current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFP). Connect a current meter across I_REFP with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so $I_{REF}$ is $100\mu A$; replace the current meter with a jumper. The I_REFP header is connected to pin 68 of the Mobius chip on the PCB. See *Testing the Current Bias Potentiometers* in the [Appendix on Testing the MOSbius PCB](../../app_pcb_test/pcb_test)
+    - The pMOS current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFP). Connect a current meter across I_REFP with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so $I_{REF}$ is $100\mu A$; replace the current meter with a jumper. The I_REFP header is connected to pin 68 of the MOSbius chip on the PCB. See *Testing the Current Bias Potentiometers* in the [Appendix on Testing the MOSbius PCB](../../app_pcb_test/pcb_test)
     - The OTA is internally connected to the current mirror with a 2X tail transistor M7 so it is biased with $200\mu A$. 
     - Use a $470pF$ capacitor as $C_{L1}$ and a $4.7nF$ capacitor as $C_{L12}$.
     - Use $R_1 = 100\Omega$ and $R_2 = 100K\Omega$ and $C_{B1} = 1\mu F$ (non electrolytic). 
@@ -59,10 +59,10 @@ Test circuit setup to measure the open-loop gain of the two-stage pMOS-input OTA
 
 #### Build and Characterize an Input-Signal Attenuator
 
-- The signal generator is based on a DAC and it is difficult to generate small signals, say of a few miliVolt. Try it and you will notice that the signal looks like a staircase (after amplification) due to the generator's DAC finite resolution. 
+- The signal generator is based on a DAC and it is difficult to generate small signals, say of a few milliVolt. Try it and you will notice that the signal looks like a staircase (after amplification) due to the generator's DAC finite resolution. 
 - Next we build an analog 100x attenuator so that we can use a large output signal from the generator but still apply the required small inputs for measuring an OTA with a lot of gain (40dB or more).
 
-```{figure} img/attenuator_setup.png 
+```{figure} img/lab6_atten_man.svg 
 :height: 200px
 
 Schematic of the 100x signal attenuator. It attenuates AC signals by 40dB while passing through DC bias.  
@@ -79,13 +79,13 @@ Schematic of the 100x signal attenuator. It attenuates AC signals by 40dB while 
     - Use the network analyzer to characterize the frequency response of the attenuator.
         - Set up the network analyzer with a $2V$ DC, $V_{offset}$, and a $1V_{p}$ signal, $V_{signal}$. 
         - Find the exact attenuation $A_{atten}$, phase shift and frequency range of the attenuator for a close to $40dB$ signal attenuation.
-        - Exolain what is happening at low frequencies. (Extra) Explain what is happening at high frequencies?   
+        - explain what is happening at low frequencies. (Extra) Explain what is happening at high frequencies?   
 
 #### Oscilloscope Measurements
 We start with measurements on the oscilloscope at low frequencies to determine an appropriate input amplitude for the network analyzer measurements. We will also obtain a first estimate of the gains and these measurements can be used to do a sanity check on our network analyzer measurements later. 
 
 - Gain:
-    - Generate a $1KHz$ $200mV_{pp}$ sinewave with a $1.25V$ DC offset with *W1* and connect it to the attenuator. **Always disconnect the signal generator first and verify the signal on the oscilloscope before applying it to your circuit. Do not apply signals above $2.5V$ or below $0V$ to the chip** 
+    - Generate a $1KHz$ $200mV_{pp}$ sine wave with a $1.25V$ DC offset with *W1* and connect it to the attenuator. **Always disconnect the signal generator first and verify the signal on the oscilloscope before applying it to your circuit. Do not apply signals above $2.5V$ or below $0V$ to the chip** 
     - Connect the attenuator output to the OTA input *in*. 
     - Connect the oscilloscope channels *1+* and *2+* to *W1* and *out* respectively and ground *1-* and *2-*.
     - Measure the waveforms at input and output and record the amplitudes.
@@ -104,7 +104,7 @@ We start with measurements on the oscilloscope at low frequencies to determine a
         - Explain why you are measuring the open-loop performance of the OTA even though there is a feedback network around the OTA. 
 
 #### Measurement vs. Behavioral-Model Predictions   
-- Compare the measured frequency response of the two-stage OTA to the response you expected based on the behavioral model of the one-stage OTA and common-source amplifier measured in [One Stage OTA and Common-Soruce Amplifier Lab](../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.md).
+- Compare the measured frequency response of the two-stage OTA to the response you expected based on the behavioral model of the one-stage OTA and common-source amplifier measured in [One Stage OTA and Common-Source Amplifier Lab](../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.md).
 
 #### Step Response Measurements
 - Place the amplifier in unity-gain feedback. Directly *out* (pin 31) to *inp* (pin 56) of the one-stage OTA without any resistors or capacitors. 
