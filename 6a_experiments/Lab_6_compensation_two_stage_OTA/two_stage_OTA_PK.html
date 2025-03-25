@@ -458,7 +458,7 @@ document.write(`
 <h1><span class="section-number">3.1.6. </span>Lab 6: Frequency Compensation of a Two-Stage OTA<a class="headerlink" href="#lab-6-frequency-compensation-of-a-two-stage-ota" title="Link to this heading">#</a></h1>
 <section id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h2>
-<p>In this experiment we build a two-stage OTA using the one-stage PMOS OTA and 4x nMOS common-source stage. We use the behavioral models measured in the <a class="reference internal" href="../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.html"><span class="std std-doc">One Stage OTA and Common-Soruce Amplifier Lab</span></a> to calculate the appropriate compensation capacitors to do a dominant-pole and a Miller compensation. Then the unity-gain closed-loop step responses are checked.</p>
+<p>In this experiment we build a two-stage OTA using the one-stage PMOS OTA and 4x nMOS common-source stage. We use the behavioral models measured in the <a class="reference internal" href="../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.html"><span class="std std-doc">One Stage OTA and Common-Source Amplifier Lab</span></a> to calculate the appropriate compensation capacitors to do a dominant-pole and a Miller compensation. Then the unity-gain closed-loop step responses are checked.</p>
 </section>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
@@ -488,21 +488,21 @@ document.write(`
 </section>
 <section id="experiments">
 <h2>Experiments<a class="headerlink" href="#experiments" title="Link to this heading">#</a></h2>
-<p>The open-loop frequency response of the two-stage OTA is measured and compared with the expected response based on the behavioral models measured in <a class="reference internal" href="../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.html"><span class="std std-doc">One Stage OTA and Common-Soruce Amplifier Lab</span></a>. The unity-gain step responses are reviewed. Then dominant-pole and Miller compensation are applied and the unity-gain step responses are reviewed again.</p>
+<p>The open-loop frequency response of the two-stage OTA is measured and compared with the expected response based on the behavioral models measured in <a class="reference internal" href="../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.html"><span class="std std-doc">One Stage OTA and Common-Source Amplifier Lab</span></a>. The unity-gain step responses are reviewed. Then dominant-pole and Miller compensation are applied and the unity-gain step responses are reviewed again.</p>
 <section id="two-stage-pmos-input-ota-without-compensation">
 <h3>Two-Stage pMOS-input OTA without Compensation<a class="headerlink" href="#two-stage-pmos-input-ota-without-compensation" title="Link to this heading">#</a></h3>
 <section id="build-the-test-circuit-and-check-the-bias-point">
 <h4>Build the Test Circuit and Check the Bias Point<a class="headerlink" href="#build-the-test-circuit-and-check-the-bias-point" title="Link to this heading">#</a></h4>
 <figure class="align-default" id="fig-ota-open-loop-setup">
-<a class="reference internal image-reference" href="../../_images/two_stage_OTA_setup.png"><img alt="../../_images/two_stage_OTA_setup.png" src="../../_images/two_stage_OTA_setup.png" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="../../_images/lab6_schematic_man.svg"><img alt="../../_images/lab6_schematic_man.svg" height="400px" src="../../_images/lab6_schematic_man.svg" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3.11 </span><span class="caption-text">Test circuit setup to measure the open-loop gain of the two-stage pMOS-input OTA. The input is a one-stage OTA biased with a 2x <span class="math notranslate nohighlight">\(I_{REF}\)</span> current bias; thej second stage is a 4x CS nMOS transistor biased with a 4x <span class="math notranslate nohighlight">\(I_{REF}\)</span> current bias. The first and second stage are loaded by <span class="math notranslate nohighlight">\(C_{L1}\)</span> and <span class="math notranslate nohighlight">\(C_{L2}\)</span> respectively. The OTA is placed in negative DC feedback with <span class="math notranslate nohighlight">\(R_2\)</span>, <span class="math notranslate nohighlight">\(R_1\)</span> and <span class="math notranslate nohighlight">\(C_{B1}\)</span> and in AC feedback with <span class="math notranslate nohighlight">\(R_2\)</span>, <span class="math notranslate nohighlight">\(R_1\)</span>. The biasing of the input pin is not shown.</span><a class="headerlink" href="#fig-ota-open-loop-setup" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.11 </span><span class="caption-text">Test circuit setup to measure the open-loop gain of the two-stage pMOS-input OTA. The input is a one-stage OTA biased with a 2x <span class="math notranslate nohighlight">\(I_{REF}\)</span> current bias; the second stage is a 4x CS nMOS transistor biased with a 4x <span class="math notranslate nohighlight">\(I_{REF}\)</span> current bias. The first and second stage are loaded by <span class="math notranslate nohighlight">\(C_{L1}\)</span> and <span class="math notranslate nohighlight">\(C_{L2}\)</span> respectively. The OTA is placed in negative DC feedback with <span class="math notranslate nohighlight">\(R_2\)</span>, <span class="math notranslate nohighlight">\(R_1\)</span> and <span class="math notranslate nohighlight">\(C_{B1}\)</span> and in AC feedback with <span class="math notranslate nohighlight">\(R_2\)</span>, <span class="math notranslate nohighlight">\(R_1\)</span>. The biasing of the input pin is not shown.</span><a class="headerlink" href="#fig-ota-open-loop-setup" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
 <li><p>Build the test circuit:</p>
 <ul>
-<li><p>The pMOS current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFP). Connect a current meter across I_REFP with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so <span class="math notranslate nohighlight">\(I_{REF}\)</span> is <span class="math notranslate nohighlight">\(100\mu A\)</span>; replace the current meter with a jumper. The I_REFP header is connected to pin 68 of the Mobius chip on the PCB. See <em>Testing the Current Bias Potentiometers</em> in the <a class="reference internal" href="../../app_pcb_test/pcb_test.html"><span class="doc std std-doc">Appendix on Testing the MOSbius PCB</span></a></p></li>
+<li><p>The pMOS current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFP). Connect a current meter across I_REFP with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so <span class="math notranslate nohighlight">\(I_{REF}\)</span> is <span class="math notranslate nohighlight">\(100\mu A\)</span>; replace the current meter with a jumper. The I_REFP header is connected to pin 68 of the MOSbius chip on the PCB. See <em>Testing the Current Bias Potentiometers</em> in the <a class="reference internal" href="../../app_pcb_test/pcb_test.html"><span class="doc std std-doc">Appendix on Testing the MOSbius PCB</span></a></p></li>
 <li><p>The OTA is internally connected to the current mirror with a 2X tail transistor M7 so it is biased with <span class="math notranslate nohighlight">\(200\mu A\)</span>.</p></li>
 <li><p>Use a <span class="math notranslate nohighlight">\(470pF\)</span> capacitor as <span class="math notranslate nohighlight">\(C_{L1}\)</span> and a <span class="math notranslate nohighlight">\(4.7nF\)</span> capacitor as <span class="math notranslate nohighlight">\(C_{L12}\)</span>.</p></li>
 <li><p>Use <span class="math notranslate nohighlight">\(R_1 = 100\Omega\)</span> and <span class="math notranslate nohighlight">\(R_2 = 100K\Omega\)</span> and <span class="math notranslate nohighlight">\(C_{B1} = 1\mu F\)</span> (non electrolytic).</p></li>
@@ -533,11 +533,11 @@ document.write(`
 <section id="build-and-characterize-an-input-signal-attenuator">
 <h4>Build and Characterize an Input-Signal Attenuator<a class="headerlink" href="#build-and-characterize-an-input-signal-attenuator" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>The signal generator is based on a DAC and it is difficult to generate small signals, say of a few miliVolt. Try it and you will notice that the signal looks like a staircase (after amplification) due to the generator’s DAC finite resolution.</p></li>
+<li><p>The signal generator is based on a DAC and it is difficult to generate small signals, say of a few milliVolt. Try it and you will notice that the signal looks like a staircase (after amplification) due to the generator’s DAC finite resolution.</p></li>
 <li><p>Next we build an analog 100x attenuator so that we can use a large output signal from the generator but still apply the required small inputs for measuring an OTA with a lot of gain (40dB or more).</p></li>
 </ul>
 <figure class="align-default" id="id11">
-<a class="reference internal image-reference" href="../../_images/attenuator_setup.png"><img alt="../../_images/attenuator_setup.png" src="../../_images/attenuator_setup.png" style="height: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/lab6_atten_man.svg"><img alt="../../_images/lab6_atten_man.svg" height="200px" src="../../_images/lab6_atten_man.svg" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.12 </span><span class="caption-text">Schematic of the 100x signal attenuator. It attenuates AC signals by 40dB while passing through DC bias.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
 </figcaption>
@@ -561,7 +561,7 @@ document.write(`
 <ul>
 <li><p>Set up the network analyzer with a <span class="math notranslate nohighlight">\(2V\)</span> DC, <span class="math notranslate nohighlight">\(V_{offset}\)</span>, and a <span class="math notranslate nohighlight">\(1V_{p}\)</span> signal, <span class="math notranslate nohighlight">\(V_{signal}\)</span>.</p></li>
 <li><p>Find the exact attenuation <span class="math notranslate nohighlight">\(A_{atten}\)</span>, phase shift and frequency range of the attenuator for a close to <span class="math notranslate nohighlight">\(40dB\)</span> signal attenuation.</p></li>
-<li><p>Exolain what is happening at low frequencies. (Extra) Explain what is happening at high frequencies?</p></li>
+<li><p>explain what is happening at low frequencies. (Extra) Explain what is happening at high frequencies?</p></li>
 </ul>
 </li>
 </ul>
@@ -574,7 +574,7 @@ document.write(`
 <ul class="simple">
 <li><p>Gain:</p>
 <ul>
-<li><p>Generate a <span class="math notranslate nohighlight">\(1KHz\)</span> <span class="math notranslate nohighlight">\(200mV_{pp}\)</span> sinewave with a <span class="math notranslate nohighlight">\(1.25V\)</span> DC offset with <em>W1</em> and connect it to the attenuator. <strong>Always disconnect the signal generator first and verify the signal on the oscilloscope before applying it to your circuit. Do not apply signals above <span class="math notranslate nohighlight">\(2.5V\)</span> or below <span class="math notranslate nohighlight">\(0V\)</span> to the chip</strong></p></li>
+<li><p>Generate a <span class="math notranslate nohighlight">\(1KHz\)</span> <span class="math notranslate nohighlight">\(200mV_{pp}\)</span> sine wave with a <span class="math notranslate nohighlight">\(1.25V\)</span> DC offset with <em>W1</em> and connect it to the attenuator. <strong>Always disconnect the signal generator first and verify the signal on the oscilloscope before applying it to your circuit. Do not apply signals above <span class="math notranslate nohighlight">\(2.5V\)</span> or below <span class="math notranslate nohighlight">\(0V\)</span> to the chip</strong></p></li>
 <li><p>Connect the attenuator output to the OTA input <em>in</em>.</p></li>
 <li><p>Connect the oscilloscope channels <em>1+</em> and <em>2+</em> to <em>W1</em> and <em>out</em> respectively and ground <em>1-</em> and <em>2-</em>.</p></li>
 <li><p>Measure the waveforms at input and output and record the amplitudes.</p>
@@ -610,7 +610,7 @@ document.write(`
 <section id="measurement-vs-behavioral-model-predictions">
 <h4>Measurement vs. Behavioral-Model Predictions<a class="headerlink" href="#measurement-vs-behavioral-model-predictions" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Compare the measured frequency response of the two-stage OTA to the response you expected based on the behavioral model of the one-stage OTA and common-source amplifier measured in <a class="reference internal" href="../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.html"><span class="std std-doc">One Stage OTA and Common-Soruce Amplifier Lab</span></a>.</p></li>
+<li><p>Compare the measured frequency response of the two-stage OTA to the response you expected based on the behavioral model of the one-stage OTA and common-source amplifier measured in <a class="reference internal" href="../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.html"><span class="std std-doc">One Stage OTA and Common-Source Amplifier Lab</span></a>.</p></li>
 </ul>
 </section>
 <section id="step-response-measurements">

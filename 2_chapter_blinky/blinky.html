@@ -437,7 +437,7 @@ document.write(`
   Your browser does not support the video tag
 </video>
 </center><p><strong>Circuit Schematic:</strong>
-We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4x inverter providing positive feedback around the second stage, resulting in hysteresis in the input-output tranfer characteristic. Overall feedback around the Schmitt Trigger is created with an R-C network. LEDs are connected at the output of the second stage; the red LED ligths up when the output is high, and the green LED lights up when it is low.</p>
+We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4x inverter providing positive feedback around the second stage, resulting in hysteresis in the input-output transfer characteristic. Overall feedback around the Schmitt Trigger is created with an R-C network. LEDs are connected at the output of the second stage; the red LED lights up when the output is high, and the green LED lights up when it is low.</p>
 <figure class="align-default" id="id3">
 <img alt="../_images/relaxation_osc_v1.png" src="../_images/relaxation_osc_v1.png" />
 <figcaption>
@@ -448,7 +448,7 @@ We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4
 <figure class="align-default" id="id4">
 <img alt="../_images/relaxation_osc_v1_IMG_2992.jpeg" src="../_images/relaxation_osc_v1_IMG_2992.jpeg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Photo of the <em>blinky</em> setup using the on-chip connections; the external components are a 100K<span class="math notranslate nohighlight">\(\Omega\)</span> resistor, a 10uF capacitor, and two LEDs with 47<span class="math notranslate nohighlight">\(\Omega\)</span> resistors; the orange and blue wires connect to the ADALM2000 oscillscope channels <code class="docutils literal notranslate"><span class="pre">1+</span></code> and <code class="docutils literal notranslate"><span class="pre">2+</span></code> respectively; <code class="docutils literal notranslate"><span class="pre">1-</span></code> and <code class="docutils literal notranslate"><span class="pre">2-</span></code> are grounded; the ADALM <code class="docutils literal notranslate"><span class="pre">V+</span></code> provides the 2.5V power supply; digital channels <code class="docutils literal notranslate"><span class="pre">DIO8</span></code> and <code class="docutils literal notranslate"><span class="pre">DIO9</span></code> are used to feed the bitstream to the <code class="docutils literal notranslate"><span class="pre">CLK</span></code> and <code class="docutils literal notranslate"><span class="pre">DATA</span></code> pin of the MOSbius chip to program the switch matrix.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Photo of the <em>blinky</em> setup using the on-chip connections; the external components are a 100K<span class="math notranslate nohighlight">\(\Omega\)</span> resistor, a 10uF capacitor, and two LEDs with 47<span class="math notranslate nohighlight">\(\Omega\)</span> resistors; the orange and blue wires connect to the ADALM2000 oscilloscope channels <code class="docutils literal notranslate"><span class="pre">1+</span></code> and <code class="docutils literal notranslate"><span class="pre">2+</span></code> respectively; <code class="docutils literal notranslate"><span class="pre">1-</span></code> and <code class="docutils literal notranslate"><span class="pre">2-</span></code> are grounded; the ADALM <code class="docutils literal notranslate"><span class="pre">V+</span></code> provides the 2.5V power supply; digital channels <code class="docutils literal notranslate"><span class="pre">DIO8</span></code> and <code class="docutils literal notranslate"><span class="pre">DIO9</span></code> are used to feed the bitstream to the <code class="docutils literal notranslate"><span class="pre">CLK</span></code> and <code class="docutils literal notranslate"><span class="pre">DATA</span></code> pin of the MOSbius chip to program the switch matrix.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Measurements:</strong>
@@ -493,7 +493,7 @@ The oscillation across the capacitor has an amplitude of approx. 500mVpp. The av
 </aside>
 <aside class="footnote brackets" id="commentsim" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>The current LTSpice library for the chip components is using public domain 0.25um CMOS models and does not include accurate models of the on-chip layout and ESD parasitics; however, for low-frequency circuits qualitively accurate simulations can be obtained.</p>
+<p>The current LTSpice library for the chip components is using public domain 0.25um CMOS models and does not include accurate models of the on-chip layout and ESD parasitics; however, for low-frequency circuits qualitatively accurate simulations can be obtained.</p>
 </aside>
 </aside>
 </section>
