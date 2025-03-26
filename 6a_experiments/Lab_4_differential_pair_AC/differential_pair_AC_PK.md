@@ -39,7 +39,7 @@ In these experiments we will drive one input of the differential amplifier with 
 
 ### Build the Circuit and Check the Bias Point
 
-```{figure} img/dif_pair_4x_CloadSE.png
+```{figure} img/lab4_1_schematic_man.svg
 :height: 400px
 Schematic of the nMOS differential pair with a 8x $I_{REF}$ current bias. Note the location of the load capacitors $C_L$ and the common-source capacitor $C_{CS}$. The capacitors will not always be used for all parts of the experiments. The biasing of the input pins is not shown. 
 ```
@@ -123,7 +123,7 @@ Next we are going to add a large capacitor from the *CMSRC* node to *GND*. In ac
 
 ### Differential Load Capacitors vs Single-Ended Load Capacitors
 
-```{figure} img/dif_pair_4x_CloadD.png
+```{figure} img/lab4_2_schematic_man.svg
 :height: 400px
 Schematic of the nMOS differential pair with a 8x $I_{REF}$ current bias. Note the different configuration for the load capacitors $C_L$. Their common point needs to be floating. 
 ```
