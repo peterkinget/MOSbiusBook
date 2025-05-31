@@ -491,7 +491,7 @@ document.write(`
 <ul class="simple">
 <li><p>Build the circuit:</p>
 <ul>
-<li><p>The current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFN). Connect a current meter across I_REFN with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so <span class="math notranslate nohighlight">\(I_{REF}\)</span> is <span class="math notranslate nohighlight">\(100\mu A\)</span>; replace the current meter with a jumper. The I_REFN header is connected to pin 19 of the Mobius chip on the PCB. See <em>Testing the Current Bias Potentiometers</em> in the <a class="reference internal" href="../../app_pcb_test/pcb_test.html"><span class="doc std std-doc">Appendix on Testing the MOSbius PCB</span></a></p></li>
+<li><p>The current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFN). Connect a current meter across I_REFN with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so <span class="math notranslate nohighlight">\(I_{REF}\)</span> is <span class="math notranslate nohighlight">\(100\mu A\)</span>; replace the current meter with a jumper. The I_REFN header is connected to pin 19 of the MOSbius chip on the PCB. See <em>Testing the Current Bias Potentiometers</em> in the <a class="reference internal" href="../../app_pcb_test/pcb_test.html"><span class="doc std std-doc">Appendix on Testing the MOSbius PCB</span></a></p></li>
 <li><p>Use the 8x output of the current mirror to bias the differential pair. So each transistor<a class="footnote-reference brackets" href="#bias" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> is biased with <span class="math notranslate nohighlight">\(400\mu A\)</span>.</p></li>
 <li><p>The body<a class="footnote-reference brackets" href="#body" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> of transistors M1 and M2 needs to be connected to GND (VSS).</p></li>
 <li><p>Place the load resistors <span class="math notranslate nohighlight">\(R_L\)</span> of <span class="math notranslate nohighlight">\(\frac{4.7K\Omega}{4}\)</span> or equivalent on the breadboard. Measure your resistors with a multimeter and note their values. Ideally the two loads should be identical.</p></li>
@@ -576,7 +576,7 @@ document.write(`
 <li><p>Response at the Common Source:</p>
 <ul>
 <li><p>Keep the circuit in the common-mode configuration.</p></li>
-<li><p>Measure the <span class="math notranslate nohighlight">\(V_{CMSRC}\)</span> vs <span class="math notranslate nohighlight">\(V_{IN}\)</span>. Can you explain the responses? Note that you are now basically measuring a source follower (assuming that the <span class="math notranslate nohighlight">\(R_L\)</span> have a neglible effect, which is the case).</p></li>
+<li><p>Measure the <span class="math notranslate nohighlight">\(V_{CMSRC}\)</span> vs <span class="math notranslate nohighlight">\(V_{IN}\)</span>. Can you explain the responses? Note that you are now basically measuring a source follower (assuming that the <span class="math notranslate nohighlight">\(R_L\)</span> have a negligible effect, which is the case).</p></li>
 </ul>
 </li>
 <li><p>Common-Mode Rejection Ratio:</p>

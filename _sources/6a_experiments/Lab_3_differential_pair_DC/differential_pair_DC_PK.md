@@ -33,7 +33,7 @@ Schematic of the MOSbius chip with the nMOS current mirror and the 4x nMOS diffe
 Schematic of the nMOS differential pair with a 2x $I_{REF}$ current bias
 ```
 
-- The current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFN). Connect a current meter across I_REFN with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so $I_{REF}$ is $100\mu A$; replace the current meter with a jumper. The I_REFN header is connected to pin 19 of the Mobius chip on the PCB. See *Testing the Current Bias Potentiometers* in the [Appendix on Testing the MOSbius PCB](../../app_pcb_test/pcb_test)
+- The current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFN). Connect a current meter across I_REFN with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so $I_{REF}$ is $100\mu A$; replace the current meter with a jumper. The I_REFN header is connected to pin 19 of the MOSbius chip on the PCB. See *Testing the Current Bias Potentiometers* in the [Appendix on Testing the MOSbius PCB](../../app_pcb_test/pcb_test)
 - For the initial experiments use the 2x output of the current mirror to bias the differential pair. So each transistor is biased with $100\mu A$. Note that you will change this in later experiments. 
 - The body[^body] of transistors M1 and M2 needs to be connected to GND (VSS).
 - Place the load resistors $R_L$ on your breadboard. For the initial experiments $R_L$ is $4.7K\Omega$. Measure your resistors with a multimeter and note their values. Ideally the two resistors should be identical. 

@@ -11,7 +11,7 @@
 
 ## Preparation
 
-* Review your course notes on current mirrors and sigle transistor characteristics 
+* Review your course notes on current mirrors and single transistor characteristics 
 * Review the pin map for the chip and find where the current mirrors are
 ![<em>Fig.</em> The current mirrors used in this experiment; blue pin numbers correspond to the numbers on the PCB.](img/Current_Mirror.png)
 
