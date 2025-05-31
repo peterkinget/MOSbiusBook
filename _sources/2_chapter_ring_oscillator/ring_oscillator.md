@@ -38,7 +38,7 @@ We place the `1+` oscilloscope on different nodes:
 ### Three-Stage Ring Oscillator
 
 We build the 3-stage 16-16-8 ring-oscillator circuit shown in the following schematic. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use `BUS9` for VSS and `BUS10` for VDD.
-![3stage_RO_8x_schematic](./img/3stage_RO_8x_schematic.png)
+![3stage_RO_8x_schematic](./img/3stage_RO_8x.png)
 
 First, we translate the schematic `cir` file to a connections json file or manually[^3stageconnections] create a [connections json file](./img/connections_3stage_RO_8x_vdd_10_vss_9.json) that we then translate into a [bitstream](img/3stage_RO_8x_vdd_10_vss_9.txt) and [clock file](img/3stage_RO_8x_vdd_10_vss_9_clk.txt). We upload the bitstream into the MOSbius chip using the `Pattern Generator` function of the ADALM using channel 8 for the *CLK* and channel 9 for the *DATA*; we typically use *200kHz* for the frequency for *CLK* and *100kHz* for the frequency for *DATA*; during programming the `EN` needs to be LOW; we leave it floating so the internal pull-down will hold it LOW; and we also disconnect the `1+` and `2+` scope inputs. 
 ![3stage_RO_ready_for_programming](img/3stage_RO_8x_ready_for_programming.jpeg)
