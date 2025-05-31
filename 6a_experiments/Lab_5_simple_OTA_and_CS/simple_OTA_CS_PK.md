@@ -37,7 +37,7 @@ The frequency response of the two amplifiers is measured to determine their smal
 Schematic of the one-stage pMOS OTA with a 2x $I_{REF}$ current bias. The OTA is loaded with $C_{L1}$ and is placed in negative DC feedback with $R_2$, $R_1$ and $C_{B1}$ and in AC feedback with $R_2$, $R_1$. The biasing of the input pin is not shown. 
 ```
 - Build the test circuit:
-    - The pMOS current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFP). Connect a current meter across I_REFP with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so $I_{REF}$ is $100\mu A$; replace the current meter with a jumper. The I_REFP header is connected to pin 68 of the Mobius chip on the PCB. See *Testing the Current Bias Potentiometers* in the [Appendix on Testing the MOSbius PCB](../../app_pcb_test/pcb_test)
+    - The pMOS current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFP). Connect a current meter across I_REFP with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so $I_{REF}$ is $100\mu A$; replace the current meter with a jumper. The I_REFP header is connected to pin 68 of the MOSbius chip on the PCB. See *Testing the Current Bias Potentiometers* in the [Appendix on Testing the MOSbius PCB](../../app_pcb_test/pcb_test)
     - The OTA is internally connected to the current mirror with a 2X tail transistor M7 so it is biased with $200\mu A$. 
     - Use a $470pF$ capacitor as $C_{L1}$.
     - Use $R_1 = 100\Omega$ and $R_2 = 100K\Omega$ and $C_{B1} = 47\mu F$. 
@@ -57,7 +57,7 @@ Schematic of the one-stage pMOS OTA with a 2x $I_{REF}$ current bias. The OTA is
 We start with measurements on the oscilloscope at low frequencies to determine an appropriate input amplitude for the network analyzer measurements. We will also obtain a first estimate of the gains and these measurements can be used to do a sanity check on our network analyzer measurements later. 
 
 - Gain:
-    - Generate a $1KHz$ $50mV_{pp}$ sinewave with a $1.25V$ DC offset with *W1*. **Always disconnect the signal generator first and verify the signal on the oscilloscope before applying it to your circuit. Do not apply signals above $2.5V$ or below $0V$ to the chip** 
+    - Generate a $1KHz$ $50mV_{pp}$ sine wave with a $1.25V$ DC offset with *W1*. **Always disconnect the signal generator first and verify the signal on the oscilloscope before applying it to your circuit. Do not apply signals above $2.5V$ or below $0V$ to the chip** 
     - Disconnect *in* from $V_{REF}$ and connect it to the signal generator *W1*.
     - Connect the oscilloscope channels *1+* and *2+* to *in* and *out* respectively and ground *1-* and *2-*.
     - Measure the waveforms at input and output and record the amplitudes.
@@ -115,7 +115,7 @@ Schematic of the 4x common-source nMOS amplifier. M5 is biased a 4x $I_{REF}$ cu
 We start again with measurements on the oscilloscope at low frequencies to determine an appropriate input amplitude for the network analyzer measurements. We will also obtain a first estimate of the gains and these measurements can be used to do a sanity check on our network analyzer measurements later. 
 
 - Gain:
-    - Generate a $1KHz$ $20mV_{pp}$ sinewave with a $0V$ DC offset with *W1*. **Always disconnect the signal generator first and verify the signal on the oscilloscope before applying it to your circuit. Do not apply signals above $2.5V$ or below $0V$ to the chip** 
+    - Generate a $1KHz$ $20mV_{pp}$ sine wave with a $0V$ DC offset with *W1*. **Always disconnect the signal generator first and verify the signal on the oscilloscope before applying it to your circuit. Do not apply signals above $2.5V$ or below $0V$ to the chip** 
     - Connect *in* to the signal generator *W1*.
     - Connect the oscilloscope channels *1+* and *2+* to *in* and *out* respectively and ground *1-* and *2-*.
     - Measure the waveforms at input and output and record the amplitudes.
