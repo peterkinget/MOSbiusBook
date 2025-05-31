@@ -81,7 +81,7 @@ One can now experiment with different loading capacitors and study the relations
 ### Seven-Stage Ring Oscillator
 
 The schematic for the 7-stage ring oscillator is shown in the following figure. It uses a large number of the transistors available. The associated [bitstream](./img/7stage_RO_bitstream.txt) and [clock file](./img/7stage_RO_bitstream_clk.txt) are generated and loaded into the chip as described above. Note that due to the presence of the jumper BUS08 is renamed to BUS01 in the netlist. 
-![7stage_RO_schematic](./img/7stage_RO_schematic.png)
+![7stage_RO_schematic](./img/7stage_RO_schematic_v2.png)
 
 The output of stage 7 (BUS01) and stage 6 (BUS07) is connected to the ADALM oscilloscope `1+` (yellow wire/orange trace) and `2+` (blue wire/purple trace), respectively, and the inputs of stage 1 through 7 are connected to `DIO1` through `DIO7` on the ADALM. 
 ![7stage_RO_protoboard](./img/7stage_RO_protoboard.jpeg)
