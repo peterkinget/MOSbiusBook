@@ -412,14 +412,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-connections">2.2.1. Manual Connections</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-stage-ring-oscillator">Three-Stage Ring Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-stage-ring-oscillator-1-16-16">Three-Stage Ring Oscillator (1-16-16)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements">Measurements</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connections-using-the-on-chip-switch-matrix">2.2.2. Connections Using the On-Chip Switch Matrix</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Three-Stage Ring Oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-stage-ring-oscillator-16-16-8">Three-Stage Ring Oscillator (16-16-8)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-stage-ring-oscillator-studying-the-loop">Three-Stage Ring Oscillator - Studying the Loop</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-transfer-characteristic">DC Transfer Characteristic</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#delay-measurement-vs-oscillation-frequency">Delay Measurement vs Oscillation Frequency</a></li>
@@ -443,19 +443,24 @@ document.write(`
 <h1><span class="section-number">2.2. </span>Ring Oscillator Experiments<a class="headerlink" href="#ring-oscillator-experiments" title="Link to this heading">#</a></h1>
 <section id="manual-connections">
 <h2><span class="section-number">2.2.1. </span>Manual Connections<a class="headerlink" href="#manual-connections" title="Link to this heading">#</a></h2>
-<p>We start with an experiment with <em>manual</em> connections. The inverter stages and transistor are connected with wires on the breadboard. The on-chip switch matrix is left <em>disabled</em>.</p>
-<section id="three-stage-ring-oscillator">
-<h3>Three-Stage Ring Oscillator<a class="headerlink" href="#three-stage-ring-oscillator" title="Link to this heading">#</a></h3>
-<figure class="align-default" id="id3">
-<img alt="../_images/3stage_RO_manual_setup.jpeg" src="../_images/3stage_RO_manual_setup.jpeg" />
+<p>We start with an experiment with <em>manual</em> connections. The inverter stages and transistor are connected with wires on the breadboard. The on-chip switch matrix is left <em>disabled</em> (keep <code class="docutils literal notranslate"><span class="pre">EM_PU</span></code> open).</p>
+<section id="three-stage-ring-oscillator-1-16-16">
+<h3>Three-Stage Ring Oscillator (1-16-16)<a class="headerlink" href="#three-stage-ring-oscillator-1-16-16" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id1">
+<img alt="../_images/3stage_RO_1x_schematic_c.png" src="../_images/3stage_RO_1x_schematic_c.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">Mobius chip wired with external connections to build a 3-stage 16-16-1 ring oscillator; each node is using a different color wire; in the lower left corner is the ADALM 2000 that provides power and oscilloscope measurements.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-text">Three stage 1-16-16 ring oscillator built using manual wiring; the VDD and VSS connections in black are made on the MOSbius chip; the colored VDD and VSS connections have to be made manually along with the stage connections (see picture below)</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;TBD</span> <span class="pre">Schematic</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">circuit&gt;</span></code></p>
+<figure class="align-default" id="id2">
+<img alt="../_images/3stage_RO_manual_setup.jpeg" src="../_images/3stage_RO_manual_setup.jpeg" />
+<figcaption>
+<p><span class="caption-text">MOSbius chip wired with external connections to build a 3-stage 1-16-16 ring oscillator; each node is using a different color wire corresponding to the schematic; in the lower left corner is the ADALM 2000 that provides power and oscilloscope measurements.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p><strong>Circuit Topology</strong></p>
 <ul class="simple">
-<li><p>we use the two 16x inverter pairs for <em>stages 1</em> and <em>2</em>, and a 1x nMOS and a 1x pMOS as <em>stage 3</em></p></li>
+<li><p>we use the two 16x inverter pairs for <em>stages 2</em> and <em>3</em>, and a 1x nMOS and a 1x pMOS as <em>stage 1</em></p></li>
 <li><p>we make the following connections on the breadboard:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">stage1_in</span></code> 52 &amp; 53 &amp; 40 &amp; 12;</p></li>
@@ -464,15 +469,16 @@ document.write(`
 <li><p>14 &amp; VDD; 38 &amp; VSS;</p></li>
 </ul>
 </li>
+<li><p>make sure to leave the <code class="docutils literal notranslate"><span class="pre">EN</span></code> signal low, i.e. keep <code class="docutils literal notranslate"><span class="pre">EM_PU</span></code> jumper open</p></li>
 <li><p>on the ADALM we connect</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">V+</span></code> to the positive rail on the breadboard and</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code> to the negative rail on the breadboard;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">1-</span></code> and <code class="docutils literal notranslate"><span class="pre">2-</span></code> to <code class="docutils literal notranslate"><span class="pre">GND</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1+</span></code> and <code class="docutils literal notranslate"><span class="pre">2+</span></code> are use to make measurements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1+</span></code> and <code class="docutils literal notranslate"><span class="pre">2+</span></code> are used to make measurements</p></li>
 </ul>
 </li>
-<li><p>we power the chip with 2.5V and observe oscillation!!</p></li>
+<li><p>we power the chip with <strong>2.5V</strong> and observe oscillation!!</p></li>
 </ul>
 <section id="measurements">
 <h4>Measurements<a class="headerlink" href="#measurements" title="Link to this heading">#</a></h4>
@@ -496,11 +502,16 @@ document.write(`
 </section>
 <section id="connections-using-the-on-chip-switch-matrix">
 <h2><span class="section-number">2.2.2. </span>Connections Using the On-Chip Switch Matrix<a class="headerlink" href="#connections-using-the-on-chip-switch-matrix" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>Three-Stage Ring Oscillator<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>We build the 3-stage 16-16-8 ring-oscillator circuit shown in the following schematic. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use <code class="docutils literal notranslate"><span class="pre">BUS9</span></code> for VSS and <code class="docutils literal notranslate"><span class="pre">BUS10</span></code> for VDD.
-<img alt="3stage_RO_8x_schematic" src="../_images/3stage_RO_8x.png" /></p>
-<p>First, we translate the schematic <code class="docutils literal notranslate"><span class="pre">cir</span></code> file to a connections json file or manually<a class="footnote-reference brackets" href="#stageconnections" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> create a <a class="reference download internal" download="" href="../_downloads/f4b5044828f5358d316dc7f05f2bb0a3/connections_3stage_RO_8x_vdd_10_vss_9.json"><span class="xref download myst">connections json file</span></a> that we then translate into a <a class="reference download internal" download="" href="../_downloads/8f9a87260924670769a82b94adc17525/3stage_RO_8x_vdd_10_vss_9.txt"><span class="xref download myst">bitstream</span></a> and <a class="reference download internal" download="" href="../_downloads/d80a932f04ac907a7716515c2253a795/3stage_RO_8x_vdd_10_vss_9_clk.txt"><span class="xref download myst">clock file</span></a>. We upload the bitstream into the MOSbius chip using the <code class="docutils literal notranslate"><span class="pre">Pattern</span> <span class="pre">Generator</span></code> function of the ADALM using channel 8 for the <em>CLK</em> and channel 9 for the <em>DATA</em>; we typically use <em>200kHz</em> for the frequency for <em>CLK</em> and <em>100kHz</em> for the frequency for <em>DATA</em>; during programming the <code class="docutils literal notranslate"><span class="pre">EN</span></code> needs to be LOW; we leave it floating so the internal pull-down will hold it LOW; and we also disconnect the <code class="docutils literal notranslate"><span class="pre">1+</span></code> and <code class="docutils literal notranslate"><span class="pre">2+</span></code> scope inputs.
+<section id="three-stage-ring-oscillator-16-16-8">
+<h3>Three-Stage Ring Oscillator (16-16-8)<a class="headerlink" href="#three-stage-ring-oscillator-16-16-8" title="Link to this heading">#</a></h3>
+<p>We build the 3-stage 16-16-8 ring-oscillator circuit shown in the following <a class="reference download internal" download="" href="../_downloads/48cdc1fac660b4187958abe416602d2d/3stage_RO_16_16_8.zip"><span class="xref download myst">LTspice schematic</span></a>. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use <code class="docutils literal notranslate"><span class="pre">BUS9</span></code> for VSS and <code class="docutils literal notranslate"><span class="pre">BUS10</span></code> for VDD.</p>
+<figure class="align-default" id="id3">
+<img alt="../_images/3stage_RO_8x.png" src="../_images/3stage_RO_8x.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">LTspice schematic for the 16-16-8 ring oscillator</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The programming is described in detail in the <a class="reference internal" href="../5_sw_support/MOSbiusTools.html"><span class="std std-doc">Programming the Chip Using the MOSbiusTools chapter</span></a>. In brief, first we translate the schematic <code class="docutils literal notranslate"><span class="pre">cir</span></code> file to a connections json file or manually create a <a class="reference download internal" download="" href="../_downloads/f4b5044828f5358d316dc7f05f2bb0a3/connections_3stage_RO_8x_vdd_10_vss_9.json"><span class="xref download myst">connections json file</span></a> that we then translate into a <a class="reference download internal" download="" href="../_downloads/8f9a87260924670769a82b94adc17525/3stage_RO_8x_vdd_10_vss_9.txt"><span class="xref download myst">bitstream</span></a> and <a class="reference download internal" download="" href="../_downloads/d80a932f04ac907a7716515c2253a795/3stage_RO_8x_vdd_10_vss_9_clk.txt"><span class="xref download myst">clock file</span></a>. We upload the bitstream into the MOSbius chip using the <code class="docutils literal notranslate"><span class="pre">Pattern</span> <span class="pre">Generator</span></code> function of the ADALM using channel 8 for the <em>CLK</em> and channel 9 for the <em>DATA</em>; we typically use <em>200kHz</em> for the frequency for <em>CLK</em> and <em>100kHz</em> for the frequency for <em>DATA</em>; during programming the <code class="docutils literal notranslate"><span class="pre">EN</span></code> needs to be LOW; we leave it floating so the internal pull-down will hold it LOW; and we also disconnect the <code class="docutils literal notranslate"><span class="pre">1+</span></code> and <code class="docutils literal notranslate"><span class="pre">2+</span></code> scope inputs.
 <img alt="3stage_RO_ready_for_programming" src="../_images/3stage_RO_8x_ready_for_programming.jpeg" /></p>
 <p>We then enable the connection matrix by asserting the <code class="docutils literal notranslate"><span class="pre">EN</span></code> signal. Notice that the red LED shows that the chip is powered and the orange LED shows the switch matrix is enabled.
 <img alt="3stage_RO_ready_for_programming" src="../_images/3stage_RO_8x_in_operation.jpeg" /></p>
@@ -543,13 +554,6 @@ The frequency of operation is a bit high to make very clean measurements on a so
 <img alt="7stage_RO_meas" src="../_images/7stage_RO_mixed_signal_meas.png" /></p>
 <p>When adding 4.7nF capacitors to VSS on all the outputs, the frequency goes down to 105.6kHz
 <img alt="7stage_RO_meas2" src="../_images/7stage_RO_mixed_signal_meas_4n7.png" /></p>
-<hr class="footnotes docutils" />
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="stageconnections" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
-<p>Note that in the manual connections json file and the corresponding bitsteam file provided here the input of the first stage is connected to BUS03, the input of the second stage to BUS04, and the input of the third stage to BUS05, while VSS and VDD are connected to BUS09 and BUS10 respectively. This is different from the schematic shown, but does not really make a difference for the operation of the circuit.</p>
-</aside>
-</aside>
 </section>
 </section>
 </section>
@@ -619,14 +623,14 @@ The frequency of operation is a bit high to make very clean measurements on a so
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-connections">2.2.1. Manual Connections</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-stage-ring-oscillator">Three-Stage Ring Oscillator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-stage-ring-oscillator-1-16-16">Three-Stage Ring Oscillator (1-16-16)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements">Measurements</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connections-using-the-on-chip-switch-matrix">2.2.2. Connections Using the On-Chip Switch Matrix</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Three-Stage Ring Oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-stage-ring-oscillator-16-16-8">Three-Stage Ring Oscillator (16-16-8)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-stage-ring-oscillator-studying-the-loop">Three-Stage Ring Oscillator - Studying the Loop</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-transfer-characteristic">DC Transfer Characteristic</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#delay-measurement-vs-oscillation-frequency">Delay Measurement vs Oscillation Frequency</a></li>
