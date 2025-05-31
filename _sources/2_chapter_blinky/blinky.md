@@ -1,6 +1,10 @@
 # First Experiment: Blinky
 As a first experiment we show a **Schmitt-Trigger Relaxation Oscillator with LEDs**. It's always good to start off a project with blinking LEDs ... 
 
+```{tip}
+A step-by-step guide to learn how to program the MOSbius chip is provided in [Programming the Chip Using the MOSbiusTools](../5_sw_support/MOSbiusTools.md)
+```
+
 ## Schmitt-Trigger Relaxation Oscillator
 
 ```{raw} html
@@ -15,7 +19,7 @@ As a first experiment we show a **Schmitt-Trigger Relaxation Oscillator with LED
 **Circuit Schematic:** 
 We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4x inverter providing positive feedback around the second stage, resulting in hysteresis in the input-output tranfer characteristic. Overall feedback around the Schmitt Trigger is created with an R-C network. LEDs are connected at the output of the second stage; the red LED ligths up when the output is high, and the green LED lights up when it is low. 
 ```{figure} img/relaxation_osc_v1.png
-LTSpice schematic for the relaxation oscillator experiment
+[LTSpice schematic](sim/blinky_relaxation_osc.zip) for the relaxation oscillator experiment 
 ```
 
 **Building the Circuit:** You can use manual connections or use the on-chip switch matrix (Files: [bitstream](img/relaxation_osc_v1_bitstream.txt), [bitsteam_clk](img/relaxation_osc_v1_bitstream_clk.txt), [connections](img/connections_relaxation_osc_v1.json)). When using the on-chip connections, the solderless breadboard only requires and external resistor and capacitor, along with the LEDS.
