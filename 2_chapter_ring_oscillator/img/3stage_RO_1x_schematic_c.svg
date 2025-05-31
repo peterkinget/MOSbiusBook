@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" baseProfile="tiny" version="1.2" viewBox="0 0 1920 1080">
+  <!-- Generator: Adobe Illustrator 29.5.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 141)  -->
+  <rect x="362.3" y="977.7" width="119.5" height="91.5" fill="#fcf" stroke="#fff" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="1826.6" y1="267.3" x2="93.4" y2="267.3" fill="none" stroke="lime" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="272.7" y1="566.1" x2="183" y2="566.1" fill="none" stroke="lime" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="840.5" y1="566.1" x2="720.9" y2="566.1" fill="none" stroke="#ff0" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="1438.1" y1="566.1" x2="1318.6" y2="566.1" fill="none" stroke="#06f" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="93.4" y1="715.6" x2="93.4" y2="267.3" fill="none" stroke="lime" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="183" y1="715.6" x2="183" y2="566.1" fill="none" stroke="lime" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="183" y1="715.6" x2="93.4" y2="715.6" fill="none" stroke="lime" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="422.1" y1="715.6" x2="422.1" y2="685.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="720.9" y1="715.6" x2="720.9" y2="566.1" fill="none" stroke="#ff0" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="720.9" y1="715.6" x2="422.1" y2="715.6" fill="none" stroke="#ff0" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="1318.6" y1="715.6" x2="1318.6" y2="566.1" fill="none" stroke="#06f" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="1318.6" y1="715.6" x2="1049.6" y2="715.6" fill="none" stroke="#06f" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="1826.6" y1="715.6" x2="1826.6" y2="267.3" fill="none" stroke="lime" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="1826.6" y1="715.6" x2="1647.3" y2="715.6" fill="none" stroke="lime" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="422.1" y1="745.4" x2="422.1" y2="715.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="183" y1="865" x2="183" y2="715.6" fill="none" stroke="lime" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="272.7" y1="865" x2="183" y2="865" fill="none" stroke="lime" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="720.9" y1="865" x2="720.9" y2="715.6" fill="none" stroke="#ff0" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="840.5" y1="865" x2="720.9" y2="865" fill="none" stroke="#ff0" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="1318.6" y1="865" x2="1318.6" y2="715.6" fill="none" stroke="#06f" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <line x1="1438.1" y1="865" x2="1318.6" y2="865" fill="none" stroke="#06f" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  <circle cx="183" cy="715.6" r="8.4" fill="lime"/>
+  <circle cx="422.1" cy="715.6" r="8.4"/>
+  <circle cx="720.9" cy="715.6" r="8.4" fill="#ff0" stroke="#ff0" stroke-miterlimit="7.5"/>
+  <circle cx="1318.6" cy="715.6" r="8.4" fill="#06f"/>
+  <g>
+    <text transform="translate(913.5 410.8)" font-family="ArialMT, Arial" font-size="29.9" isolation="isolate"><tspan x="0" y="0">VDD</tspan></text>
+    <text transform="translate(913.5 478)" font-family="ArialMT, Arial" font-size="29.9" isolation="isolate"><tspan x="0" y="0">16x</tspan></text>
+    <text transform="translate(898.6 965.5)" font-family="ArialMT, Arial" font-size="29.9" isolation="isolate"><tspan x="0" y="0">16x</tspan></text>
+    <text transform="translate(852.5 893)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">53</tspan></text>
+    <text transform="translate(852.5 594.2)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">52</tspan></text>
+    <text transform="translate(1016.8 706.2)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">51</tspan></text>
+    <line x1="989.9" y1="506.4" x2="989.9" y2="476.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="946.9" y1="536.3" x2="989.9" y2="536.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="900.2" y1="566.1" x2="915.2" y2="566.1" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="915.2" y1="625.9" x2="915.2" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="625.9" x2="930.1" y2="625.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="655.8" x2="989.9" y2="625.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1019.8" y1="536.3" x2="989.9" y2="536.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1019.8" y1="476.5" x2="1019.8" y2="536.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="476.5" x2="1019.8" y2="476.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="476.5" x2="989.9" y2="476.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="930.1" y1="625.9" x2="930.1" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="960" y1="513.9" x2="930.1" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="960" y1="498.9" x2="960" y2="513.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="930.1" y1="506.4" x2="960" y2="498.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="506.4" x2="960" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="924.7" x2="989.9" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="946.9" y1="894.9" x2="989.9" y2="894.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="900.2" y1="865" x2="915.2" y2="865" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="915.2" y1="805.2" x2="915.2" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="805.2" x2="930.1" y2="805.2" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="775.3" x2="989.9" y2="805.2" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1019.8" y1="894.9" x2="989.9" y2="894.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1019.8" y1="954.6" x2="1019.8" y2="894.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="954.6" x2="1019.8" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="954.6" x2="989.9" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="930.1" y1="805.2" x2="930.1" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="960" y1="917.3" x2="989.9" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="960" y1="932.2" x2="960" y2="917.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="924.7" x2="960" y2="932.2" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="930.1" y1="924.7" x2="960" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="900.2" y1="865" x2="840.5" y2="865" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1049.6" y1="715.6" x2="989.9" y2="715.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="1014.4" x2="960" y2="1014.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="476.5" x2="989.9" y2="416.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="974.9" y1="424.2" x2="1004.8" y2="409.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="840.5" y1="566.1" x2="900.2" y2="566.1" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="954.6" x2="989.9" y2="984.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="989.9" y1="655.8" x2="989.9" y2="775.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <g>
+      <line x1="989.9" y1="1014.4" x2="989.9" y2="984.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+      <line x1="960" y1="1014.4" x2="989.9" y2="1044.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+      <line x1="1019.8" y1="1014.4" x2="989.9" y2="1044.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    </g>
+    <line x1="989.9" y1="1014.4" x2="1019.8" y2="1014.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  </g>
+  <g>
+    <text transform="translate(1511.2 410.8)" font-family="ArialMT, Arial" font-size="29.9" isolation="isolate"><tspan x="0" y="0">VDD</tspan></text>
+    <text transform="translate(1511.2 478)" font-family="ArialMT, Arial" font-size="29.9" isolation="isolate"><tspan x="0" y="0">16x</tspan></text>
+    <text transform="translate(1513 967.3)" font-family="ArialMT, Arial" font-size="29.9" isolation="isolate"><tspan x="0" y="0">16x</tspan></text>
+    <text transform="translate(1450.2 893)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">48</tspan></text>
+    <text transform="translate(1450.2 594.2)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">50</tspan></text>
+    <text transform="translate(1614.5 706.2)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">49</tspan></text>
+    <line x1="1587.5" y1="506.4" x2="1587.5" y2="476.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1544.6" y1="536.3" x2="1587.5" y2="536.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1497.9" y1="566.1" x2="1512.8" y2="566.1" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1512.8" y1="625.9" x2="1512.8" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="625.9" x2="1527.8" y2="625.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="655.8" x2="1587.5" y2="625.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1617.4" y1="536.3" x2="1587.5" y2="536.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1617.4" y1="476.5" x2="1617.4" y2="536.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="476.5" x2="1617.4" y2="476.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="476.5" x2="1587.5" y2="476.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1527.8" y1="625.9" x2="1527.8" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1557.7" y1="513.9" x2="1527.8" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1557.7" y1="498.9" x2="1557.7" y2="513.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1527.8" y1="506.4" x2="1557.7" y2="498.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="506.4" x2="1557.7" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="924.7" x2="1587.5" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1544.6" y1="894.9" x2="1587.5" y2="894.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1497.9" y1="865" x2="1512.8" y2="865" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1512.8" y1="805.2" x2="1512.8" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="805.2" x2="1527.8" y2="805.2" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="775.3" x2="1587.5" y2="805.2" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1617.4" y1="894.9" x2="1587.5" y2="894.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1617.4" y1="954.6" x2="1617.4" y2="894.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="954.6" x2="1617.4" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="954.6" x2="1587.5" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1527.8" y1="805.2" x2="1527.8" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1557.7" y1="917.3" x2="1587.5" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1557.7" y1="932.2" x2="1557.7" y2="917.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="924.7" x2="1557.7" y2="932.2" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1527.8" y1="924.7" x2="1557.7" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1497.9" y1="865" x2="1438.1" y2="865" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1647.3" y1="715.6" x2="1587.5" y2="715.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="1014.4" x2="1587.5" y2="984.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1557.7" y1="1014.4" x2="1587.5" y2="1044.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="1014.4" x2="1557.7" y2="1014.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="476.5" x2="1587.5" y2="416.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1572.6" y1="424.2" x2="1602.5" y2="409.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1438.1" y1="566.1" x2="1497.9" y2="566.1" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="954.6" x2="1587.5" y2="984.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="655.8" x2="1587.5" y2="775.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1617.4" y1="1014.4" x2="1587.5" y2="1044.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="1587.5" y1="1014.4" x2="1617.4" y2="1014.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  </g>
+  <g>
+    <text transform="translate(325 972.9)" font-family="ArialMT, Arial" font-size="29.9" isolation="isolate"><tspan x="0" y="0">1x</tspan></text>
+    <text transform="translate(292.2 855.6)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">39</tspan></text>
+    <text transform="translate(434.1 780.9)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">40</tspan></text>
+    <text transform="translate(434.1 960.2)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">38</tspan></text>
+    <line x1="422.1" y1="954.6" x2="422.1" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="745.4" x2="422.1" y2="775.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="984.5" x2="422.1" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="452" y1="924.7" x2="481.9" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="481.9" y1="924.7" x2="452" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="924.7" x2="422.1" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="379.1" y1="894.9" x2="422.1" y2="894.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="332.5" y1="865" x2="347.4" y2="865" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="347.4" y1="805.2" x2="347.4" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="805.2" x2="362.3" y2="805.2" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="775.3" x2="422.1" y2="805.2" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="481.9" y1="894.9" x2="422.1" y2="894.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="954.6" x2="422.1" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="362.3" y1="805.2" x2="362.3" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="392.2" y1="917.3" x2="422.1" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="392.2" y1="932.2" x2="392.2" y2="917.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="924.7" x2="392.2" y2="932.2" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="362.3" y1="924.7" x2="392.2" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="481.9" y1="924.7" x2="481.9" y2="894.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="272.7" y1="865" x2="332.5" y2="865" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="511.8" y1="924.7" x2="481.9" y2="954.6" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="481.9" y1="924.7" x2="511.8" y2="924.7" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  </g>
+  <g>
+    <text transform="translate(480.2 455.6)" font-family="ArialMT, Arial" font-size="29.9" isolation="isolate"><tspan x="0" y="0">VDD</tspan></text>
+    <text transform="translate(277.2 586.7)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">13</tspan></text>
+    <text transform="translate(434.1 668.9)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">12</tspan></text>
+    <text transform="translate(327.6 478)" font-family="ArialMT, Arial" font-size="29.9" isolation="isolate"><tspan x="0" y="0">1x</tspan></text>
+    <text transform="translate(441.6 467.2)" font-family="ArialMT, Arial" font-size="18.7" isolation="isolate"><tspan x="0" y="0">14</tspan></text>
+    <line x1="422.1" y1="506.4" x2="422.1" y2="476.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="379.1" y1="536.3" x2="422.1" y2="536.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="347.4" y1="625.9" x2="347.4" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="625.9" x2="362.3" y2="625.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="655.8" x2="422.1" y2="625.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="452" y1="536.3" x2="422.1" y2="536.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="476.5" x2="422.1" y2="476.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="362.3" y1="625.9" x2="362.3" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="392.2" y1="513.9" x2="362.3" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="392.2" y1="498.9" x2="392.2" y2="513.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="362.3" y1="506.4" x2="392.2" y2="498.9" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="506.4" x2="392.2" y2="506.4" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="685.7" x2="422.1" y2="655.8" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="481.9" y1="536.3" x2="481.9" y2="476.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="466.9" y1="484" x2="496.8" y2="469" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="685.7" x2="422.1" y2="655.8" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="481.9" y1="536.3" x2="452" y2="536.3" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="272.7" y1="566.1" x2="347.4" y2="566.1" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="422.1" y1="446.6" x2="422.1" y2="476.5" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  </g>
+  <text transform="translate(391.9 155.3)" font-family="ArialMT, Arial" font-size="74.7" isolation="isolate"><tspan x="0" y="0">Three Stage Ring Oscillator 1-16-16</tspan></text>
+  <g>
+    <text transform="translate(346.6 380.1)" fill="#ee3900" font-family="ArialMT, Arial" font-size="29.9" isolation="isolate"><tspan x="0" y="0">VDD</tspan></text>
+    <line x1="422.9" y1="445.8" x2="422.9" y2="386" fill="#ee3900" stroke="#ff2f08" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="408" y1="393.5" x2="437.9" y2="378.6" fill="#ee3900" stroke="#ff3212" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  </g>
+  <g>
+    <line x1="422.1" y1="1014.4" x2="422.1" y2="984.5" fill="#f96" stroke="#454c45" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="392.2" y1="1014.4" x2="422.1" y2="1044.3" fill="#f96" stroke="#454c45" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="452" y1="1014.4" x2="422.1" y2="1044.3" fill="#f96" stroke="#454c45" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+    <line x1="452" y1="1014.4" x2="392.2" y2="1014.4" fill="#f96" stroke="#454c45" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+  </g>
+  <rect x="602.5" y="1043.8" width="2.8" height="0" fill="#f96" stroke="#fff" stroke-linecap="round" stroke-miterlimit="7.5" stroke-width="5.6"/>
+</svg>

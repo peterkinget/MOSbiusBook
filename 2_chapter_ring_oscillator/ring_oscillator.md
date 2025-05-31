@@ -1,26 +1,32 @@
 # Ring Oscillator Experiments
 ## Manual Connections
-We start with an experiment with *manual* connections. The inverter stages and transistor are connected with wires on the breadboard. The on-chip switch matrix is left *disabled*. 
+We start with an experiment with *manual* connections. The inverter stages and transistor are connected with wires on the breadboard. The on-chip switch matrix is left *disabled* (keep `EM_PU` open). 
 
-### Three-Stage Ring Oscillator
-```{figure} img/3stage_RO_manual_setup.jpeg
-Mobius chip wired with external connections to build a 3-stage 16-16-1 ring oscillator; each node is using a different color wire; in the lower left corner is the ADALM 2000 that provides power and oscilloscope measurements.
+### Three-Stage Ring Oscillator (1-16-16)
+
+```{figure} img/3stage_RO_1x_schematic_c.png
+Three stage 1-16-16 ring oscillator built using manual wiring; the VDD and VSS connections in black are made on the MOSbius chip; the colored VDD and VSS connections have to be made manually along with the stage connections (see picture below)
 ```
-`<TBD Schematic of the circuit>`
+
+```{figure} img/3stage_RO_manual_setup.jpeg
+MOSbius chip wired with external connections to build a 3-stage 1-16-16 ring oscillator; each node is using a different color wire corresponding to the schematic; in the lower left corner is the ADALM 2000 that provides power and oscilloscope measurements.
+```
+
 
 **Circuit Topology**
-- we use the two 16x inverter pairs for *stages 1* and *2*, and a 1x nMOS and a 1x pMOS as *stage 3*
+- we use the two 16x inverter pairs for *stages 2* and *3*, and a 1x nMOS and a 1x pMOS as *stage 1*
 - we make the following connections on the breadboard:
     - `stage1_in` 52 & 53 & 40 & 12; 
     - `stage2_in` 51 & 50 & 48; 
     - `stage3_in` 49 & 39 & 13; 
     - 14 & VDD; 38 & VSS; 
+- make sure to leave the `EN` signal low, i.e. keep `EM_PU` jumper open
 - on the ADALM we connect 
     - `V+` to the positive rail on the breadboard and 
     - `GND` to the negative rail on the breadboard; 
     - `1-` and `2-` to `GND`
-    - `1+` and `2+` are use to make measurements
-- we power the chip with 2.5V and observe oscillation!!
+    - `1+` and `2+` are used to make measurements
+- we power the chip with **2.5V** and observe oscillation!!
 #### Measurements
 We place the `1+` oscilloscope on different nodes:
 - `1+` on `stage3_in` --> 14.6MHz
@@ -35,10 +41,12 @@ We place the `1+` oscilloscope on different nodes:
 
 ## Connections Using the On-Chip Switch Matrix
 
-### Three-Stage Ring Oscillator
+### Three-Stage Ring Oscillator (16-16-8)
 
-We build the 3-stage 16-16-8 ring-oscillator circuit shown in the following schematic. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use `BUS9` for VSS and `BUS10` for VDD.
-![3stage_RO_8x_schematic](./img/3stage_RO_8x.png)
+We build the 3-stage 16-16-8 ring-oscillator circuit shown in the following [LTspice schematic](sim/3stage_RO_16_16_8.zip). It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use `BUS9` for VSS and `BUS10` for VDD.
+```{figure} ./img/3stage_RO_8x.png
+LTspice schematic for the 16-16-8 ring oscillator
+```
 
 First, we translate the schematic `cir` file to a connections json file or manually[^3stageconnections] create a [connections json file](./img/connections_3stage_RO_8x_vdd_10_vss_9.json) that we then translate into a [bitstream](img/3stage_RO_8x_vdd_10_vss_9.txt) and [clock file](img/3stage_RO_8x_vdd_10_vss_9_clk.txt). We upload the bitstream into the MOSbius chip using the `Pattern Generator` function of the ADALM using channel 8 for the *CLK* and channel 9 for the *DATA*; we typically use *200kHz* for the frequency for *CLK* and *100kHz* for the frequency for *DATA*; during programming the `EN` needs to be LOW; we leave it floating so the internal pull-down will hold it LOW; and we also disconnect the `1+` and `2+` scope inputs. 
 ![3stage_RO_ready_for_programming](img/3stage_RO_8x_ready_for_programming.jpeg)
