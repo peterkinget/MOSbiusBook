@@ -33,7 +33,7 @@ The open-loop frequency response of the two-stage OTA is measured and compared w
 
 #### Build the Test Circuit and Check the Bias Point
 
-```{figure} img/two_stage_OTA_setup.png
+```{figure} img/lab6_schematic_man.svg
 :name: fig-ota-open-loop-setup
 :height: 400px
 
@@ -62,8 +62,8 @@ Test circuit setup to measure the open-loop gain of the two-stage pMOS-input OTA
 - The signal generator is based on a DAC and it is difficult to generate small signals, say of a few miliVolt. Try it and you will notice that the signal looks like a staircase (after amplification) due to the generator's DAC finite resolution. 
 - Next we build an analog 100x attenuator so that we can use a large output signal from the generator but still apply the required small inputs for measuring an OTA with a lot of gain (40dB or more).
 
-```{figure} img/attenuator_setup.png 
-:height: 200px
+```{figure} img/lab6_atten_man.svg
+:height: 150px
 
 Schematic of the 100x signal attenuator. It attenuates AC signals by 40dB while passing through DC bias.  
 ```

@@ -32,7 +32,7 @@ The frequency response of the two amplifiers is measured to determine their smal
 
 #### Build the Test Circuit and Check the Bias Point
 
-```{figure} img/one_stage_OTA_setup.png
+```{figure} img/lab5_1_schematic_man_with_OTA.svg
 :height: 400px
 Schematic of the one-stage pMOS OTA with a 2x $I_{REF}$ current bias. The OTA is loaded with $C_{L1}$ and is placed in negative DC feedback with $R_2$, $R_1$ and $C_{B1}$ and in AC feedback with $R_2$, $R_1$. The biasing of the input pin is not shown. 
 ```
@@ -93,7 +93,7 @@ Schematic for the OTA behavioral model
 
 #### Build the Test Circuit and Check the Bias Point
 
-```{figure} img/nMOS_CS_setup.png
+```{figure} img/lab5_2_schematic_man.svg
 :height: 400px
 Schematic of the 4x common-source nMOS amplifier. M5 is biased a 4x $I_{REF}$ current bias and its DC gate voltage is generated with DC OTA feedback. 
 ```

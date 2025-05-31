@@ -1,9 +1,7 @@
 # First Experiment: Blinky
 As a first experiment we show a **Schmitt-Trigger Relaxation Oscillator with LEDs**. It's always good to start off a project with blinking LEDs ... 
 
-```{tip}
-A step-by-step guide to learn how to program the MOSbius chip is provided in [Programming the Chip Using the MOSbiusTools](../5_sw_support/MOSbiusTools.md)
-```
+
 
 ## Schmitt-Trigger Relaxation Oscillator
 
@@ -25,6 +23,10 @@ We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4
 **Building the Circuit:** You can use manual connections or use the on-chip switch matrix (Files: [bitstream](img/relaxation_osc_v1_bitstream.txt), [bitsteam_clk](img/relaxation_osc_v1_bitstream_clk.txt), [connections](img/connections_relaxation_osc_v1.json)). When using the on-chip connections, the solderless breadboard only requires and external resistor and capacitor, along with the LEDS.
 ```{figure} img/relaxation_osc_v1_IMG_2992.jpeg
 Photo of the *blinky* setup using the on-chip connections; the external components are a 100K$\Omega$ resistor, a 10uF capacitor, and two LEDs with 47$\Omega$ resistors; the orange and blue wires connect to the ADALM2000 oscillscope channels `1+` and `2+` respectively; `1-` and `2-` are grounded; the ADALM `V+` provides the 2.5V power supply; digital channels `DIO8` and `DIO9` are used to feed the bitstream to the `CLK` and `DATA` pin of the MOSbius chip to program the switch matrix. 
+```
+
+```{tip}
+A step-by-step guide to learn how to program the MOSbius chip is provided in [Programming the Chip Using the MOSbiusTools](../5_sw_support/MOSbiusTools.md)
 ```
 
 **Measurements:**
