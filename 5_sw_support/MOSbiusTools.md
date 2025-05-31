@@ -56,8 +56,8 @@ After installing the package the scripts should be executable from your command 
 ## Example of Programming a Three-Stage Ring Oscillator
 
 ### Starting from LTspice Schematic
-We build the 3-stage 16-16-8 ring-oscillator circuit schematic in LTspice using the MOSbius library. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use `BUS9` for VSS and `BUS10` for VDD.
-![3stage_RO_8x_schematic](../2_chapter_ring_oscillator/img/3stage_RO_8x_schematic.png)
+We build the 3-stage 16-16-8 ring-oscillator circuit [schematic in LTspice](../2_chapter_ring_oscillator/sim/3stage_RO_16_16_8.zip) using the MOSbius library. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use `BUS9` for VSS and `BUS10` for VDD.
+![3stage_RO_8x_schematic](../2_chapter_ring_oscillator/img/3stage_RO_8x.png)
 
 We save the netlist of the circuit as a `.cir` file by right clicking on the schematic, then View Spice Netlist, and File Save as. 
 
