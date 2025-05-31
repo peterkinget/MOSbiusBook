@@ -65,10 +65,10 @@ The frequency of operation is a bit high to make very clean measurements on a so
 
 ### Three-Stage Ring Oscillator - Studying the Loop
 
-Next, we open the loop by splitting BUS01 and disconnecting the third stage output from the first stage input ([connections](./img/connections_3stage_RO_8x_vdd_10_vss_9_open_loop.json), [bitstream](./img/3stage_RO_open_loop.txt), [clk](./img/3stage_RO_open_loop_clk.txt)).
+Next, we open the loop by splitting BUS03 and disconnecting the third stage output from the first stage input ([connections](./img/connections_3stage_RO_8x_vdd_10_vss_9_open_loop.json), [bitstream](./img/3stage_RO_open_loop.txt), [clk](./img/3stage_RO_open_loop_clk.txt)).
 
 #### DC Transfer Characteristic
-We now measure the DC transfer characteristics by applying a slow rail-to-rail triangle wave to the first stage input (BUS01) and measure the voltage at its output (BUS02), shown on the right; using the X-Y display function of the oscilloscope, we get the typical inverter transfer characteristic. 
+We now measure the DC transfer characteristics by applying a slow rail-to-rail triangle wave to the first stage input (BUS03) and measure the voltage at its output (BUS04), shown on the right; using the X-Y display function of the oscilloscope, we get the typical inverter transfer characteristic. 
 ![DC Transfer Stage 1](./img/3stage_RO_8x_vdd_10_vss_9_open_loop_4n7_dc_stage1i_stage1o.png)
 
 Measuring the output of stage 2 we obtain a non-inverting amplifier with more gain. 
