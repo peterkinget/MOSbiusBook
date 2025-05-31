@@ -28,7 +28,7 @@ Schematic of the MOSbius chip with the nMOS current mirror and the 4x nMOS diffe
 
 ### Build the Circuit and Check the Bias Point
 
-```{figure} img/dif_pair_4x_b.png
+```{figure} img/lab3_schematic_man.svg
 :height: 400px
 Schematic of the nMOS differential pair with a 2x $I_{REF}$ current bias
 ```

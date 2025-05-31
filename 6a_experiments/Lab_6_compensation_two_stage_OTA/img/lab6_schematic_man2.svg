@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" version="1.1" viewBox="0 0 405.8 248.7">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0, .st1, .st2, .st3, .st4, .st5 {
+        fill: none;
+      }
+
+      .st6, .st7, .st8, .st9, .st10 {
+        fill: #0096ff;
+      }
+
+      .st7 {
+        font-size: 8px;
+      }
+
+      .st7, .st11, .st12, .st8, .st13, .st9, .st14, .st15, .st10 {
+        isolation: isolate;
+      }
+
+      .st7, .st11, .st8, .st13, .st14, .st15, .st10 {
+        font-family: ArialMT, Arial;
+      }
+
+      .st1 {
+        stroke: #0096ff;
+        stroke-width: 2px;
+      }
+
+      .st1, .st2, .st3, .st4, .st5 {
+        stroke-miterlimit: 1.4;
+      }
+
+      .st2, .st3, .st4, .st5 {
+        stroke: #000;
+        stroke-width: 1.1px;
+      }
+
+      .st2, .st4 {
+        stroke-dasharray: 0 2.2;
+      }
+
+      .st2, .st5 {
+        stroke-linecap: round;
+      }
+
+      .st11, .st8, .st9 {
+        font-size: 10px;
+      }
+
+      .st13, .st10 {
+        font-size: 8.7px;
+      }
+
+      .st9 {
+        font-family: Arial-ItalicMT, Arial;
+        font-style: italic;
+      }
+
+      .st14 {
+        font-size: 5.8px;
+      }
+
+      .st15 {
+        font-size: 3.6px;
+      }
+    </style>
+  </defs>
+  <line class="st5" x1="166.4" y1="81.6" x2="105.8" y2="81.6"/>
+  <line class="st5" x1="190.5" y1="81.6" x2="166.4" y2="81.6"/>
+  <line class="st5" x1="358.4" y1="127.8" x2="358.4" y2="110.5"/>
+  <line class="st5" x1="121.1" y1="139.4" x2="115.3" y2="139.4"/>
+  <line class="st5" x1="155.8" y1="139.4" x2="121.1" y2="139.4"/>
+  <line class="st5" x1="231.1" y1="139.4" x2="231.1" y2="110.5"/>
+  <line class="st5" x1="277.4" y1="139.4" x2="231.1" y2="139.4"/>
+  <line class="st5" x1="283.1" y1="139.4" x2="277.4" y2="139.4"/>
+  <line class="st5" x1="63.2" y1="151" x2="34.3" y2="151"/>
+  <line class="st5" x1="63.2" y1="127.8" x2="34.3" y2="127.8"/>
+  <line class="st5" x1="358.4" y1="156.8" x2="358.4" y2="151"/>
+  <line class="st5" x1="358.4" y1="156.8" x2="329.4" y2="156.8"/>
+  <line class="st5" x1="358.4" y1="168.4" x2="358.4" y2="156.8"/>
+  <line class="st5" x1="121.1" y1="174.1" x2="121.1" y2="139.4"/>
+  <line class="st5" x1="231.1" y1="174.1" x2="231.1" y2="139.4"/>
+  <line class="st5" x1="277.4" y1="174.1" x2="277.4" y2="139.4"/>
+  <line class="st5" x1="329.4" y1="185.7" x2="329.4" y2="156.8"/>
+  <line class="st5" x1="341" y1="185.7" x2="329.4" y2="185.7"/>
+  <line class="st5" x1="155.8" y1="197.3" x2="155.8" y2="139.4"/>
+  <line class="st5" x1="202.1" y1="197.3" x2="155.8" y2="197.3"/>
+  <line class="st5" x1="121.1" y1="220.4" x2="121.1" y2="197.3"/>
+  <line class="st5" x1="121.1" y1="220.4" x2="121.1" y2="220.4"/>
+  <line class="st5" x1="277.4" y1="220.4" x2="277.4" y2="197.3"/>
+  <line class="st5" x1="277.4" y1="220.4" x2="121.1" y2="220.4"/>
+  <line class="st5" x1="358.4" y1="220.4" x2="358.4" y2="197.3"/>
+  <line class="st5" x1="358.4" y1="220.4" x2="277.4" y2="220.4"/>
+  <circle cx="121.1" cy="139.4" r="1.6"/>
+  <circle cx="231.1" cy="139.4" r="1.6"/>
+  <circle cx="277.4" cy="139.4" r="1.6"/>
+  <circle cx="358.4" cy="156.8" r="1.6"/>
+  <circle cx="121.1" cy="220.4" r="1.6"/>
+  <circle cx="277.4" cy="220.4" r="1.6"/>
+  <path class="st2" d="M322.2,126.4h66.6v117.2h-66.6v-117.2Z"/>
+  <g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st15" transform="translate(348.6 108.7)"><tspan x="0" y="0">68</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st14" transform="translate(335.2 65.6)"><tspan x="0" y="0">1x</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st14" transform="translate(358.4 48.8)"><tspan x="0" y="0">VDD</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st15" transform="translate(238.9 108.7)"><tspan x="0" y="0">65</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st14" transform="translate(245.5 64.5)"><tspan x="0" y="0">4x</tspan></text>
+      </g>
+    </g>
+    <line class="st5" x1="358.4" y1="110.5" x2="358.4" y2="98.9"/>
+    <line class="st5" x1="358.4" y1="64.2" x2="358.4" y2="51.2"/>
+    <line class="st5" x1="361.3" y1="52.6" x2="355.5" y2="49.7"/>
+    <line class="st5" x1="231.1" y1="64.2" x2="231.1" y2="57"/>
+    <line class="st5" x1="231.1" y1="70" x2="231.1" y2="64.2"/>
+    <line class="st5" x1="239.4" y1="75.8" x2="231.1" y2="75.8"/>
+    <line class="st5" x1="248.4" y1="81.6" x2="245.5" y2="81.6"/>
+    <line class="st5" x1="245.5" y1="93.1" x2="245.5" y2="70"/>
+    <line class="st5" x1="231.1" y1="93.1" x2="242.6" y2="93.1"/>
+    <line class="st5" x1="231.1" y1="98.9" x2="231.1" y2="93.1"/>
+    <line class="st5" x1="225.3" y1="75.8" x2="231.1" y2="75.8"/>
+    <line class="st5" x1="225.3" y1="64.2" x2="225.3" y2="75.8"/>
+    <line class="st5" x1="231.1" y1="64.2" x2="225.3" y2="64.2"/>
+    <line class="st5" x1="231.1" y1="64.2" x2="231.1" y2="64.2"/>
+    <line class="st5" x1="242.6" y1="93.1" x2="242.6" y2="70"/>
+    <line class="st5" x1="236.8" y1="71.4" x2="242.6" y2="70"/>
+    <line class="st5" x1="236.8" y1="68.5" x2="236.8" y2="71.4"/>
+    <line class="st5" x1="242.6" y1="70" x2="236.8" y2="68.5"/>
+    <line class="st5" x1="231.1" y1="70" x2="236.8" y2="70"/>
+    <line class="st5" x1="358.4" y1="70" x2="358.4" y2="64.2"/>
+    <line class="st5" x1="350.1" y1="75.8" x2="358.4" y2="75.8"/>
+    <line class="st5" x1="341" y1="81.6" x2="343.9" y2="81.6"/>
+    <line class="st5" x1="343.9" y1="93.1" x2="343.9" y2="70"/>
+    <line class="st5" x1="358.4" y1="93.1" x2="346.8" y2="93.1"/>
+    <line class="st5" x1="358.4" y1="98.9" x2="358.4" y2="93.1"/>
+    <line class="st5" x1="364.2" y1="75.8" x2="358.4" y2="75.8"/>
+    <line class="st5" x1="364.2" y1="64.2" x2="364.2" y2="75.8"/>
+    <line class="st5" x1="358.4" y1="64.2" x2="364.2" y2="64.2"/>
+    <line class="st5" x1="358.4" y1="64.2" x2="358.4" y2="64.2"/>
+    <line class="st5" x1="346.8" y1="93.1" x2="346.8" y2="70"/>
+    <line class="st5" x1="352.6" y1="71.4" x2="346.8" y2="70"/>
+    <line class="st5" x1="352.6" y1="68.5" x2="352.6" y2="71.4"/>
+    <line class="st5" x1="346.8" y1="70" x2="352.6" y2="68.5"/>
+    <line class="st5" x1="358.4" y1="70" x2="352.6" y2="70"/>
+    <line class="st5" x1="231.1" y1="110.5" x2="231.1" y2="98.9"/>
+    <line class="st5" x1="179" y1="81.6" x2="341" y2="81.6"/>
+    <line class="st5" x1="332.3" y1="101.8" x2="358.4" y2="101.8"/>
+    <line class="st5" x1="332.3" y1="81.6" x2="332.3" y2="101.8"/>
+  </g>
+  <g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st14" transform="translate(202.1 214.7)"><tspan x="0" y="0">4x B</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st15" transform="translate(204.8 195.8)"><tspan x="0" y="0">30</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st15" transform="translate(224.7 178.1)"><tspan x="0" y="0">31</tspan></text>
+      </g>
+    </g>
+    <line class="st5" x1="231.1" y1="208.9" x2="231.1" y2="214.7"/>
+    <line class="st5" x1="222.7" y1="203.1" x2="231.1" y2="203.1"/>
+    <line class="st5" x1="213.7" y1="197.3" x2="216.6" y2="197.3"/>
+    <line class="st5" x1="216.6" y1="185.7" x2="216.6" y2="208.9"/>
+    <line class="st5" x1="231.1" y1="185.7" x2="219.5" y2="185.7"/>
+    <line class="st5" x1="231.1" y1="179.9" x2="231.1" y2="185.7"/>
+    <line class="st5" x1="236.8" y1="203.1" x2="231.1" y2="203.1"/>
+    <line class="st5" x1="236.8" y1="214.7" x2="236.8" y2="203.1"/>
+    <line class="st5" x1="231.1" y1="214.7" x2="236.8" y2="214.7"/>
+    <line class="st5" x1="231.1" y1="214.7" x2="231.1" y2="226.2"/>
+    <line class="st5" x1="231.1" y1="214.7" x2="231.1" y2="214.7"/>
+    <line class="st5" x1="225.3" y1="226.2" x2="231.1" y2="232"/>
+    <line class="st5" x1="231.1" y1="226.2" x2="225.3" y2="226.2"/>
+    <line class="st5" x1="202.1" y1="197.3" x2="213.7" y2="197.3"/>
+    <line class="st5" x1="219.5" y1="185.7" x2="219.5" y2="208.9"/>
+    <line class="st5" x1="225.3" y1="207.4" x2="231.1" y2="208.9"/>
+    <line class="st5" x1="225.3" y1="210.3" x2="225.3" y2="207.4"/>
+    <line class="st5" x1="231.1" y1="208.9" x2="225.3" y2="210.3"/>
+    <line class="st5" x1="219.5" y1="208.9" x2="225.3" y2="208.9"/>
+    <line class="st5" x1="231.1" y1="174.1" x2="231.1" y2="179.9"/>
+    <line class="st5" x1="236.8" y1="226.2" x2="231.1" y2="226.2"/>
+    <line class="st5" x1="231.1" y1="232" x2="236.8" y2="226.2"/>
+  </g>
+  <g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st15" transform="translate(109 137.6)"><tspan x="0" y="0">54</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st13" transform="translate(76.6 129)"><tspan x="0" y="0">+</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st13" transform="translate(77.7 153.6)"><tspan x="0" y="0">-</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st15" transform="translate(65.6 146.3)"><tspan x="0" y="0">55</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st15" transform="translate(65.6 133.3)"><tspan x="0" y="0">56</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st13" transform="translate(66.1 175.5)"><tspan x="0" y="0">OTA_pMOS</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st14" transform="translate(73 52.9)"><tspan x="0" y="0">VDD</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st15" transform="translate(109.1 87.3)"><tspan x="0" y="0">68</tspan></text>
+      </g>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st14" transform="translate(98.6 64.2)"><tspan x="0" y="0">2x</tspan></text>
+      </g>
+    </g>
+    <line class="st5" x1="87" y1="64.2" x2="87" y2="70"/>
+    <line class="st5" x1="87" y1="75.8" x2="95.3" y2="75.8"/>
+    <line class="st5" x1="101.5" y1="81.6" x2="104.4" y2="81.6"/>
+    <line class="st5" x1="101.5" y1="70" x2="101.5" y2="93.1"/>
+    <line class="st5" x1="98.6" y1="93.1" x2="87" y2="93.1"/>
+    <line class="st5" x1="87" y1="93.1" x2="87" y2="98.9"/>
+    <line class="st5" x1="87" y1="75.8" x2="81.2" y2="75.8"/>
+    <line class="st5" x1="81.2" y1="75.8" x2="81.2" y2="64.2"/>
+    <line class="st5" x1="81.2" y1="64.2" x2="87" y2="64.2"/>
+    <line class="st5" x1="87" y1="64.2" x2="87" y2="64.2"/>
+    <line class="st5" x1="98.6" y1="70" x2="98.6" y2="93.1"/>
+    <line class="st5" x1="98.6" y1="70" x2="92.8" y2="71.4"/>
+    <line class="st5" x1="92.8" y1="71.4" x2="92.8" y2="68.5"/>
+    <line class="st5" x1="92.8" y1="68.5" x2="98.6" y2="70"/>
+    <line class="st5" x1="92.8" y1="70" x2="87" y2="70"/>
+    <line class="st5" x1="87" y1="54.1" x2="87" y2="64.2"/>
+    <line class="st5" x1="83.5" y1="55.5" x2="89.3" y2="52.6"/>
+    <line class="st5" x1="87" y1="98.9" x2="87" y2="126.4"/>
+    <line class="st5" x1="104.4" y1="81.6" x2="107.3" y2="81.6"/>
+    <line class="st5" x1="107.3" y1="81.6" x2="110.2" y2="81.6"/>
+    <line class="st5" x1="74.8" y1="116.3" x2="74.8" y2="162.6"/>
+    <line class="st5" x1="103.7" y1="139.4" x2="74.8" y2="116.3"/>
+    <line class="st5" x1="74.8" y1="116.3" x2="103.7" y2="139.4"/>
+    <line class="st5" x1="103.7" y1="139.4" x2="74.8" y2="162.6"/>
+    <line class="st5" x1="74.8" y1="127.8" x2="63.2" y2="127.8"/>
+    <line class="st5" x1="63.2" y1="151" x2="74.8" y2="151"/>
+    <line class="st5" x1="103.7" y1="139.4" x2="115.3" y2="139.4"/>
+    <rect class="st4" x="63.2" y="46.8" width="52.1" height="120.1"/>
+  </g>
+  <g>
+    <line class="st5" x1="358.4" y1="194.4" x2="358.4" y2="197.3"/>
+    <line class="st5" x1="364.2" y1="191.5" x2="358.4" y2="194.4"/>
+    <line class="st5" x1="352.6" y1="185.7" x2="364.2" y2="191.5"/>
+    <line class="st5" x1="364.2" y1="179.9" x2="352.6" y2="185.7"/>
+    <line class="st5" x1="352.6" y1="174.1" x2="364.2" y2="179.9"/>
+    <line class="st5" x1="358.4" y1="168.4" x2="358.4" y2="171.3"/>
+    <line class="st5" x1="358.4" y1="171.3" x2="352.6" y2="174.1"/>
+    <line class="st5" x1="349.7" y1="185.7" x2="341" y2="185.7"/>
+    <line class="st5" x1="349.7" y1="185.7" x2="346.8" y2="182.8"/>
+    <line class="st5" x1="349.7" y1="185.7" x2="346.8" y2="188.6"/>
+  </g>
+  <g>
+    <line class="st5" x1="358.4" y1="130.7" x2="358.4" y2="127.8"/>
+    <line class="st5" x1="358.4" y1="148.1" x2="358.4" y2="151"/>
+    <circle class="st3" cx="358.4" cy="146.7" r="1.4"/>
+    <circle class="st3" cx="358.4" cy="132.2" r="1.4"/>
+    <path class="st3" d="M359.8,146.5c3.9-.8,6.5-4.6,5.7-8.5-.6-2.9-2.8-5.1-5.7-5.7"/>
+  </g>
+  <g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st13" transform="translate(280.2 179.6)"><tspan x="0" y="0">CL2</tspan></text>
+      </g>
+    </g>
+    <line class="st5" x1="277.4" y1="187.2" x2="277.4" y2="197.3"/>
+    <line class="st5" x1="277.4" y1="184.3" x2="277.4" y2="174.1"/>
+    <line class="st5" x1="271.6" y1="184.3" x2="283.1" y2="184.3"/>
+    <line class="st5" x1="271.6" y1="187.2" x2="283.1" y2="187.2"/>
+  </g>
+  <g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st13" transform="translate(95.3 195.9)"><tspan x="0" y="0">CL1</tspan></text>
+      </g>
+    </g>
+    <line class="st5" x1="121.1" y1="187.2" x2="121.1" y2="197.3"/>
+    <line class="st5" x1="121.1" y1="184.3" x2="121.1" y2="174.1"/>
+    <line class="st5" x1="115.3" y1="184.3" x2="126.9" y2="184.3"/>
+    <line class="st5" x1="115.3" y1="187.2" x2="126.9" y2="187.2"/>
+  </g>
+  <g>
+    <g>
+      <line class="st5" x1="34.4" y1="151.1" x2="28.6" y2="156.8"/>
+      <line class="st5" x1="28.6" y1="156.8" x2="5.4" y2="156.8"/>
+      <line class="st5" x1="5.4" y1="156.8" x2="5.4" y2="145.3"/>
+      <line class="st5" x1="5.4" y1="145.3" x2="28.6" y2="145.3"/>
+      <line class="st5" x1="28.6" y1="145.3" x2="34.4" y2="151.1"/>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st10" transform="translate(12.2 154.1)"><tspan x="0" y="0">in+</tspan></text>
+      </g>
+    </g>
+  </g>
+  <line class="st5" x1="358.4" y1="57" x2="231.5" y2="57"/>
+  <g class="st12">
+    <g class="st12">
+      <text class="st11" transform="translate(235.8 195.8)"><tspan x="0" y="0">M5</tspan></text>
+    </g>
+  </g>
+  <g class="st12">
+    <g class="st12">
+      <text class="st11" transform="translate(198 91.7)"><tspan x="0" y="0">M6</tspan></text>
+    </g>
+  </g>
+  <g class="st12">
+    <g class="st12">
+      <text class="st11" transform="translate(364.8 89.5)"><tspan x="0" y="0">M8</tspan></text>
+    </g>
+  </g>
+  <g class="st12">
+    <g class="st12">
+      <text class="st9" transform="translate(246 135.1)"><tspan x="0" y="0">out</tspan></text>
+    </g>
+  </g>
+  <g class="st12">
+    <g class="st12">
+      <text class="st11" transform="translate(70.1 89.5)"><tspan x="0" y="0">M7</tspan></text>
+    </g>
+  </g>
+  <g class="st12">
+    <g class="st12">
+      <text class="st8" transform="translate(371.7 115.2)"><tspan x="0" y="0">I</tspan></text>
+    </g>
+  </g>
+  <g class="st12">
+    <g class="st12">
+      <text class="st7" transform="translate(375.1 117.4)"><tspan x="0" y="0">REF</tspan></text>
+    </g>
+  </g>
+  <g>
+    <line class="st0" x1="365.5" y1="98.9" x2="365.5" y2="120.4"/>
+    <g>
+      <line class="st1" x1="365.5" y1="98.9" x2="365.5" y2="113.3"/>
+      <polygon class="st6" points="365.5 120.4 361.4 110.5 365.5 112.8 369.6 110.5 365.5 120.4"/>
+    </g>
+  </g>
+  <g class="st12">
+    <g class="st12">
+      <text class="st9" transform="translate(124.2 135.3)"><tspan x="0" y="0">OTAout</tspan></text>
+    </g>
+  </g>
+  <path class="st5" d="M140.9,275.5"/>
+  <path class="st5" d="M166.9,130.7"/>
+  <g>
+    <g>
+      <line class="st5" x1="34.4" y1="127.8" x2="28.6" y2="133.6"/>
+      <line class="st5" x1="28.6" y1="133.6" x2="5.4" y2="133.6"/>
+      <line class="st5" x1="5.4" y1="133.6" x2="5.4" y2="122.1"/>
+      <line class="st5" x1="5.4" y1="122.1" x2="28.6" y2="122.1"/>
+      <line class="st5" x1="28.6" y1="122.1" x2="34.4" y2="127.8"/>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st10" transform="translate(12.2 130.8)"><tspan x="0" y="0">in-</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <g>
+      <line class="st5" x1="312.1" y1="139.4" x2="306.3" y2="145.1"/>
+      <line class="st5" x1="306.3" y1="145.1" x2="283.1" y2="145.1"/>
+      <line class="st5" x1="283.1" y1="145.1" x2="283.1" y2="133.6"/>
+      <line class="st5" x1="283.1" y1="133.6" x2="306.3" y2="133.6"/>
+      <line class="st5" x1="306.3" y1="133.6" x2="312.1" y2="139.4"/>
+    </g>
+    <g class="st12">
+      <g class="st12">
+        <text class="st10" transform="translate(290.9 142.4)"><tspan x="0" y="0">out</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
