@@ -44,7 +44,7 @@ In these experiments we will drive one input of the differential amplifier with 
 Schematic of the nMOS differential pair with a 8x $I_{REF}$ current bias. Note the location of the load capacitors $C_L$ and the common-source capacitor $C_{CS}$. The capacitors will not always be used for all parts of the experiments. The biasing of the input pins is not shown. 
 ```
 - Build the circuit:
-    - The current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFN). Connect a current meter across I_REFN with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so $I_{REF}$ is $100\mu A$; replace the current meter with a jumper. The I_REFN header is connected to pin 19 of the Mobius chip on the PCB. See *Testing the Current Bias Potentiometers* in the [Appendix on Testing the MOSbius PCB](../../app_pcb_test/pcb_test)
+    - The current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFN). Connect a current meter across I_REFN with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so $I_{REF}$ is $100\mu A$; replace the current meter with a jumper. The I_REFN header is connected to pin 19 of the MOSbius chip on the PCB. See *Testing the Current Bias Potentiometers* in the [Appendix on Testing the MOSbius PCB](../../app_pcb_test/pcb_test)
     - Use the 8x output of the current mirror to bias the differential pair. So each transistor[^bias] is biased with $400\mu A$. 
     - The body[^body] of transistors M1 and M2 needs to be connected to GND (VSS).
     - Place the load resistors $R_L$ of $\frac{4.7K\Omega}{4}$ or equivalent on the breadboard. Measure your resistors with a multimeter and note their values. Ideally the two loads should be identical. 
@@ -96,7 +96,7 @@ We start with measurements on the oscilloscope at low frequencies to determine a
 
 - Response at the Common Source:
     - Keep the circuit in the common-mode configuration. 
-    - Measure the $V_{CMSRC}$ vs $V_{IN}$. Can you explain the responses? Note that you are now basically measuring a source follower (assuming that the $R_L$ have a neglible effect, which is the case).
+    - Measure the $V_{CMSRC}$ vs $V_{IN}$. Can you explain the responses? Note that you are now basically measuring a source follower (assuming that the $R_L$ have a negligible effect, which is the case).
     
 - Common-Mode Rejection Ratio:
     - Measure $A_{dd}$, take a snapshot (and save the trace if you want to do post processing), and then measure $A_{cc}$ and compare; their ratio is often referred to as the common-mode-rejection ratio $CMRR = \frac{A_{dd}}{A_{cc}}$; do this for the following capacitor combinations:

@@ -45,7 +45,7 @@ Learn various measurement techniques using the ADALM2000
 
 ## Lab Report
 
-Write a *succint* lab report that includes screen captures of the key measurements and your interpretation of the data; where applicable, include a brief comparison to theoretical expected behavior, but no need for  derivations of that behavior. 
+Write a *succinct* lab report that includes screen captures of the key measurements and your interpretation of the data; where applicable, include a brief comparison to theoretical expected behavior, but no need for  derivations of that behavior. 
 
 You can use a word processor or hand write the report, just make sure it is clearly organized. Clearly mark your group, names, and UNIs on the report.
 

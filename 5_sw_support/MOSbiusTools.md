@@ -2,7 +2,7 @@
 
 We currently provide two tools to generate bitstream files that you can use to program the switch matrix on the MOSbius chip. The tools are available from Github and as a python package.
 
-* The [Github repository](https://github.com/peterkinget/MOSbiusCADFlow/) contains python modules and command-line scripts to interface with the Mobius chip. 
+* The [Github repository](https://github.com/peterkinget/MOSbiusCADFlow/) contains python modules and command-line scripts to interface with the MOSbius chip. 
 
 * A python package is available from TestPyPI as [MOSbiusTools](https://test.pypi.org/project/MOSbiusTools)
   - we advise to create a virtual environment to install the tools
