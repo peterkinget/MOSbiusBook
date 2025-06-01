@@ -429,32 +429,39 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="first-experiment-blinky">
 <h1><span class="section-number">2.1. </span>First Experiment: Blinky<a class="headerlink" href="#first-experiment-blinky" title="Link to this heading">#</a></h1>
 <p>As a first experiment we show a <strong>Schmitt-Trigger Relaxation Oscillator with LEDs</strong>. It’s always good to start off a project with blinking LEDs …</p>
-<section id="schmitt-trigger-relaxation-oscillator">
-<h2><span class="section-number">2.1.1. </span>Schmitt-Trigger Relaxation Oscillator<a class="headerlink" href="#schmitt-trigger-relaxation-oscillator" title="Link to this heading">#</a></h2>
 <center>
 <video controls width="640" autoplay loop muted>
   <source src="../_static/videos/IMG_2993.mov" type="video/mp4">
   Your browser does not support the video tag
 </video>
-</center><figure class="align-default">
-<img alt="../_images/blinky_block.png" src="../_images/blinky_block.png" />
-</figure>
-<p><strong>Circuit Schematic:</strong>
-We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4x inverter providing positive feedback around the second stage, resulting in hysteresis in the input-output tranfer characteristic. Overall feedback around the Schmitt Trigger is created with an R-C network. LEDs are connected at the output of the second stage; the red LED ligths up when the output is high, and the green LED lights up when it is low.</p>
-<figure class="align-default">
-<img alt="../_images/blinky_block_inv.png" src="../_images/blinky_block_inv.png" />
-</figure>
+</center><section id="schmitt-trigger-relaxation-oscillator">
+<h2><span class="section-number">2.1.1. </span>Schmitt-Trigger Relaxation Oscillator<a class="headerlink" href="#schmitt-trigger-relaxation-oscillator" title="Link to this heading">#</a></h2>
+<p>The ‘Blinky’ circuit is built using a Schmitt-Trigger relaxation oscillator as shown below.</p>
 <figure class="align-default" id="id3">
-<img alt="../_images/blinky_relaxation_osc_v1.png" src="../_images/blinky_relaxation_osc_v1.png" />
+<a class="reference internal image-reference" href="../_images/blinky_block.png"><img alt="../_images/blinky_block.png" src="../_images/blinky_block.png" style="height: 200px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/fe1ebb425c814927755a0f6b6c28d62a/blinky_relaxation_osc.zip"><span class="xref download myst">LTSpice schematic</span></a> for the relaxation oscillator experiment</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Block diagram of the blinky circuit</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p><strong>Building the Circuit:</strong> You can use manual connections or use the on-chip switch matrix (Files: <a class="reference download internal" download="" href="../_downloads/1928cb46b290b0296f6b5ffc188da530/relaxation_osc_v1_bitstream.txt"><span class="xref download myst">bitstream</span></a>, <a class="reference download internal" download="" href="../_downloads/55b01fc91779870e2d5cf05ee1848268/relaxation_osc_v1_bitstream_clk.txt"><span class="xref download myst">bitsteam_clk</span></a>, <a class="reference download internal" download="" href="../_downloads/2e9beb3d0ab6de33be1ce938a1f1cc49/connections_relaxation_osc_v1.json"><span class="xref download myst">connections</span></a>). When using the on-chip connections, the solderless breadboard only requires and external resistor and capacitor, along with the LEDS.</p>
+<p><strong>Circuit Schematic:</strong>
+We build the Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4x inverter providing positive feedback around the second stage, resulting in hysteresis in the input-output transfer characteristic. Overall feedback around the Schmitt Trigger is created with an R-C network. LEDs are connected at the output of the second stage; the red LED ligths up when the output is high, and the green LED lights up when it is low.</p>
 <figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/blinky_block_inv.png"><img alt="../_images/blinky_block_inv.png" src="../_images/blinky_block_inv.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Implementation of the Schmitt Trigger for the blinky circuit using inverters</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="../_images/blinky_relaxation_osc_v1.png" src="../_images/blinky_relaxation_osc_v1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.3 </span><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/fe1ebb425c814927755a0f6b6c28d62a/blinky_relaxation_osc.zip"><span class="xref download myst">LTSpice schematic</span></a> for the MOSbius realization of the blinky circuit</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Building the Circuit with MOSbius:</strong> You can use manual connections or use the on-chip switch matrix (Files: <a class="reference download internal" download="" href="../_downloads/1928cb46b290b0296f6b5ffc188da530/relaxation_osc_v1_bitstream.txt"><span class="xref download myst">bitstream</span></a>, <a class="reference download internal" download="" href="../_downloads/55b01fc91779870e2d5cf05ee1848268/relaxation_osc_v1_bitstream_clk.txt"><span class="xref download myst">bitsteam_clk</span></a>, <a class="reference download internal" download="" href="../_downloads/2e9beb3d0ab6de33be1ce938a1f1cc49/connections_relaxation_osc_v1.json"><span class="xref download myst">connections</span></a>). When using the on-chip connections, the solderless breadboard only requires and external resistor and capacitor, along with the LEDS.</p>
+<figure class="align-default" id="id6">
 <img alt="../_images/relaxation_osc_v1_IMG_2992.jpeg" src="../_images/relaxation_osc_v1_IMG_2992.jpeg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Photo of the <em>blinky</em> setup using the on-chip connections; the external components are a 100K<span class="math notranslate nohighlight">\(\Omega\)</span> resistor, a 10uF capacitor, and two LEDs with 47<span class="math notranslate nohighlight">\(\Omega\)</span> resistors; the orange and blue wires connect to the ADALM2000 oscillscope channels <code class="docutils literal notranslate"><span class="pre">1+</span></code> and <code class="docutils literal notranslate"><span class="pre">2+</span></code> respectively; <code class="docutils literal notranslate"><span class="pre">1-</span></code> and <code class="docutils literal notranslate"><span class="pre">2-</span></code> are grounded; the ADALM <code class="docutils literal notranslate"><span class="pre">V+</span></code> provides the 2.5V power supply; digital channels <code class="docutils literal notranslate"><span class="pre">DIO8</span></code> and <code class="docutils literal notranslate"><span class="pre">DIO9</span></code> are used to feed the bitstream to the <code class="docutils literal notranslate"><span class="pre">CLK</span></code> and <code class="docutils literal notranslate"><span class="pre">DATA</span></code> pin of the MOSbius chip to program the switch matrix.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Photo of the <em>blinky</em> setup using the on-chip connections; the external components are a 100K<span class="math notranslate nohighlight">\(\Omega\)</span> resistor, a 10uF capacitor, and two LEDs with 47<span class="math notranslate nohighlight">\(\Omega\)</span> resistors; the orange and blue wires connect to the ADALM2000 oscillscope channels <code class="docutils literal notranslate"><span class="pre">1+</span></code> and <code class="docutils literal notranslate"><span class="pre">2+</span></code> respectively; <code class="docutils literal notranslate"><span class="pre">1-</span></code> and <code class="docutils literal notranslate"><span class="pre">2-</span></code> are grounded; the ADALM <code class="docutils literal notranslate"><span class="pre">V+</span></code> provides the 2.5V power supply; digital channels <code class="docutils literal notranslate"><span class="pre">DIO8</span></code> and <code class="docutils literal notranslate"><span class="pre">DIO9</span></code> are used to feed the bitstream to the <code class="docutils literal notranslate"><span class="pre">CLK</span></code> and <code class="docutils literal notranslate"><span class="pre">DATA</span></code> pin of the MOSbius chip to program the switch matrix.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition tip">
@@ -463,41 +470,41 @@ We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4
 </div>
 <p><strong>Measurements:</strong>
 Besides the blinking LEDs the following waveforms can be observed:</p>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id7">
 <img alt="../_images/osciloscope_waveoforms_2.png" src="../_images/osciloscope_waveoforms_2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Measured waveforms on <em>BUS01</em> and <em>BUS02</em>.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Measured waveforms on <em>BUS01</em> and <em>BUS02</em>.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id8">
 <img alt="../_images/osciloscope_waveoforms_3.png" src="../_images/osciloscope_waveoforms_3.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Measured waveforms on <em>BUS01</em> and <em>BUS04</em>.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.6 </span><span class="caption-text">Measured waveforms on <em>BUS01</em> and <em>BUS04</em>.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Quick Analytical Estimations</strong>:
 The oscillation across the capacitor has an amplitude of approx. 500mVpp. The average charging current is roughly <span class="math notranslate nohighlight">\(I_{ch} = (V_{DD} - V(\mathrm{BUS01})_{avg})/R = C \frac{\Delta V}{\Delta T}\)</span>, so <span class="math notranslate nohighlight">\(\Delta T = R C \frac{\Delta V}{(V_{DD} - V(\mathrm{BUS01})_{avg})}\)</span>; using <span class="math notranslate nohighlight">\(V_{DD}\)</span> = 2.5V, <span class="math notranslate nohighlight">\(V(\mathrm{BUS01})_{avg}\)</span> = 1.25, and <span class="math notranslate nohighlight">\(\Delta V\)</span> = 500mV, we obtain <span class="math notranslate nohighlight">\(\Delta T\)</span> = 400ms which corresponds to half the period. This is close to the measured result of 445ms<a class="footnote-reference brackets" href="#exactanalysis" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <p><strong>Comparison to Simulations:</strong> The measured results correspond qualitatively very well to the results obtained from an LTspice simulation using models<a class="footnote-reference brackets" href="#commentsim" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> for the chip components:</p>
-<figure class="align-default" id="id7">
+<figure class="align-default" id="id9">
 <img alt="../_images/relaxation_osc_v1_sim.png" src="../_images/relaxation_osc_v1_sim.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Simulation results for the relaxation oscillator obtained with LTSpice</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+<p><span class="caption-text">Simulation results for the relaxation oscillator obtained with LTSpice</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="schmitt-trigger-transfer-characteristic">
 <h2><span class="section-number">2.1.2. </span>Schmitt-Trigger Transfer Characteristic<a class="headerlink" href="#schmitt-trigger-transfer-characteristic" title="Link to this heading">#</a></h2>
 <p>After removing the resistor, <em>BUS01</em> can be driven with a slow 2.5Vpp sawtooth waveform with a 1.25V DC offset to measure the DC transfer characteristic of the Schmitt Trigger:</p>
-<figure class="align-default" id="id8">
+<figure class="align-default" id="id10">
 <img alt="../_images/xy_timedomain.png" src="../_images/xy_timedomain.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.6 </span><span class="caption-text">Time domain waveforms to create the Schmitt Trigger characteristic between <em>BUS01</em> and <em>BUS04</em></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+<p><span class="caption-text">Time domain waveforms to create the Schmitt Trigger characteristic between <em>BUS01</em> and <em>BUS04</em></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id9">
+<figure class="align-default" id="id11">
 <img alt="../_images/xy_xy.png" src="../_images/xy_xy.png" />
 <figcaption>
-<p><span class="caption-text">Schmitt Trigger characteristic between <em>BUS01</em> and <em>BUS04</em> using X-Y plotting</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+<p><span class="caption-text">Schmitt Trigger characteristic between <em>BUS01</em> and <em>BUS04</em> using X-Y plotting</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The Schmitt trigger has a inverting characteristic with a hysteresis of approx. 500mV centered at about 1.25V.</p>
