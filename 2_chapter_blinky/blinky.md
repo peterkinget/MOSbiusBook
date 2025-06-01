@@ -1,10 +1,6 @@
 # First Experiment: Blinky
 As a first experiment we show a **Schmitt-Trigger Relaxation Oscillator with LEDs**. It's always good to start off a project with blinking LEDs ... 
 
-
-
-## Schmitt-Trigger Relaxation Oscillator
-
 ```{raw} html
 <center>
 <video controls width="640" autoplay loop muted>
@@ -13,22 +9,32 @@ As a first experiment we show a **Schmitt-Trigger Relaxation Oscillator with LED
 </video>
 </center>
 ```
+## Schmitt-Trigger Relaxation Oscillator
+
+The 'Blinky' circuit is built using a Schmitt-Trigger relaxation oscillator as shown below. 
+
 ```{figure} img/blinky_block.png
+:height: 200px
+
+Block diagram of the blinky circuit
 ```
 
 **Circuit Schematic:** 
-We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4x inverter providing positive feedback around the second stage, resulting in hysteresis in the input-output tranfer characteristic. Overall feedback around the Schmitt Trigger is created with an R-C network. LEDs are connected at the output of the second stage; the red LED ligths up when the output is high, and the green LED lights up when it is low.
+We build the Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4x inverter providing positive feedback around the second stage, resulting in hysteresis in the input-output transfer characteristic. Overall feedback around the Schmitt Trigger is created with an R-C network. LEDs are connected at the output of the second stage; the red LED ligths up when the output is high, and the green LED lights up when it is low.
 
 ```{figure} img/blinky_block_inv.png
+:height: 250px
+
+Implementation of the Schmitt Trigger for the blinky circuit using inverters
 ```
 
 
 
 ```{figure} img/blinky_relaxation_osc_v1.png
-[LTSpice schematic](sim/blinky_relaxation_osc.zip) for the relaxation oscillator experiment 
+[LTSpice schematic](sim/blinky_relaxation_osc.zip) for the MOSbius realization of the blinky circuit  
 ```
 
-**Building the Circuit:** You can use manual connections or use the on-chip switch matrix (Files: [bitstream](img/relaxation_osc_v1_bitstream.txt), [bitsteam_clk](img/relaxation_osc_v1_bitstream_clk.txt), [connections](img/connections_relaxation_osc_v1.json)). When using the on-chip connections, the solderless breadboard only requires and external resistor and capacitor, along with the LEDS.
+**Building the Circuit with MOSbius:** You can use manual connections or use the on-chip switch matrix (Files: [bitstream](img/relaxation_osc_v1_bitstream.txt), [bitsteam_clk](img/relaxation_osc_v1_bitstream_clk.txt), [connections](img/connections_relaxation_osc_v1.json)). When using the on-chip connections, the solderless breadboard only requires and external resistor and capacitor, along with the LEDS.
 ```{figure} img/relaxation_osc_v1_IMG_2992.jpeg
 Photo of the *blinky* setup using the on-chip connections; the external components are a 100K$\Omega$ resistor, a 10uF capacitor, and two LEDs with 47$\Omega$ resistors; the orange and blue wires connect to the ADALM2000 oscillscope channels `1+` and `2+` respectively; `1-` and `2-` are grounded; the ADALM `V+` provides the 2.5V power supply; digital channels `DIO8` and `DIO9` are used to feed the bitstream to the `CLK` and `DATA` pin of the MOSbius chip to program the switch matrix. 
 ```

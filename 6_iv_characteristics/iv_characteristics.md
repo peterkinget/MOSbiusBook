@@ -5,7 +5,7 @@
 ### IDS-VDS Measurement
 
 ```{figure} img/iV_schematic_man_no_wave.svg
-:height: 100px
+:height: 250px
 
 Measurement setup for IDS-VDS measurements of an 2x nMOS device; with CH1 (1+ & 1-) we measure the VDS and with CH2 (2+ & 2-) we measure the current given that R1 is $100\Omega$
 ```
