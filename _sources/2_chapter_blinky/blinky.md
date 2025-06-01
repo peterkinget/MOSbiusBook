@@ -13,10 +13,18 @@ As a first experiment we show a **Schmitt-Trigger Relaxation Oscillator with LED
 </video>
 </center>
 ```
+```{figure} img/blinky_block.png
+```
 
 **Circuit Schematic:** 
-We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4x inverter providing positive feedback around the second stage, resulting in hysteresis in the input-output tranfer characteristic. Overall feedback around the Schmitt Trigger is created with an R-C network. LEDs are connected at the output of the second stage; the red LED ligths up when the output is high, and the green LED lights up when it is low. 
-```{figure} img/relaxation_osc_v1.png
+We build a Schmitt Trigger out of cascade of a 16x, 16x and 4x inverter with a 4x inverter providing positive feedback around the second stage, resulting in hysteresis in the input-output tranfer characteristic. Overall feedback around the Schmitt Trigger is created with an R-C network. LEDs are connected at the output of the second stage; the red LED ligths up when the output is high, and the green LED lights up when it is low.
+
+```{figure} img/blinky_block_inv.png
+```
+
+
+
+```{figure} img/blinky_relaxation_osc_v1.png
 [LTSpice schematic](sim/blinky_relaxation_osc.zip) for the relaxation oscillator experiment 
 ```
 
@@ -31,10 +39,10 @@ A step-by-step guide to learn how to program the MOSbius chip is provided in [Pr
 
 **Measurements:**
 Besides the blinking LEDs the following waveforms can be observed:
-```{figure} img/relaxation_bus01_bus02.png
+```{figure} img/osciloscope_waveoforms_2.png
 Measured waveforms on *BUS01* and *BUS02*.
 ```
-```{figure} img/relaxation_bus01_bus04.png
+```{figure} img/osciloscope_waveoforms_3.png
 Measured waveforms on *BUS01* and *BUS04*.
 ```
 **Quick Analytical Estimations**:
@@ -47,9 +55,14 @@ Simulation results for the relaxation oscillator obtained with LTSpice
 
 ## Schmitt-Trigger Transfer Characteristic
 After removing the resistor, *BUS01* can be driven with a slow 2.5Vpp sawtooth waveform with a 1.25V DC offset to measure the DC transfer characteristic of the Schmitt Trigger:
-```{figure} img/Schmitt_Trigger_bus01_to_bus04.png
-Measured Schmitt Trigger characteristic between *BUS01* and *BUS04*
+```{figure} img/xy_timedomain.png 
+
+Time domain waveforms to create the Schmitt Trigger characteristic between *BUS01* and *BUS04*
 ```
+```{figure} img/xy_xy.png
+Schmitt Trigger characteristic between *BUS01* and *BUS04* using X-Y plotting
+```
+
 The Schmitt trigger has a inverting characteristic with a hysteresis of approx. 500mV centered at about 1.25V.
 
 [^exactanalysis]: A more detailed analysis can be performed using the expressions for the exponential charging and discharging waveforms.

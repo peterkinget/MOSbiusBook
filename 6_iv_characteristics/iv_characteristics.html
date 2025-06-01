@@ -413,7 +413,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilloscope-measurements">2.4.1. Oscilloscope Measurements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilloscope-measurements">2.4.1. Oscilloscope Measurements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ids-vds-measurement">IDS-VDS Measurement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ids-vgs-measurement">IDS - VGS Measurement</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-measurements">2.4.2. Automated Measurements</a></li>
 </ul>
             </nav>
@@ -430,25 +434,44 @@ document.write(`
 <h1><span class="section-number">2.4. </span>Transistor I-V Characteristics<a class="headerlink" href="#transistor-i-v-characteristics" title="Link to this heading">#</a></h1>
 <section id="oscilloscope-measurements">
 <h2><span class="section-number">2.4.1. </span>Oscilloscope Measurements<a class="headerlink" href="#oscilloscope-measurements" title="Link to this heading">#</a></h2>
+<section id="ids-vds-measurement">
+<h3>IDS-VDS Measurement<a class="headerlink" href="#ids-vds-measurement" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="id1">
-<img alt="../_images/ids_vds_4x.png" src="../_images/ids_vds_4x.png" />
+<a class="reference internal image-reference" href="../_images/iV_schematic_man_no_wave.svg"><img alt="../_images/iV_schematic_man_no_wave.svg" height="100px" src="../_images/iV_schematic_man_no_wave.svg" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.39 </span><span class="caption-text">IDS-VDS measurement of a 4x nMOS transistor with a <span class="math notranslate nohighlight">\(100\Omega\)</span> series resistor in the drain; CH1 is measuring the VDS voltage and CH2 is measuring the voltage across the drain series resistor</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.39 </span><span class="caption-text">Measurement setup for IDS-VDS measurements of an 2x nMOS device; with CH1 (1+ &amp; 1-) we measure the VDS and with CH2 (2+ &amp; 2-) we measure the current given that R1 is <span class="math notranslate nohighlight">\(100\Omega\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id2">
-<img alt="../_images/vgs_vds_4x.png" src="../_images/vgs_vds_4x.png" />
+<img alt="../_images/iv_iDS_VDS_stimulus.png" src="../_images/iv_iDS_VDS_stimulus.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 2.40 </span><span class="caption-text">VGS (orange) and VDS (purple) waveforms used for the IDS-VDS measurements</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>We performed nMOS IDS-VDS measurements for varying VGS by connecting the ADALM2000 waveform generator <code class="docutils literal notranslate"><span class="pre">W1</span></code> to the gate of the transistor under test and the drain to the waveform generator <code class="docutils literal notranslate"><span class="pre">W2</span></code> through a <span class="math notranslate nohighlight">\(100 \Omega\)</span> series resistor <span class="math notranslate nohighlight">\(R_D\)</span>. The scope channel <code class="docutils literal notranslate"><span class="pre">1</span></code> measures the drain to source voltage (VSS) and the <code class="docutils literal notranslate"><span class="pre">2</span></code> channel measures the voltage across the drain series resistor.</p>
-<p>The VGS voltage is stepped from 0.25 to 1.25V with 0.1V steps, and for each VGS the VDS voltage is swept from 0 to 2.5V.</p>
-<p>This is a simple but relatively crude way to measure IDS-VDS characteristics. As the IDS increases, the voltage drop across the resistor <span class="math notranslate nohighlight">\(R_D\)</span> increases and thus the effective range for the VDS measurements reduces, so a small value of <span class="math notranslate nohighlight">\(R_D\)</span> is preferred; however, small <span class="math notranslate nohighlight">\(R_D\)</span> results in small current-to-voltage conversion and hence low current-measurement accuracy given the accuracy limit of the scope channels.</p>
+<p>We performed nMOS IDS-VDS measurements for varying VGS by connecting the ADALM2000 waveform generator <code class="docutils literal notranslate"><span class="pre">W1</span></code> to the gate of the transistor under test and the drain to the waveform generator <code class="docutils literal notranslate"><span class="pre">W2</span></code> through a <span class="math notranslate nohighlight">\(100 \Omega\)</span> series resistor <span class="math notranslate nohighlight">\(R_1\)</span>. The scope channel <code class="docutils literal notranslate"><span class="pre">1</span></code> measures the drain to source voltage (VDS) and the <code class="docutils literal notranslate"><span class="pre">2</span></code> channel measures the voltage across the drain series resistor.</p>
+<p>The VGS voltage is stepped from 0.25 to 2.50V in 9 steps of 278mV, and for each VGS the VDS voltage is swept from 0 to 2.5V.</p>
+<figure class="align-default" id="id3">
+<img alt="../_images/nmos_2x_IDS_VDS_scope.png" src="../_images/nmos_2x_IDS_VDS_scope.png" />
+<figcaption>
+<p><span class="caption-text">IDS-VDS measurement of a 4x nMOS transistor with a <span class="math notranslate nohighlight">\(100\Omega\)</span> series resistor in the drain; CH1 is measuring the VDS voltage and CH2 is measuring the voltage across the drain series resistor</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is a simple but relatively crude way to measure IDS-VDS characteristics. As the IDS increases, the voltage drop across the resistor <span class="math notranslate nohighlight">\(R_1\)</span> increases and thus the effective range for the VDS measurements reduces, so a small value of <span class="math notranslate nohighlight">\(R_1\)</span> is preferred; however, small <span class="math notranslate nohighlight">\(R_1\)</span> results in small current-to-voltage conversion and hence low current-measurement accuracy given the accuracy limit of the scope channels.</p>
+</section>
+<section id="ids-vgs-measurement">
+<h3>IDS - VGS Measurement<a class="headerlink" href="#ids-vgs-measurement" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id4">
+<img alt="../_images/nmos_2x_IDS_VGS_scope.png" src="../_images/nmos_2x_IDS_VGS_scope.png" />
+<figcaption>
+<p><span class="caption-text">IDS-VGS measurement for a 4x nMOS transistor</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Similarly IDS-VGS measurements can be easily performed by setting VDS to 2.5V and sweeping VGS from 0 to 2.5V with a triangular waveform.</p>
+</section>
 </section>
 <section id="automated-measurements">
 <h2><span class="section-number">2.4.2. </span>Automated Measurements<a class="headerlink" href="#automated-measurements" title="Link to this heading">#</a></h2>
-<p>We wrote a <code class="docutils literal notranslate"><span class="pre">python</span></code> script using the <code class="docutils literal notranslate"><span class="pre">libm2k</span></code> package to collect the measurement data from the ADALM2000 and made sure that the scope channels operate in their most sensitive <span class="math notranslate nohighlight">\(\pm 2.5V\)</span> range to improve measurement accuracy. <code class="docutils literal notranslate"><span class="pre">&lt;consider</span> <span class="pre">adding</span> <span class="pre">script&gt;</span></code></p>
+<p>We wrote a <code class="docutils literal notranslate"><span class="pre">python</span></code> script using the <code class="docutils literal notranslate"><span class="pre">libm2k</span></code> package to collect the measurement data from the ADALM2000 and made sure that the scope channels operate in their most sensitive <span class="math notranslate nohighlight">\(\pm 2.5V\)</span> range to improve measurement accuracy.</p>
 <p>For the pMOS we used a similar setup with a <span class="math notranslate nohighlight">\(100 \Omega\)</span> series resistor but with the appropriate adjustments to the voltage source sweeps.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -523,7 +546,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilloscope-measurements">2.4.1. Oscilloscope Measurements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilloscope-measurements">2.4.1. Oscilloscope Measurements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ids-vds-measurement">IDS-VDS Measurement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ids-vgs-measurement">IDS - VGS Measurement</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-measurements">2.4.2. Automated Measurements</a></li>
 </ul>
   </nav></div>
