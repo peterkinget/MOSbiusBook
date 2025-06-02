@@ -1,62 +1,83 @@
-# Programming the Chip Using the MOSBiusTools
+# Programming the Chip 
 
-We currently provide two tools to generate bitstream files that you can use to program the switch matrix on the MOSbius chip. The tools are available from Github and as a python package.
+At this point, there are two documented flows on how to program the on-chip switch matrix on the MOSbius chip using the *CLK, DATA,* and *EN* pins:
 
-* The [Github repository](https://github.com/peterkinget/MOSbiusCADFlow/) contains python modules and command-line scripts to interface with the MOSbius chip. 
+- using the MOSbiusTools to generate bitstreams for a **digital pattern generator**,
+- or using a **Rasperry Pi Pico microcontroller** with the MOSbius micropython flow.
 
-* A python package is available from TestPyPI as [MOSbiusTools](https://test.pypi.org/project/MOSbiusTools)
-  - we advise to create a virtual environment to install the tools
-  - install using `pip3 install -i https://test.pypi.org/simple MOSbiusTools`
-  - installs the `MOSbiusTools` module and two executable scripts described below.
+In both cases, you need a `connections.json` file [^filename] that describes which pins are connected to which BUSes. The example below is for the 3-stage ring oscillator circuit that is explained in more detail below. The format is straightforward; for each bus, the connected pins are listed in a list; buses with no connections can be listed with an empty list or can be skipped altogether. 
 
-## Executable Scripts
+```json
+{
+"1": [], 
+"2": [], 
+"3": [53, 52, 11, 6, 41, 46], 
+"4": [51, 48, 50], 
+"5": [45, 7, 42, 10, 49], 
+"6": [], 
+"7": [], 
+"8": [], 
+"9": [18, 43, 44, 47], 
+"10": [1, 5, 8, 9] 
+}
+```
 
-After installing the package the scripts should be executable from your command line. 
+You can create the connections file manually or from an LTspice schematic using the `cir_to_connections` script (see below).
 
-### connections_to_bitstream
+Once you have the connections file you can proceed with generating bitstream files for your digital pattern generator or upload the connections file to the Raspberry Pi PICO
 
-*  `connections_to_bitstream` converts a connections.json file into a bitstream to program the MOSbius chip.
-* run `connections_to_bitstream -h` and you get a brief description of
-  script usage. 
-* There is a blank `connections.json` file provided and some [examples](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/). 
+## Installing the MOSbiusTools
 
-### cir_to_connections
+We currently provide two scripts [^source] to assist with generating connections and bitstream files to program the switch matrix on the MOSbius chip. The tools can be installed with a python package from TestPyPI as [MOSbiusTools](https://test.pypi.org/project/MOSbiusTools):
+- we advise to create a virtual environment to install the tools;
+- install using `pip3 install -i https://test.pypi.org/simple MOSbiusTools`;
+- this installs the MOSbiusTools module and two executable scripts, more details below:     
+  - `cir_to_connections` converts an LTSpice netlist (.cir) into a connections.json file;
+  - `connections_to_bitstream` converts a connections.json file into a bitstream file for a digital pattern generator to program the MOSbius chip; 
+ - after installing the package the scripts should be executable from your command line.
 
-*  `cir_to_connections` converts an LTSpice netlist (`.cir`)
-  into a `connections.json` file that the `connections_to_bitstream`
-  script can convert into a bitstream file. 
-* Run `cir_to_connections -h` and you get a brief description of
-  script usage. 
-* There are some example `.cir` files provided in
-  [examples](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_cir). 
+## Step 1: Creating a connections file
 
-## Basic Steps to Create Bitstream Files
+### Manually
 
-### From LTspice Schematic
-* create an LTspice schematic using the [LTspice Library](../4_chapter_simulations/LTspice_simulations.md)
+  - You can create a connections file in your text editor by starting from [connections.json](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections.json); for each *BUS* list the pcb pin numbers that need to be connected to it [(OTA example)](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections_Miller_OTA_pin.json); let's assume you save it as `connections_my_circuit.json`. 
+
+### From an LTspice schematic using `cir_to_connections`
+
+* create an LTspice schematic using the [MOSbius LTspice Symbol Library](../4_chapter_simulations/LTspice_simulations.md)
 * save your design as a `.cir` file, e.g. `my_circuit.cir`. You obtain a `.cir`
   netlist for your LTSpice circuit by right clicking on the schematic,
   then 'View SPICE Netlist', then 'Save As'. 
 * create a `connections.json` file:
-  - `cir_to_connections -i my_circuit.cir -o connections_my_circuit.json -d`
+  - Execute `cir_to_connections -i my_circuit.cir -o connections_my_circuit.json -d`
   - the `-d` is not required but will provide some output to review the conversion process.
   - you can choose your own filename for the json file, but a .json is recommended.
 * convert the `connections_my_circuit.json` to a bitstream file with `connections_to_bitstream` -- see next topic.
 
-### From Connections Json File
-* prepare connections file:
-  - You can create a connections file in your text editor by starting from [connections.json](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections.json); for each *BUS* list the pcb pin numbers that need to be connected to it [(OTA example)](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections_Miller_OTA_pin.json); let's assume you save it as `connections_my_circuit.json`. 
-  - Or, you can use the `cir_to_connections` script described above.
-* convert connections file to bitstream files:
-   - `connections_to_bitstream -i connections_my_circuit.json -o my_circuit_bitstream.txt -d`
-  - `-d` is not required but will provide output so you can review the conversion.
-  - you can choose your own filename for the output file, but a `.txt` extension is recommended; besides `my_circuit_bitstream.txt`, `my_circuit_bitstream_clk.txt` will also be generated.
-  - the bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA).
+There are some example `.cir` files provided in
+  [examples](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_cir). 
 
-## Example of Programming a Three-Stage Ring Oscillator
+## Step 2: Programming MOSbius 
+
+### Option 1: using a Raspberry Pi PICO
+
+To use the Raspberry Pi PICO, you only need a `connections.json` file and the MOSbius micropython scripts on the PICO will generate the necessary *CLK, DATA,* and *EN* signals. 
+
+Please review the documentation at the [MOSbius_MicroPython_Flow](https://github.com/Jianxun/MOSbius_MicroPython_Flow) by Jianxun Zhu for detailed instructions and examples. 
+
+### Option 2: using a Digital Pattern Generator
+
+To use a digital pattern generator (like e.g., the one in the ADALM2000 used below) you need to create bitstream files from the connections file:
+
+   - Execute `connections_to_bitstream -i connections_my_circuit.json -o my_circuit_bitstream.txt -d`
+     - `-d` is not required but will provide output so you can review the conversion.
+     - you can choose your own filename for the output file, but a `.txt` extension is recommended; besides `my_circuit_bitstream.txt`, `my_circuit_bitstream_clk.txt` will also be generated.
+  - the bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA), see below.
+
+## Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator
 
 ### Starting from LTspice Schematic
-We build the 3-stage 16-16-8 ring-oscillator circuit [schematic in LTspice](../2_chapter_ring_oscillator/sim/3stage_RO_16_16_8.zip) using the MOSbius library. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use `BUS9` for VSS and `BUS10` for VDD.
+First, we build the 3-stage 16-16-8 ring-oscillator circuit [schematic in LTspice](../2_chapter_ring_oscillator/sim/3stage_RO_16_16_8.zip) using the MOSbius symbol library. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use `BUS9` for VSS and `BUS10` for VDD.
 ![3stage_RO_8x_schematic](../2_chapter_ring_oscillator/img/3stage_RO_8x.png)
 
 We save the netlist of the circuit as a `.cir` file by right clicking on the schematic, then View Spice Netlist, and File Save as. 
@@ -111,5 +132,7 @@ We now enable the connection matrix by asserting the `EN` signal by shorting the
 
 The measurements are further described [here](../2_chapter_ring_oscillator/ring_oscillator.md). 
 
+[^filename]: You can choose any filename of your liking. 
+[^source]: The source code of the scripts is available from this [Github repository](https://github.com/peterkinget/MOSbiusCADFlow/).
 [^dio_choice]: You can choose any DIO channels of your preference. 
 [^en_jumper]: We chose to use a short jumper cable to short the `EMU_PU` jumper but you can use a standard jumper as well. 
