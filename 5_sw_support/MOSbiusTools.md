@@ -26,7 +26,7 @@ You can create the connections file manually or from an LTspice schematic using 
 
 Once you have the connections file you can proceed with generating bitstream files for your digital pattern generator or upload the connections file to the Raspberry Pi PICO.
 
-<span style="font-size: 150%;">**Installing the MOSbiusTools**</span>
+<span style="font-size: 150%;">**Installing the MOSbiusTools**</span>[^noneed]
 
 We currently provide two scripts [^source] to assist with generating *connections* and *bitstream files* to program the switch matrix on the MOSbius chip. The tools can be installed with a python package from TestPyPI called [MOSbiusTools](https://test.pypi.org/project/MOSbiusTools):
 - we advise to create a virtual environment to install the tools;
@@ -40,7 +40,7 @@ We currently provide two scripts [^source] to assist with generating *connection
 
 ### Manually
 
-  - You can create a connections file in your text editor by starting from [connections.json](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections.json); for each *BUS* list the pcb pin numbers that need to be connected to it [(OTA example)](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections_Miller_OTA_pin.json); let's assume you save it as `connections_my_circuit.json`. 
+  - You can create a connections file in your text editor by starting from [connections.json](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections.json); for each *BUS* list the pcb pin numbers that need to be connected to it [(OTA example)](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections_Miller_OTA_pin.json).
 
 ### From an LTspice Schematic Using `cir_to_connections`
 
@@ -61,15 +61,15 @@ There are some example `.cir` files provided in
 
 ## Step 2: Programming MOSbius 
 
-### Option 1: using a Raspberry Pi PICO
+### Option 1: Using a Raspberry Pi PICO
 
 To use the Raspberry Pi PICO, you only need a `connections.json` file and the MOSbius micropython scripts on the PICO will generate the necessary *CLK, DATA,* and *EN* signals. 
 
 Please review the documentation at the [MOSbius_MicroPython_Flow](https://github.com/Jianxun/MOSbius_MicroPython_Flow) by Jianxun Zhu for detailed instructions and examples. 
 
-### Option 2: using a Digital Pattern Generator
+### Option 2: Using a Digital Pattern Generator
 
-To use a digital pattern generator (like e.g., the one in the ADALM2000 used below) you need to create bitstream files from the connections file:
+To use a digital pattern generator (like e.g., the one in the ADALM2000 used in the example below) you need to create bitstream files from the connections file *connections_my_circuit.json*. 
 
 ``` 
 > connections_to_bitstream -i connections_my_circuit.json -o my_circuit_bitstream.txt -d
@@ -77,15 +77,17 @@ To use a digital pattern generator (like e.g., the one in the ADALM2000 used bel
 - `-d` is not required but will provide output so you can review the conversion.
 - you can choose your own filename for the output file, but a `.txt` extension is recommended; besides `my_circuit_bitstream.txt`, `my_circuit_bitstream_clk.txt` will also be generated.
 
-The bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA), see below.
+The bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA), see the worked-out example below.
 
 ## Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator
 
-### Starting from LTspice Schematic
+### Making the Connections File 
+
+#### Making the Connections File from an LTspice Schematic
 First, we build the 3-stage 16-16-8 ring-oscillator circuit [schematic in LTspice](../2_chapter_ring_oscillator/sim/3stage_RO_16_16_8.zip) using the MOSbius symbol library. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use `BUS9` for VSS and `BUS10` for VDD.
 ![3stage_RO_8x_schematic](../2_chapter_ring_oscillator/img/3stage_RO_8x.png)
 
-We save the netlist of the circuit as a `.cir` file by right clicking on the schematic, then View Spice Netlist, and File Save as. 
+Then, we save the netlist of the circuit as a `.cir` file by right clicking on the schematic, then View Spice Netlist, and File Save as. 
 
 Next, we translate the schematic `cir` file to [connections json file](../2_chapter_ring_oscillator/img/connections_3stage_RO_8x_vdd_10_vss_9.json) (see instructions above):
 
@@ -93,11 +95,11 @@ Next, we translate the schematic `cir` file to [connections json file](../2_chap
 > cir_to_connections -i 3stage_RO_8x_vdd_10_vss_9.cir -o connections_3stage_RO_8x_vdd_10_vss_9.json`
 ```
 
-Continue on with the next step. 
+#### Making the Connections File Manually
 
-### Starting from a Connections File
+You can also create the [connections json file](../2_chapter_ring_oscillator/img/connections_3stage_RO_8x_vdd_10_vss_9.json) manually in a text editor. 
 
-We can generate the [connections json file](../2_chapter_ring_oscillator/img/connections_3stage_RO_8x_vdd_10_vss_9.json) from a schematic or create it manually in a text editor. 
+### Generating the Bitstream File
 
 Then we translate it into a [bitstream](../2_chapter_ring_oscillator/img/3stage_RO_8x_vdd_10_vss_9.txt) and [clock file](../2_chapter_ring_oscillator/img/3stage_RO_8x_vdd_10_vss_9_clk.txt):
 
@@ -138,6 +140,7 @@ We now enable the connection matrix by asserting the `EN` signal by shorting the
 The measurements are further described [here](../2_chapter_ring_oscillator/ring_oscillator.md). 
 
 [^filename]: You can choose any filename of your liking. 
+[^noneed]: If you create your connections files manually and use the Raspberry Pi PICO for programming you will not need the MOSbiusTools. 
 [^source]: The source code of the scripts is available from this [Github repository](https://github.com/peterkinget/MOSbiusCADFlow/).
 [^dio_choice]: You can choose any DIO channels of your preference. 
 [^en_jumper]: We chose to use a short jumper cable to short the `EMU_PU` jumper but you can use a standard jumper as well. 
