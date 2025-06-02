@@ -24,11 +24,11 @@ In both cases, you need a `connections.json` file [^filename] that describes whi
 
 You can create the connections file manually or from an LTspice schematic using the `cir_to_connections` script (see below).
 
-Once you have the connections file you can proceed with generating bitstream files for your digital pattern generator or upload the connections file to the Raspberry Pi PICO
+Once you have the connections file you can proceed with generating bitstream files for your digital pattern generator or upload the connections file to the Raspberry Pi PICO.
 
-## Installing the MOSbiusTools
+<span style="font-size: 150%;">**Installing the MOSbiusTools**</span>
 
-We currently provide two scripts [^source] to assist with generating connections and bitstream files to program the switch matrix on the MOSbius chip. The tools can be installed with a python package from TestPyPI as [MOSbiusTools](https://test.pypi.org/project/MOSbiusTools):
+We currently provide two scripts [^source] to assist with generating *connections* and *bitstream files* to program the switch matrix on the MOSbius chip. The tools can be installed with a python package from TestPyPI called [MOSbiusTools](https://test.pypi.org/project/MOSbiusTools):
 - we advise to create a virtual environment to install the tools;
 - install using `pip3 install -i https://test.pypi.org/simple MOSbiusTools`;
 - this installs the MOSbiusTools module and two executable scripts, more details below:     
@@ -36,23 +36,25 @@ We currently provide two scripts [^source] to assist with generating connections
   - `connections_to_bitstream` converts a connections.json file into a bitstream file for a digital pattern generator to program the MOSbius chip; 
  - after installing the package the scripts should be executable from your command line.
 
-## Step 1: Creating a connections file
+## Step 1: Creating a Connections File
 
 ### Manually
 
   - You can create a connections file in your text editor by starting from [connections.json](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections.json); for each *BUS* list the pcb pin numbers that need to be connected to it [(OTA example)](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections_Miller_OTA_pin.json); let's assume you save it as `connections_my_circuit.json`. 
 
-### From an LTspice schematic using `cir_to_connections`
+### From an LTspice Schematic Using `cir_to_connections`
 
 * create an LTspice schematic using the [MOSbius LTspice Symbol Library](../4_chapter_simulations/LTspice_simulations.md)
 * save your design as a `.cir` file, e.g. `my_circuit.cir`. You obtain a `.cir`
   netlist for your LTSpice circuit by right clicking on the schematic,
   then 'View SPICE Netlist', then 'Save As'. 
-* create a `connections.json` file:
-  - Execute `cir_to_connections -i my_circuit.cir -o connections_my_circuit.json -d`
-  - the `-d` is not required but will provide some output to review the conversion process.
-  - you can choose your own filename for the json file, but a .json is recommended.
-* convert the `connections_my_circuit.json` to a bitstream file with `connections_to_bitstream` -- see next topic.
+* create a connections file:
+```
+> cir_to_connections -i my_circuit.cir -o connections_my_circuit.json -d
+```
+  - Note: 
+    - the `-d` is not required but will provide some output to review the conversion process.
+    - you can choose your own filename for the json file, but a .json is recommended.
 
 There are some example `.cir` files provided in
   [examples](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_cir). 
@@ -69,10 +71,13 @@ Please review the documentation at the [MOSbius_MicroPython_Flow](https://github
 
 To use a digital pattern generator (like e.g., the one in the ADALM2000 used below) you need to create bitstream files from the connections file:
 
-   - Execute `connections_to_bitstream -i connections_my_circuit.json -o my_circuit_bitstream.txt -d`
-     - `-d` is not required but will provide output so you can review the conversion.
-     - you can choose your own filename for the output file, but a `.txt` extension is recommended; besides `my_circuit_bitstream.txt`, `my_circuit_bitstream_clk.txt` will also be generated.
-  - the bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA), see below.
+``` 
+> connections_to_bitstream -i connections_my_circuit.json -o my_circuit_bitstream.txt -d
+```
+- `-d` is not required but will provide output so you can review the conversion.
+- you can choose your own filename for the output file, but a `.txt` extension is recommended; besides `my_circuit_bitstream.txt`, `my_circuit_bitstream_clk.txt` will also be generated.
+
+The bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA), see below.
 
 ## Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator
 

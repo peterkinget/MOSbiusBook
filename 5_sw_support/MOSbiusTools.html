@@ -411,22 +411,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-mosbiustools">4.1. Installing the MOSbiusTools</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-creating-a-connections-file">4.2. Step 1: Creating a connections file</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually">4.2.1. Manually</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-an-ltspice-schematic-using-cir-to-connections">4.2.2. From an LTspice schematic using <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-creating-a-connections-file">4.1. Step 1: Creating a Connections File</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually">4.1.1. Manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-an-ltspice-schematic-using-cir-to-connections">4.1.2. From an LTspice Schematic Using <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-programming-mosbius">4.3. Step 2: Programming MOSbius</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-using-a-raspberry-pi-pico">4.3.1. Option 1: using a Raspberry Pi PICO</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-a-digital-pattern-generator">4.3.2. Option 2: using a Digital Pattern Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-programming-mosbius">4.2. Step 2: Programming MOSbius</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-using-a-raspberry-pi-pico">4.2.1. Option 1: using a Raspberry Pi PICO</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-a-digital-pattern-generator">4.2.2. Option 2: using a Digital Pattern Generator</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator">4.4. Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-ltspice-schematic">4.4.1. Starting from LTspice Schematic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-a-connections-file">4.4.2. Starting from a Connections File</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-the-bitstream-file-into-the-mosbius-chip">4.4.3. Uploading the Bitstream File into the MOSbius Chip</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-the-mosbius-chip">4.4.4. Enabling the MOSbius Chip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator">4.3. Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-ltspice-schematic">4.3.1. Starting from LTspice Schematic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-a-connections-file">4.3.2. Starting from a Connections File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-the-bitstream-file-into-the-mosbius-chip">4.3.3. Uploading the Bitstream File into the MOSbius Chip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-the-mosbius-chip">4.3.4. Enabling the MOSbius Chip</a></li>
 </ul>
 </li>
 </ul>
@@ -463,10 +462,9 @@ document.write(`
 </pre></div>
 </div>
 <p>You can create the connections file manually or from an LTspice schematic using the <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span></code> script (see below).</p>
-<p>Once you have the connections file you can proceed with generating bitstream files for your digital pattern generator or upload the connections file to the Raspberry Pi PICO</p>
-<section id="installing-the-mosbiustools">
-<h2><span class="section-number">4.1. </span>Installing the MOSbiusTools<a class="headerlink" href="#installing-the-mosbiustools" title="Link to this heading">#</a></h2>
-<p>We currently provide two scripts <a class="footnote-reference brackets" href="#source" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> to assist with generating connections and bitstream files to program the switch matrix on the MOSbius chip. The tools can be installed with a python package from TestPyPI as <a class="reference external" href="https://test.pypi.org/project/MOSbiusTools">MOSbiusTools</a>:</p>
+<p>Once you have the connections file you can proceed with generating bitstream files for your digital pattern generator or upload the connections file to the Raspberry Pi PICO.</p>
+<p><span style="font-size: 150%;"><strong>Installing the MOSbiusTools</strong></span></p>
+<p>We currently provide two scripts <a class="footnote-reference brackets" href="#source" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> to assist with generating <em>connections</em> and <em>bitstream files</em> to program the switch matrix on the MOSbius chip. The tools can be installed with a python package from TestPyPI called <a class="reference external" href="https://test.pypi.org/project/MOSbiusTools">MOSbiusTools</a>:</p>
 <ul class="simple">
 <li><p>we advise to create a virtual environment to install the tools;</p></li>
 <li><p>install using <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-i</span> <span class="pre">https://test.pypi.org/simple</span> <span class="pre">MOSbiusTools</span></code>;</p></li>
@@ -478,60 +476,62 @@ document.write(`
 </li>
 <li><p>after installing the package the scripts should be executable from your command line.</p></li>
 </ul>
-</section>
 <section id="step-1-creating-a-connections-file">
-<h2><span class="section-number">4.2. </span>Step 1: Creating a connections file<a class="headerlink" href="#step-1-creating-a-connections-file" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Step 1: Creating a Connections File<a class="headerlink" href="#step-1-creating-a-connections-file" title="Link to this heading">#</a></h2>
 <section id="manually">
-<h3><span class="section-number">4.2.1. </span>Manually<a class="headerlink" href="#manually" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.1.1. </span>Manually<a class="headerlink" href="#manually" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>You can create a connections file in your text editor by starting from <a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections.json">connections.json</a>; for each <em>BUS</em> list the pcb pin numbers that need to be connected to it <a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections_Miller_OTA_pin.json">(OTA example)</a>; let’s assume you save it as <code class="docutils literal notranslate"><span class="pre">connections_my_circuit.json</span></code>.</p></li>
 </ul>
 </section>
 <section id="from-an-ltspice-schematic-using-cir-to-connections">
-<h3><span class="section-number">4.2.2. </span>From an LTspice schematic using <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span></code><a class="headerlink" href="#from-an-ltspice-schematic-using-cir-to-connections" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.1.2. </span>From an LTspice Schematic Using <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span></code><a class="headerlink" href="#from-an-ltspice-schematic-using-cir-to-connections" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>create an LTspice schematic using the <a class="reference internal" href="../4_chapter_simulations/LTspice_simulations.html"><span class="std std-doc">MOSbius LTspice Symbol Library</span></a></p></li>
 <li><p>save your design as a <code class="docutils literal notranslate"><span class="pre">.cir</span></code> file, e.g. <code class="docutils literal notranslate"><span class="pre">my_circuit.cir</span></code>. You obtain a <code class="docutils literal notranslate"><span class="pre">.cir</span></code>
 netlist for your LTSpice circuit by right clicking on the schematic,
 then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
-<li><p>create a <code class="docutils literal notranslate"><span class="pre">connections.json</span></code> file:</p>
+<li><p>create a connections file:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cir_to_connections</span> <span class="o">-</span><span class="n">i</span> <span class="n">my_circuit</span><span class="o">.</span><span class="n">cir</span> <span class="o">-</span><span class="n">o</span> <span class="n">connections_my_circuit</span><span class="o">.</span><span class="n">json</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Note:</p>
 <ul>
-<li><p>Execute <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span> <span class="pre">-i</span> <span class="pre">my_circuit.cir</span> <span class="pre">-o</span> <span class="pre">connections_my_circuit.json</span> <span class="pre">-d</span></code></p></li>
 <li><p>the <code class="docutils literal notranslate"><span class="pre">-d</span></code> is not required but will provide some output to review the conversion process.</p></li>
 <li><p>you can choose your own filename for the json file, but a .json is recommended.</p></li>
 </ul>
 </li>
-<li><p>convert the <code class="docutils literal notranslate"><span class="pre">connections_my_circuit.json</span></code> to a bitstream file with <code class="docutils literal notranslate"><span class="pre">connections_to_bitstream</span></code> – see next topic.</p></li>
 </ul>
 <p>There are some example <code class="docutils literal notranslate"><span class="pre">.cir</span></code> files provided in
 <a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_cir">examples</a>.</p>
 </section>
 </section>
 <section id="step-2-programming-mosbius">
-<h2><span class="section-number">4.3. </span>Step 2: Programming MOSbius<a class="headerlink" href="#step-2-programming-mosbius" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Step 2: Programming MOSbius<a class="headerlink" href="#step-2-programming-mosbius" title="Link to this heading">#</a></h2>
 <section id="option-1-using-a-raspberry-pi-pico">
-<h3><span class="section-number">4.3.1. </span>Option 1: using a Raspberry Pi PICO<a class="headerlink" href="#option-1-using-a-raspberry-pi-pico" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.1. </span>Option 1: using a Raspberry Pi PICO<a class="headerlink" href="#option-1-using-a-raspberry-pi-pico" title="Link to this heading">#</a></h3>
 <p>To use the Raspberry Pi PICO, you only need a <code class="docutils literal notranslate"><span class="pre">connections.json</span></code> file and the MOSbius micropython scripts on the PICO will generate the necessary <em>CLK, DATA,</em> and <em>EN</em> signals.</p>
 <p>Please review the documentation at the <a class="reference external" href="https://github.com/Jianxun/MOSbius_MicroPython_Flow">MOSbius_MicroPython_Flow</a> by Jianxun Zhu for detailed instructions and examples.</p>
 </section>
 <section id="option-2-using-a-digital-pattern-generator">
-<h3><span class="section-number">4.3.2. </span>Option 2: using a Digital Pattern Generator<a class="headerlink" href="#option-2-using-a-digital-pattern-generator" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.2. </span>Option 2: using a Digital Pattern Generator<a class="headerlink" href="#option-2-using-a-digital-pattern-generator" title="Link to this heading">#</a></h3>
 <p>To use a digital pattern generator (like e.g., the one in the ADALM2000 used below) you need to create bitstream files from the connections file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">connections_to_bitstream</span> <span class="o">-</span><span class="n">i</span> <span class="n">connections_my_circuit</span><span class="o">.</span><span class="n">json</span> <span class="o">-</span><span class="n">o</span> <span class="n">my_circuit_bitstream</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
 <ul class="simple">
-<li><p>Execute <code class="docutils literal notranslate"><span class="pre">connections_to_bitstream</span> <span class="pre">-i</span> <span class="pre">connections_my_circuit.json</span> <span class="pre">-o</span> <span class="pre">my_circuit_bitstream.txt</span> <span class="pre">-d</span></code></p>
-<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> is not required but will provide output so you can review the conversion.</p></li>
 <li><p>you can choose your own filename for the output file, but a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> extension is recommended; besides <code class="docutils literal notranslate"><span class="pre">my_circuit_bitstream.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">my_circuit_bitstream_clk.txt</span></code> will also be generated.</p></li>
 </ul>
-</li>
-<li><p>the bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA), see below.</p></li>
-</ul>
+<p>The bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA), see below.</p>
 </section>
 </section>
 <section id="worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator">
-<h2><span class="section-number">4.4. </span>Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator<a class="headerlink" href="#worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator<a class="headerlink" href="#worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator" title="Link to this heading">#</a></h2>
 <section id="starting-from-ltspice-schematic">
-<h3><span class="section-number">4.4.1. </span>Starting from LTspice Schematic<a class="headerlink" href="#starting-from-ltspice-schematic" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.1. </span>Starting from LTspice Schematic<a class="headerlink" href="#starting-from-ltspice-schematic" title="Link to this heading">#</a></h3>
 <p>First, we build the 3-stage 16-16-8 ring-oscillator circuit <a class="reference download internal" download="" href="../_downloads/48cdc1fac660b4187958abe416602d2d/3stage_RO_16_16_8.zip"><span class="xref download myst">schematic in LTspice</span></a> using the MOSbius symbol library. It uses the two 16x inverter stages and creates an 8x inverter stage by combining the pairs of 4x nMOS and pMOS transistors; we use <code class="docutils literal notranslate"><span class="pre">BUS9</span></code> for VSS and <code class="docutils literal notranslate"><span class="pre">BUS10</span></code> for VDD.
 <img alt="3stage_RO_8x_schematic" src="../_images/3stage_RO_8x.png" /></p>
 <p>We save the netlist of the circuit as a <code class="docutils literal notranslate"><span class="pre">.cir</span></code> file by right clicking on the schematic, then View Spice Netlist, and File Save as.</p>
@@ -542,7 +542,7 @@ then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
 <p>Continue on with the next step.</p>
 </section>
 <section id="starting-from-a-connections-file">
-<h3><span class="section-number">4.4.2. </span>Starting from a Connections File<a class="headerlink" href="#starting-from-a-connections-file" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.2. </span>Starting from a Connections File<a class="headerlink" href="#starting-from-a-connections-file" title="Link to this heading">#</a></h3>
 <p>We can generate the <a class="reference download internal" download="" href="../_downloads/f4b5044828f5358d316dc7f05f2bb0a3/connections_3stage_RO_8x_vdd_10_vss_9.json"><span class="xref download myst">connections json file</span></a> from a schematic or create it manually in a text editor.</p>
 <p>Then we translate it into a <a class="reference download internal" download="" href="../_downloads/8f9a87260924670769a82b94adc17525/3stage_RO_8x_vdd_10_vss_9.txt"><span class="xref download myst">bitstream</span></a> and <a class="reference download internal" download="" href="../_downloads/d80a932f04ac907a7716515c2253a795/3stage_RO_8x_vdd_10_vss_9_clk.txt"><span class="xref download myst">clock file</span></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">connections_to_bitstream</span> <span class="o">-</span><span class="n">i</span> <span class="n">connections_3stage_RO_8x_vdd_10_vss_9</span><span class="o">.</span><span class="n">json</span> <span class="o">-</span><span class="n">o</span> <span class="mi">3</span><span class="n">stage_RO_8x_vdd_10_vss_9</span><span class="o">.</span><span class="n">txt</span> 
@@ -550,7 +550,7 @@ then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
 </div>
 </section>
 <section id="uploading-the-bitstream-file-into-the-mosbius-chip">
-<h3><span class="section-number">4.4.3. </span>Uploading the Bitstream File into the MOSbius Chip<a class="headerlink" href="#uploading-the-bitstream-file-into-the-mosbius-chip" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.3. </span>Uploading the Bitstream File into the MOSbius Chip<a class="headerlink" href="#uploading-the-bitstream-file-into-the-mosbius-chip" title="Link to this heading">#</a></h3>
 <p>The chip is connected to the ADALM2000 as shown here:
 <img alt="3stage_RO_ready_for_programming" src="../_images/3stage_RO_8x_ready_for_programming.jpeg" /></p>
 <p>DIO channels 8 and 9<a class="footnote-reference brackets" href="#dio-choice" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> are wired to the <code class="docutils literal notranslate"><span class="pre">CK</span></code> and <code class="docutils literal notranslate"><span class="pre">DT</span></code> headers respectively at the top of the PCB that are the inputs of the digital level converters. Jumpers are placed on the <code class="docutils literal notranslate"><span class="pre">DATA</span></code> and <code class="docutils literal notranslate"><span class="pre">CLK</span></code> headers on the top left to connect the level-converted digital signals to the MOSbius chip. In this example, we are using a <em>manual</em> <code class="docutils literal notranslate"><span class="pre">EN1</span></code>. A jumper is placed on the bottom header on the top left of the PCB. The <code class="docutils literal notranslate"><span class="pre">EMU_PU</span></code>is left open for now (short jumper cable is dangling in the air in the photo). Please review <a class="reference internal" href="../1_chapter_description/description.html"><span class="std std-doc">the PCB description</span></a>.</p>
@@ -577,7 +577,7 @@ then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
 <p>We <em>turn on</em> the 2.5V power supply for the MOSbius chip (the red LED on the PCB turns on) and then upload the bitstream into the MOSbius chip using the <strong>Single (Run)</strong> function. If you look closely you see the data/clock LEDs on the PCB flicker briefly.</p>
 </section>
 <section id="enabling-the-mosbius-chip">
-<h3><span class="section-number">4.4.4. </span>Enabling the MOSbius Chip<a class="headerlink" href="#enabling-the-mosbius-chip" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.4. </span>Enabling the MOSbius Chip<a class="headerlink" href="#enabling-the-mosbius-chip" title="Link to this heading">#</a></h3>
 <p><img alt="3stage_RO_ready_for_programming" src="../_images/3stage_RO_8x_in_operation.jpeg" /></p>
 <p>We now enable the connection matrix by asserting the <code class="docutils literal notranslate"><span class="pre">EN</span></code> signal by shorting the <code class="docutils literal notranslate"><span class="pre">EMU_PU</span></code> jumper connection<a class="footnote-reference brackets" href="#en-jumper" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>. Notice that the red LED shows that the chip is powered and the orange LED shows the switch matrix is enabled.</p>
 <p>The measurements are further described <a class="reference internal" href="../2_chapter_ring_oscillator/ring_oscillator.html"><span class="std std-doc">here</span></a>.</p>
@@ -668,22 +668,21 @@ then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-mosbiustools">4.1. Installing the MOSbiusTools</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-creating-a-connections-file">4.2. Step 1: Creating a connections file</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually">4.2.1. Manually</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-an-ltspice-schematic-using-cir-to-connections">4.2.2. From an LTspice schematic using <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-creating-a-connections-file">4.1. Step 1: Creating a Connections File</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually">4.1.1. Manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-an-ltspice-schematic-using-cir-to-connections">4.1.2. From an LTspice Schematic Using <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-programming-mosbius">4.3. Step 2: Programming MOSbius</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-using-a-raspberry-pi-pico">4.3.1. Option 1: using a Raspberry Pi PICO</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-a-digital-pattern-generator">4.3.2. Option 2: using a Digital Pattern Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-programming-mosbius">4.2. Step 2: Programming MOSbius</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-using-a-raspberry-pi-pico">4.2.1. Option 1: using a Raspberry Pi PICO</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-a-digital-pattern-generator">4.2.2. Option 2: using a Digital Pattern Generator</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator">4.4. Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-ltspice-schematic">4.4.1. Starting from LTspice Schematic</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-a-connections-file">4.4.2. Starting from a Connections File</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-the-bitstream-file-into-the-mosbius-chip">4.4.3. Uploading the Bitstream File into the MOSbius Chip</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-the-mosbius-chip">4.4.4. Enabling the MOSbius Chip</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator">4.3. Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-ltspice-schematic">4.3.1. Starting from LTspice Schematic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-from-a-connections-file">4.3.2. Starting from a Connections File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-the-bitstream-file-into-the-mosbius-chip">4.3.3. Uploading the Bitstream File into the MOSbius Chip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enabling-the-mosbius-chip">4.3.4. Enabling the MOSbius Chip</a></li>
 </ul>
 </li>
 </ul>
