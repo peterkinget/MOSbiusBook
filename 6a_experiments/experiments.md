@@ -9,6 +9,9 @@ This section of the manual focuses on lab experiments for senior undergraduates 
 <!-- * Familiarize yourself with the MOSbius platform by building the blinky and/or ring oscillator experiments -->
 
 **Experiments**
+
+*NOTE:* The experiments described here do not require using the on-chip switch matrix and only use external wiring. This simplifies the logistics of running the labs. 
+
 ```{tableofcontents}
 ```
 

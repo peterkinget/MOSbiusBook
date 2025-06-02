@@ -10,4 +10,4 @@
     assembled some of the MOSbius PCBs
 - [Yuechen He](https://www.linkedin.com/in/yuechenhe/) and [Jingde He](https://www.linkedin.com)
     helped develop the lab experiments
-- [Jianxun Zhu](https://www.linkedin.com/in/coiughdpjlpse797eloa) has updated the LTspice library and developed demonstrators; he also made the beautiful MOSbius logo animation
+- [Jianxun Zhu](https://www.linkedin.com/in/coiughdpjlpse797eloa) has updated the LTspice library, created the Raspberry Pi PICO flow, and developed circuit demonstrators; he also made the beautiful MOSbius logo animation
