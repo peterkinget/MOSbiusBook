@@ -487,6 +487,8 @@ document.write(`
 <ul class="simple">
 <li><p>You can create a connections file in your text editor by starting from <a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections.json">connections.json</a>; for each <em>BUS</em> list the pcb pin numbers that need to be connected to it <a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections_Miller_OTA_pin.json">(OTA example)</a>.</p></li>
 </ul>
+<p>There are <code class="docutils literal notranslate"><span class="pre">.json</span></code> file examples above and in
+<a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections">examples</a>.</p>
 </section>
 <section id="from-an-ltspice-schematic-using-cir-to-connections">
 <h3><span class="section-number">4.1.2. </span>From an LTspice Schematic Using <code class="docutils literal notranslate"><span class="pre">cir_to_connections</span></code><a class="headerlink" href="#from-an-ltspice-schematic-using-cir-to-connections" title="Link to this heading">#</a></h3>
@@ -516,7 +518,7 @@ then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
 <h2><span class="section-number">4.2. </span>Step 2: Programming MOSbius<a class="headerlink" href="#step-2-programming-mosbius" title="Link to this heading">#</a></h2>
 <section id="option-1-using-a-raspberry-pi-pico">
 <h3><span class="section-number">4.2.1. </span>Option 1: Using a Raspberry Pi PICO<a class="headerlink" href="#option-1-using-a-raspberry-pi-pico" title="Link to this heading">#</a></h3>
-<p>To use the Raspberry Pi PICO, you only need a <code class="docutils literal notranslate"><span class="pre">connections.json</span></code> file and the MOSbius micropython scripts on the PICO will generate the necessary <em>CLK, DATA,</em> and <em>EN</em> signals.</p>
+<p>To use the Raspberry Pi PICO, you only need a <em>connections.json</em> file and the MOSbius micropython scripts on the PICO will generate the necessary <em>CLK, DATA,</em> and <em>EN</em> signals.</p>
 <p>Please review the documentation at the <a class="reference external" href="https://github.com/Jianxun/MOSbius_MicroPython_Flow">MOSbius_MicroPython_Flow</a> by Jianxun Zhu for detailed instructions and examples.</p>
 </section>
 <section id="option-2-using-a-digital-pattern-generator">
