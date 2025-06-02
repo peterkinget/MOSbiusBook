@@ -42,6 +42,9 @@ We currently provide two scripts [^source] to assist with generating *connection
 
   - You can create a connections file in your text editor by starting from [connections.json](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections.json); for each *BUS* list the pcb pin numbers that need to be connected to it [(OTA example)](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections/connections_Miller_OTA_pin.json).
 
+There are `.json` file examples above and in
+  [examples](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_connections). 
+
 ### From an LTspice Schematic Using `cir_to_connections`
 
 * create an LTspice schematic using the [MOSbius LTspice Symbol Library](../4_chapter_simulations/LTspice_simulations.md)
@@ -63,7 +66,7 @@ There are some example `.cir` files provided in
 
 ### Option 1: Using a Raspberry Pi PICO
 
-To use the Raspberry Pi PICO, you only need a `connections.json` file and the MOSbius micropython scripts on the PICO will generate the necessary *CLK, DATA,* and *EN* signals. 
+To use the Raspberry Pi PICO, you only need a *connections.json* file and the MOSbius micropython scripts on the PICO will generate the necessary *CLK, DATA,* and *EN* signals. 
 
 Please review the documentation at the [MOSbius_MicroPython_Flow](https://github.com/Jianxun/MOSbius_MicroPython_Flow) by Jianxun Zhu for detailed instructions and examples. 
 
