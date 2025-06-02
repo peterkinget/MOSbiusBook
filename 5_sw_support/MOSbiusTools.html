@@ -421,7 +421,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-a-digital-pattern-generator">4.2.2. Option 2: Using a Digital Pattern Generator</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator">4.3. Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-out-example-of-programming-the-mosbius-chip-using-the-adalm-2000-digital-pattern-generator">4.3. Worked-out Example of Programming the MOSbius Chip using the ADALM 2000 Digital Pattern Generator</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-connections-file">4.3.1. Making the Connections File</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-connections-file-from-an-ltspice-schematic">Making the Connections File from an LTspice Schematic</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-connections-file-manually">Making the Connections File Manually</a></li>
@@ -506,7 +506,7 @@ then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
 <li><p>Note:</p>
 <ul>
 <li><p>the <code class="docutils literal notranslate"><span class="pre">-d</span></code> is not required but will provide some output to review the conversion process.</p></li>
-<li><p>you can choose your own filename for the json file, but a .json is recommended.</p></li>
+<li><p>you can choose your own filename for the json file, but a .json extension is recommended.</p></li>
 </ul>
 </li>
 </ul>
@@ -534,8 +534,9 @@ then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
 <p>The bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA), see the worked-out example below.</p>
 </section>
 </section>
-<section id="worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator">
-<h2><span class="section-number">4.3. </span>Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator<a class="headerlink" href="#worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator" title="Link to this heading">#</a></h2>
+<section id="worked-out-example-of-programming-the-mosbius-chip-using-the-adalm-2000-digital-pattern-generator">
+<h2><span class="section-number">4.3. </span>Worked-out Example of Programming the MOSbius Chip using the ADALM 2000 Digital Pattern Generator<a class="headerlink" href="#worked-out-example-of-programming-the-mosbius-chip-using-the-adalm-2000-digital-pattern-generator" title="Link to this heading">#</a></h2>
+<p>Here we go through all the steps to program the chip using a digital pattern generator. We use a 3-stage ring oscillator as an example.</p>
 <section id="making-the-connections-file">
 <h3><span class="section-number">4.3.1. </span>Making the Connections File<a class="headerlink" href="#making-the-connections-file" title="Link to this heading">#</a></h3>
 <section id="making-the-connections-file-from-an-ltspice-schematic">
@@ -555,7 +556,7 @@ then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
 </section>
 <section id="generating-the-bitstream-file">
 <h3><span class="section-number">4.3.2. </span>Generating the Bitstream File<a class="headerlink" href="#generating-the-bitstream-file" title="Link to this heading">#</a></h3>
-<p>Then we translate it into a <a class="reference download internal" download="" href="../_downloads/8f9a87260924670769a82b94adc17525/3stage_RO_8x_vdd_10_vss_9.txt"><span class="xref download myst">bitstream</span></a> and <a class="reference download internal" download="" href="../_downloads/d80a932f04ac907a7716515c2253a795/3stage_RO_8x_vdd_10_vss_9_clk.txt"><span class="xref download myst">clock file</span></a>:</p>
+<p>Then we translate the connections file into a <a class="reference download internal" download="" href="../_downloads/8f9a87260924670769a82b94adc17525/3stage_RO_8x_vdd_10_vss_9.txt"><span class="xref download myst">bitstream</span></a> and <a class="reference download internal" download="" href="../_downloads/d80a932f04ac907a7716515c2253a795/3stage_RO_8x_vdd_10_vss_9_clk.txt"><span class="xref download myst">clock file</span></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">connections_to_bitstream</span> <span class="o">-</span><span class="n">i</span> <span class="n">connections_3stage_RO_8x_vdd_10_vss_9</span><span class="o">.</span><span class="n">json</span> <span class="o">-</span><span class="n">o</span> <span class="mi">3</span><span class="n">stage_RO_8x_vdd_10_vss_9</span><span class="o">.</span><span class="n">txt</span> 
 </pre></div>
 </div>
@@ -693,7 +694,7 @@ then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-a-digital-pattern-generator">4.2.2. Option 2: Using a Digital Pattern Generator</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-out-example-of-programming-a-three-stage-ring-oscillator-using-the-adalm-2000-digital-pattern-generator">4.3. Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-out-example-of-programming-the-mosbius-chip-using-the-adalm-2000-digital-pattern-generator">4.3. Worked-out Example of Programming the MOSbius Chip using the ADALM 2000 Digital Pattern Generator</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-connections-file">4.3.1. Making the Connections File</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-connections-file-from-an-ltspice-schematic">Making the Connections File from an LTspice Schematic</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-connections-file-manually">Making the Connections File Manually</a></li>

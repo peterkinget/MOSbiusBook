@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6. How to Order a MOSbius" href="../ordering/ordering.html" />
-    <link rel="prev" title="4. Programming the Chip Using the MOSBiusTools" href="../5_sw_support/MOSbiusTools.html" />
+    <link rel="prev" title="4. Programming the Chip" href="../5_sw_support/MOSbiusTools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -207,7 +207,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../6a_experiments/solutions.html">3.2. Solutions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../5_sw_support/MOSbiusTools.html">4. Programming the Chip Using the MOSBiusTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_sw_support/MOSbiusTools.html">4. Programming the Chip</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Spice Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ordering/ordering.html">6. How to Order a MOSbius</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mosbius_crew/mosbius_crew.html">7. The MOSbius Crew</a></li>
@@ -435,13 +435,14 @@ the MOSbius chip in <a class="reference external" href="https://www.analog.com/e
 <section id="custom-library">
 <h2><span class="section-number">5.1. </span>Custom Library<a class="headerlink" href="#custom-library" title="Link to this heading">#</a></h2>
 <figure class="align-default" id="id3">
-<img alt="../_images/template_all_transistors.png" src="../_images/template_all_transistors.png" />
+<img alt="../_images/LTspiceSymbolLibrary.png" src="../_images/LTspiceSymbolLibrary.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Screenshot of the custom symbol library for LTspice containing all transistors and transistor groups available on the MOSbius chip</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The library <code class="docutils literal notranslate"><span class="pre">library</span> <span class="pre">pcb</span> <span class="pre">pin</span> <span class="pre">numbers</span> <span class="pre">tsmc025_public</span></code> contains symbols for each of the transistor arrangements on the MOSbius chip. The terminals are labeled with the corresponding pcb pin numbers<a class="footnote-reference brackets" href="#chipnumbers" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
-<p>The simplest way to start a circuit schematic for an experiment is to copy<a class="footnote-reference brackets" href="#ltspice-lib" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> the <code class="docutils literal notranslate"><span class="pre">Template_MOSbius_transistors.asc</span></code> file in the same folder and name it for your experiment. Then rearrange the transistors you will be using in your circuit as shown in the examples below.</p>
+<p>Download <code class="docutils literal notranslate"><span class="pre">MOSbius_chip_library.zip</span></code> from the <code class="docutils literal notranslate"><span class="pre">LTspice</span></code> folder in <a class="reference external" href="https://github.com/peterkinget/MOSbiusCADFlow/">Github</a> and unzip it in your working directory.</p>
+<p>The library <code class="docutils literal notranslate"><span class="pre">MOSbius_chip_library</span></code> contains symbols for each of the transistor arrangements on the MOSbius chip. The terminals are labeled with the corresponding pcb pin numbers<a class="footnote-reference brackets" href="#chipnumbers" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>The simplest way to start a circuit schematic for an experiment is to copy<a class="footnote-reference brackets" href="#ltspice-lib" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> the <code class="docutils literal notranslate"><span class="pre">MOSbius_chip.asc</span></code> file in the same folder and name it for your experiment. Then rearrange the transistors you will be using in your circuit as shown in the examples below.</p>
 <p>Many nMOS transistors are directly connected to <em>VSS</em> (node 0) and many pMOS transistors are directly connected to <em>VDD</em> (declared as a global node); make sure to keep the <code class="docutils literal notranslate"><span class="pre">.global</span></code>, the <code class="docutils literal notranslate"><span class="pre">.param</span></code> and the <code class="docutils literal notranslate"><span class="pre">.inc</span></code> statements in your schematic, along with the voltage source for <em>VDD</em>.</p>
 <p>There are 10 buses available <code class="docutils literal notranslate"><span class="pre">BUS01</span></code> through <code class="docutils literal notranslate"><span class="pre">BUS10</span></code>; use those to name your internal nodes and the <a class="reference internal" href="../5_sw_support/MOSbiusTools.html"><span class="std std-doc">MOSbius chip programming tools</span></a> can then generate the connection pattern and bitstream file for the on-chip switch matrix (see also below). You can choose to connect the <em>VDD</em> and <em>VSS</em> to a BUS, but you have to use the provided circuit blocks <code class="docutils literal notranslate"><span class="pre">chip_vdd</span></code> and <code class="docutils literal notranslate"><span class="pre">chip_vss</span></code>. In our examples, we typically choose to connect <code class="docutils literal notranslate"><span class="pre">BUS09</span></code> to <em>VSS</em> and <code class="docutils literal notranslate"><span class="pre">BUS10</span></code> to <em>VDD</em> where needed.</p>
 </section>
@@ -452,18 +453,21 @@ the MOSbius chip in <a class="reference external" href="https://www.analog.com/e
 </section>
 <section id="example">
 <h2><span class="section-number">5.3. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
-<p>There are examples provided all throughout this book/website but here we show a larger circuit.</p>
-<figure class="align-default" id="id4">
-<img alt="../_images/Example555SimulationSchematic.png" src="../_images/Example555SimulationSchematic.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Illustration of how a MOS version of a 555 timer can be implemented with the MOSbius chip and simulated with the symbol library</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id5">
-<img alt="../_images/Example555OscillatorSchematic.svg" src="../_images/Example555OscillatorSchematic.svg" /><figcaption>
-<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text">External components are added to the 555 timer realization with the MOSbius chip to create an oscillator</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+<p>Here are two examples:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/fe1ebb425c814927755a0f6b6c28d62a/blinky_relaxation_osc.zip"><span class="xref download myst">Blinky</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/48cdc1fac660b4187958abe416602d2d/3stage_RO_16_16_8.zip"><span class="xref download myst">3-Stage Ring Oscillator</span></a></p></li>
+</ul>
+<!--
+There are examples provided all throughout this book/website but here we show a larger circuit. 
+
+>```{figure} img/Example555SimulationSchematic.png
+Illustration of how a MOS version of a 555 timer can be implemented with the MOSbius chip and simulated with the symbol library
+```
+```{figure} img/Example555OscillatorSchematic.svg
+External components are added to the 555 timer realization with the MOSbius chip to create an oscillator
+```
+-->
 </section>
 <section id="creating-a-bitstream-file-from-an-ltspice-schematic">
 <h2><span class="section-number">5.4. </span>Creating a Bitstream File from an LTspice Schematic<a class="headerlink" href="#creating-a-bitstream-file-from-an-ltspice-schematic" title="Link to this heading">#</a></h2>
@@ -472,7 +476,7 @@ the MOSbius chip in <a class="reference external" href="https://www.analog.com/e
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="chipnumbers" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>In the <code class="docutils literal notranslate"><span class="pre">old_symbols/library</span> <span class="pre">chip</span> <span class="pre">pin</span> <span class="pre">numbers</span> <span class="pre">tsmc025_public</span></code> folder in the repository you can find symbols using the chip numbers; however, the MOSbiusTools to generate bitstreams are currently written assuming the schematic is using PCB pin numbers.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">OLD</span></code> folder in the repository you can find symbols using the chip numbers; however, the MOSbiusTools to generate bitstreams are currently written assuming the schematic is using PCB pin numbers.</p>
 </aside>
 <aside class="footnote brackets" id="ltspice-lib" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
@@ -518,7 +522,7 @@ the MOSbius chip in <a class="reference external" href="https://www.analog.com/e
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Programming the Chip Using the MOSBiusTools</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Programming the Chip</p>
       </div>
     </a>
     <a class="right-next"

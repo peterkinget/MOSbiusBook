@@ -57,7 +57,7 @@ There are `.json` file examples above and in
 ```
   - Note: 
     - the `-d` is not required but will provide some output to review the conversion process.
-    - you can choose your own filename for the json file, but a .json is recommended.
+    - you can choose your own filename for the json file, but a .json extension is recommended.
 
 There are some example `.cir` files provided in
   [examples](https://github.com/peterkinget/MOSbiusCADFlow/tree/main/MOSbiusTools/MOSbiusTools/scripts/examples_cir). 
@@ -82,7 +82,9 @@ To use a digital pattern generator (like e.g., the one in the ADALM2000 used in 
 
 The bitstream files can be used with the ADALM2000 to generate the digital programming waveforms (CLK and DATA), see the worked-out example below.
 
-## Worked-out Example of Programming a Three-Stage Ring Oscillator using the ADALM 2000 Digital Pattern Generator
+## Worked-out Example of Programming the MOSbius Chip using the ADALM 2000 Digital Pattern Generator
+
+Here we go through all the steps to program the chip using a digital pattern generator. We use a 3-stage ring oscillator as an example. 
 
 ### Making the Connections File 
 
@@ -104,7 +106,7 @@ You can also create the [connections json file](../2_chapter_ring_oscillator/img
 
 ### Generating the Bitstream File
 
-Then we translate it into a [bitstream](../2_chapter_ring_oscillator/img/3stage_RO_8x_vdd_10_vss_9.txt) and [clock file](../2_chapter_ring_oscillator/img/3stage_RO_8x_vdd_10_vss_9_clk.txt):
+Then we translate the connections file into a [bitstream](../2_chapter_ring_oscillator/img/3stage_RO_8x_vdd_10_vss_9.txt) and [clock file](../2_chapter_ring_oscillator/img/3stage_RO_8x_vdd_10_vss_9_clk.txt):
 
 ```
 > connections_to_bitstream -i connections_3stage_RO_8x_vdd_10_vss_9.json -o 3stage_RO_8x_vdd_10_vss_9.txt 
