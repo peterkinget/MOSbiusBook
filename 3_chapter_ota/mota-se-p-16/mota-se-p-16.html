@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -207,15 +207,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../../6a_experiments/solutions.html">3.2. Solutions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../5_sw_support/MOSbiusTools.html">4. Programming the Chip Using the MOSBiusTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../5_sw_support/MOSbiusTools.html">4. Programming the Chip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../4_chapter_simulations/LTspice_simulations.html">5. Spice Simulations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ordering/ordering.html">6. How to Order a MOSbius</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../mosbius_crew/mosbius_crew.html">7. The MOSbius Crew</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../9_back_matter/acknowledgments.html">8. Acknowledgments</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendices/appendices.html">9. Appendices</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../app_pcb_test/pcb_test.html">9.1. Testing Your MOSbius PCB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../8_chapter_chip_design_details/chip_design_details.html">9.2. MOSbius Chip Design Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../app_adalm2000/adalm2000.html">9.3. ADALM2000 Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discussion/discussion.html">6. Discussion Forum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ordering/ordering.html">7. How to Order a MOSbius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mosbius_crew/mosbius_crew.html">8. The MOSbius Crew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../9_back_matter/acknowledgments.html">9. Acknowledgments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appendices/appendices.html">10. Appendices</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../app_pcb_test/pcb_test.html">10.1. Testing Your MOSbius PCB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../8_chapter_chip_design_details/chip_design_details.html">10.2. MOSbius Chip Design Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../app_adalm2000/adalm2000.html">10.3. ADALM2000 Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -469,13 +470,13 @@ This section is a work <em>in progress</em>. Many of the measurements presented 
 <figure class="align-default" id="id7">
 <img alt="../../_images/Miller_OTA_pin.png" src="../../_images/Miller_OTA_pin.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.8 </span><span class="caption-text">Simulation schematic of the two-stage Miller-compensated OTA including an external DC feedback for open-loop AC simulations</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Simulation schematic of the two-stage Miller-compensated OTA including an external DC feedback for open-loop AC simulations</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id8">
 <img alt="../../_images/Miller_OTA_pin_IMG_2989.jpeg" src="../../_images/Miller_OTA_pin_IMG_2989.jpeg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.9 </span><span class="caption-text">Solderless breadboard setup for the two-stage Miller-compensated OTA configured in unity-gain feedback</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Solderless breadboard setup for the two-stage Miller-compensated OTA configured in unity-gain feedback</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>A two-stage Miller-Compensated OTA with a 4x pMOS input differential pair and a 16x nMOS second stage is biased with a nominal 1x current of 100uA. Files:(<code class="docutils literal notranslate"><span class="pre">&lt;TBD</span> <span class="pre">spice</span> <span class="pre">lib&gt;</span></code> <a class="reference download internal" download="" href="../../_downloads/c68875c21d50679503f4928c8a6f5d4d/Miller_OTA_pin.cir"><span class="xref download myst">cir</span></a>, <a class="reference download internal" download="" href="../../_downloads/cada326eeb338f58024f25c984c6b588/Miller_OTA_pin_bitstream.txt"><span class="xref download myst">bitstream</span></a>, <a class="reference download internal" download="" href="../../_downloads/1d6ac2ffcbf0b81276c3c203be48bab4/Miller_OTA_pin_bitstream_clk.txt"><span class="xref download myst">clk_bitstream</span></a>)</p>
@@ -483,7 +484,7 @@ This section is a work <em>in progress</em>. Many of the measurements presented 
 <figure class="align-default" id="id9">
 <img alt="../../_images/operating_point_printout.png" src="../../_images/operating_point_printout.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Simulated DC operating point</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Simulated DC operating point</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The pMOS input pair M1/M2 are biased towards weak inversion with a <span class="math notranslate nohighlight">\((g_m/I)\)</span> of ~12 and a <span class="math notranslate nohighlight">\(g_{m,1}\)</span> of 1.1mS; the second stage M5 is biased in strong inversion with a <span class="math notranslate nohighlight">\((g_m/I)\)</span> of ~7 and a <span class="math notranslate nohighlight">\(g_{m,5}\)</span> of 12mS.</p>
@@ -532,20 +533,20 @@ This section is a work <em>in progress</em>. Many of the measurements presented 
 <figure class="align-default" id="id2">
 <img alt="../../_images/dc_sweep_output_with_XY.png" src="../../_images/dc_sweep_output_with_XY.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">The measured DC transfer characteristic of the OTA in unity-gain feedback (XY-plot, right) measured using a sawtooth input (left)</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.16 </span><span class="caption-text">The measured DC transfer characteristic of the OTA in unity-gain feedback (XY-plot, right) measured using a sawtooth input (left)</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Applying a rail-to-rail, low-frequency, sawtooth waveform to the positive input allows the measurement of the signal ranges. The output follows the input for inputs between about 0.57V and 2V</p>
 <figure class="align-default" id="id10">
 <img alt="../../_images/dc_sweep_all.png" src="../../_images/dc_sweep_all.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Measurement of all internal OTA nodes for a rail-to-rail input signal; CH1 was kept on the input, while CH2 was moved to different nodes and ‘snapshots’ were taken and saved.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.17 </span><span class="caption-text">Measurement of all internal OTA nodes for a rail-to-rail input signal; CH1 was kept on the input, while CH2 was moved to different nodes and ‘snapshots’ were taken and saved.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id11">
 <img alt="../../_images/sim_dc_sweep_all.png" src="../../_images/sim_dc_sweep_all.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Simulated internal nodes of the OTA with a rail-to-rail input signal</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.18 </span><span class="caption-text">Simulated internal nodes of the OTA with a rail-to-rail input signal</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Measured and simulated internal voltage nodes are qualitatively similar to some extent but there are important differences. The output (BUS04), BUS02, and BUS03 behavior are quite different for low input voltages; the BUS03 behavior for high input voltages are also quite different. For an input of 1.25V, the correspondence between measurement and simulation is very good. The differences warrant further investigations; they could be due to limited modeling accuracy of the simulated circuits given that in the experimental device all nodes are connected off-chip. This introduces additional parasitics (pads, pins, ESD) and the measurement equipment also introduces additional loading.</p>
@@ -555,13 +556,13 @@ This section is a work <em>in progress</em>. Many of the measurements presented 
 <figure class="align-default" id="id12">
 <img alt="../../_images/output_11_0.png" src="../../_images/output_11_0.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Input-Output characteristic of the unity-gain buffer with a linear fit for Vin <span class="math notranslate nohighlight">\(\in\)</span> [0.65, 1.85]</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.19 </span><span class="caption-text">Input-Output characteristic of the unity-gain buffer with a linear fit for Vin <span class="math notranslate nohighlight">\(\in\)</span> [0.65, 1.85]</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id13">
 <img alt="../../_images/output_12_0.png" src="../../_images/output_12_0.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Zoom in for the input-output characteristic and linear fit</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.20 </span><span class="caption-text">Zoom in for the input-output characteristic and linear fit</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We then run the fitting for different input voltage ranges:</p>
@@ -607,7 +608,7 @@ Linear Regression: Vout = 1.0054 (Vin + -0.0104)
 <figure class="align-default" id="id14">
 <img alt="../../_images/unity_gain_p600m.png" src="../../_images/unity_gain_p600m.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.16 </span><span class="caption-text">At t=0s, positive step responses of the OTA configured as a unity-gain buffer. Notes provided a legend for the traces</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.21 </span><span class="caption-text">At t=0s, positive step responses of the OTA configured as a unity-gain buffer. Notes provided a legend for the traces</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Positive step responses are collected for the unity-gain case with the OTA output connected to the negative input; the signal generator <code class="docutils literal notranslate"><span class="pre">W1</span></code> is connected to the positive OTA input and and generates 200KHz square waves between 1.25V and 100mV, 200mV, 400mV and 600mV higher.</p>
@@ -615,7 +616,7 @@ Linear Regression: Vout = 1.0054 (Vin + -0.0104)
 <figure class="align-default" id="id15">
 <img alt="../../_images/unity_gain_m600m.png" src="../../_images/unity_gain_m600m.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.17 </span><span class="caption-text">At t=0s, negative step responses of the OTA configured as a unity-gain buffer. Notes provided a legend for the traces</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.22 </span><span class="caption-text">At t=0s, negative step responses of the OTA configured as a unity-gain buffer. Notes provided a legend for the traces</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>For the negative step responses, the signal generator <code class="docutils literal notranslate"><span class="pre">W1</span></code> generates 200KHz square waves between 1.25V and 100mV, 200mV, 400mV and 500mV lower.</p>
@@ -630,7 +631,7 @@ Linear Regression: Vout = 1.0054 (Vin + -0.0104)
 <figure class="align-default" id="id16">
 <img alt="../../_images/dc_transfer.png" src="../../_images/dc_transfer.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.18 </span><span class="caption-text">DC transfer characteristic measured with a low-frequency rail-to-rail sawtooth input</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.23 </span><span class="caption-text">DC transfer characteristic measured with a low-frequency rail-to-rail sawtooth input</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;TBD</span> <span class="pre">Need</span> <span class="pre">to</span> <span class="pre">add</span> <span class="pre">the</span> <span class="pre">signal</span> <span class="pre">range</span> <span class="pre">measurements</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">internal</span> <span class="pre">nodes&gt;</span></code></p>
@@ -640,14 +641,14 @@ Linear Regression: Vout = 1.0054 (Vin + -0.0104)
 <figure class="align-default" id="id17">
 <img alt="../../_images/network_comp_and_no_comp.png" src="../../_images/network_comp_and_no_comp.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.19 </span><span class="caption-text">Measured AC transfer characteristic of the compensated amplifier (purple) and uncompensated amplifier (red) in a 10x non-inverting configuration</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.24 </span><span class="caption-text">Measured AC transfer characteristic of the compensated amplifier (purple) and uncompensated amplifier (red) in a 10x non-inverting configuration</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The DC gain is 20.7dB (10.8x), the unity-gain frequency, <span class="math notranslate nohighlight">\(f_u\)</span>, is 756kHz, and the phase shift at <span class="math notranslate nohighlight">\(f_u\)</span> is -(180-44)deg. Note that we are doing a closed-loop measurement but above the 3dB bandwidth of the amplifier (i.e. the unity-gain frequency of the loop gain), the closed-loop response is close to the open-loop response.</p>
 <figure class="align-default" id="id18">
 <img alt="../../_images/network_comp_no_r_and_comp.png" src="../../_images/network_comp_no_r_and_comp.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.20 </span><span class="caption-text">Measured AC transfer characteristic of the compensated amplifier without <span class="math notranslate nohighlight">\(R_{comp}\)</span> (purple) and compensated amplifier (red) with <span class="math notranslate nohighlight">\(R_{comp}\)</span> in a 10x non-inverting configuration</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.25 </span><span class="caption-text">Measured AC transfer characteristic of the compensated amplifier without <span class="math notranslate nohighlight">\(R_{comp}\)</span> (purple) and compensated amplifier (red) with <span class="math notranslate nohighlight">\(R_{comp}\)</span> in a 10x non-inverting configuration</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -656,25 +657,25 @@ Linear Regression: Vout = 1.0054 (Vin + -0.0104)
 <figure class="align-default" id="id19">
 <img alt="../../_images/step_response_100mVpp.png" src="../../_images/step_response_100mVpp.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.21 </span><span class="caption-text">Measured step response of the compensated amplifier (purple) in a 10x non-inverting configuration for a 100mVpp input signal</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.26 </span><span class="caption-text">Measured step response of the compensated amplifier (purple) in a 10x non-inverting configuration for a 100mVpp input signal</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id20">
 <img alt="../../_images/step_response_20_50_100mVpp_comp.png" src="../../_images/step_response_20_50_100mVpp_comp.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.22 </span><span class="caption-text">Measured step responses of the compensated amplifier in a 10x non-inverting configuration for a 20, 50 and 100mVpp input signal around 1.25V common mode<a class="footnote-reference brackets" href="#csvplot" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.27 </span><span class="caption-text">Measured step responses of the compensated amplifier in a 10x non-inverting configuration for a 20, 50 and 100mVpp input signal around 1.25V common mode<a class="footnote-reference brackets" href="#csvplot" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id21">
 <img alt="../../_images/step_response_100mVpp_no_comp2.png" src="../../_images/step_response_100mVpp_no_comp2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.23 </span><span class="caption-text">Measured step response of the uncompensated amplifier (purple) in a 10x non-inverting configuration for a 100mVpp input signal</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.28 </span><span class="caption-text">Measured step response of the uncompensated amplifier (purple) in a 10x non-inverting configuration for a 100mVpp input signal</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id22">
 <img alt="../../_images/step_response_20_50_100mVpp_comp_no_comp.png" src="../../_images/step_response_20_50_100mVpp_comp_no_comp.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.24 </span><span class="caption-text">Measured step responses of the compensated and uncompensated amplifier in a 10x non-inverting configuration for a 20, 50 and 100mVpp input signal around a 1.25V common mode</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.29 </span><span class="caption-text">Measured step responses of the compensated and uncompensated amplifier in a 10x non-inverting configuration for a 20, 50 and 100mVpp input signal around a 1.25V common mode</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -684,7 +685,7 @@ Linear Regression: Vout = 1.0054 (Vin + -0.0104)
 <figure class="align-default" id="id23">
 <img alt="../../_images/Offset_DC_Gain_measurement.png" src="../../_images/Offset_DC_Gain_measurement.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.25 </span><span class="caption-text">A circuit setup to measure the offset (keep red, remove green) and DC gain (keep green, remove red) of an operational amplifier; we used R1=1K, R2=100K, R3 = R4 = 10K</span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.30 </span><span class="caption-text">A circuit setup to measure the offset (keep red, remove green) and DC gain (keep green, remove red) of an operational amplifier; we used R1=1K, R2=100K, R3 = R4 = 10K</span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="offset-measurement">
@@ -693,7 +694,7 @@ Linear Regression: Vout = 1.0054 (Vin + -0.0104)
 <figure class="align-default" id="id24">
 <img alt="../../_images/dc_offset_measurement.png" src="../../_images/dc_offset_measurement.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.26 </span><span class="caption-text">Oscilloscope traces obtained for the DC offset measurement</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.31 </span><span class="caption-text">Oscilloscope traces obtained for the DC offset measurement</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The measured voltages at ‘B’ (CH1) and ‘out’ (CH2) compared to ‘inp’ result in an offset measurement of -5.0mV and -5.2mV respectively. We note that the resistors used were 5% resistors.</p>
@@ -707,14 +708,14 @@ Linear Regression: Vout = 1.0054 (Vin + -0.0104)
 <figure class="align-default" id="id25">
 <img alt="../../_images/dc_gain_measurement_scope.png" src="../../_images/dc_gain_measurement_scope.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.27 </span><span class="caption-text">Measurement of ‘out’ (CH1) and ‘B’ (CH2) on the oscilloscope with a 100Hz input signal; the channels are AC coupled</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.32 </span><span class="caption-text">Measurement of ‘out’ (CH1) and ‘B’ (CH2) on the oscilloscope with a 100Hz input signal; the channels are AC coupled</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Estimating the amplitude of the waveform at ‘B’ is difficult in the time domain using the oscilloscope.</p>
 <figure class="align-default" id="id26">
 <img alt="../../_images/dc_gain_measurement_spectrum.png" src="../../_images/dc_gain_measurement_spectrum.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.28 </span><span class="caption-text">Measurement of ‘out’ (CH1) and ‘B’ (CH2) on the spectrum analyzer with a 100Hz input signal</span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.33 </span><span class="caption-text">Measurement of ‘out’ (CH1) and ‘B’ (CH2) on the spectrum analyzer with a 100Hz input signal</span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Using the spectrum analyzer, a better estimate of the ratio of <span class="math notranslate nohighlight">\(V_{out, AC} / V_{B, AC} \)</span> can be obtained, and the OTA gain <span class="math notranslate nohighlight">\(A\)</span> at 100Hz is estimated to be <strong>68.6dB</strong>.</p>
@@ -729,7 +730,7 @@ Linear Regression: Vout = 1.0054 (Vin + -0.0104)
 <figure class="align-default" id="id27">
 <img alt="../../_images/ac_open_loop.png" src="../../_images/ac_open_loop.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.29 </span><span class="caption-text">Test setup to measure the AC loop gain of the OTA; RA = 100K, RB = 1K, CA = 1uF; R2 = 1M and R1 is varied from 10K, 1K, to 100 to change the in-band gain; CB = 22uF//1uF; buffer amplifier is the AD8542 and CR = 1uF</span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.34 </span><span class="caption-text">Test setup to measure the AC loop gain of the OTA; RA = 100K, RB = 1K, CA = 1uF; R2 = 1M and R1 is varied from 10K, 1K, to 100 to change the in-band gain; CB = 22uF//1uF; buffer amplifier is the AD8542 and CR = 1uF</span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The resistive divider R1, R2 from the output ‘OUT’ to the negative input ‘inn’ sets the AC closed-loop gain to <span class="math notranslate nohighlight">\((1+R2/R1)\)</span>. However, we do not connect R1 to the common-mode, mid-supply voltage ‘cm’, but rather to a large capacitor CB of (1uF // 22uF). As a result, for DC and at very, very low frequencies the OTA is in a unity-gain feedback configuration, which is needed to avoid large amplification of the DC offset.</p>
@@ -738,19 +739,19 @@ Linear Regression: Vout = 1.0054 (Vin + -0.0104)
 <figure class="align-default" id="id28">
 <img alt="../../_images/AC_open_loop_80dB.png" src="../../_images/AC_open_loop_80dB.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.30 </span><span class="caption-text">Bode plot of the gain with the amplifier configured for a 10,001x gain (orange/purple); note that there is a 40dB attenuation of the input signal</span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.35 </span><span class="caption-text">Bode plot of the gain with the amplifier configured for a 10,001x gain (orange/purple); note that there is a 40dB attenuation of the input signal</span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id29">
 <img alt="../../_images/AC_open_loop_60dB_80dB.png" src="../../_images/AC_open_loop_60dB_80dB.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.31 </span><span class="caption-text">Bode plot of the gain with the amplifier configured for a 1001x gain (orange/purple) compared to the 10,001x gain case; note that there is a 40dB attenuation of the input signal</span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.36 </span><span class="caption-text">Bode plot of the gain with the amplifier configured for a 1001x gain (orange/purple) compared to the 10,001x gain case; note that there is a 40dB attenuation of the input signal</span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id30">
 <img alt="../../_images/AC_open_loop_40dB_80dB.png" src="../../_images/AC_open_loop_40dB_80dB.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.32 </span><span class="caption-text">Bode plot of the gain with the amplifier configured for a 101x gain (orange/purple) compared to the 10,001x gain case; note that there is a 40dB attenuation of the input signal</span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.37 </span><span class="caption-text">Bode plot of the gain with the amplifier configured for a 101x gain (orange/purple) compared to the 10,001x gain case; note that there is a 40dB attenuation of the input signal</span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="dc-gain">
@@ -779,7 +780,7 @@ The 101x phase curve can be used to estimate the **phase margin** for the 11x by
 <figure class="align-default" id="id31">
 <img alt="../../_images/Miller_OTA_pin_R_noR.png" src="../../_images/Miller_OTA_pin_R_noR.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.33 </span><span class="caption-text">The frequency response of the OTA configured as a 11x non-inverting amplifier with a Miller compensation with a 200<span class="math notranslate nohighlight">\(\Omega\)</span> or no zero-compensation resistor</span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.38 </span><span class="caption-text">The frequency response of the OTA configured as a 11x non-inverting amplifier with a Miller compensation with a 200<span class="math notranslate nohighlight">\(\Omega\)</span> or no zero-compensation resistor</span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here we measure the effect of the zero-compensation resistor; we note an improvement in the phase response when the resistor is present. When the frequency is sufficiently above the 3dB frequency of the closed loop gain, we observe the open-loop phase response. The resistor improves the phase shift measurably.</p>
@@ -791,7 +792,7 @@ The 101x phase curve can be used to estimate the **phase margin** for the 11x by
 <figure class="align-default" id="id32">
 <img alt="../../_images/Miller_OTA_gm_stage1.png" src="../../_images/Miller_OTA_gm_stage1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.34 </span><span class="caption-text">The second stage, M5, is configured as a transresistance amplifier to measure the differential output current of the differential input pair (M1, M2) when driven with external input signals.</span><a class="headerlink" href="#id32" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.39 </span><span class="caption-text">The second stage, M5, is configured as a transresistance amplifier to measure the differential output current of the differential input pair (M1, M2) when driven with external input signals.</span><a class="headerlink" href="#id32" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We now apply a differential sawtooth waveform, with a common-mode of 1.25V, to the gates of M1 and M2 (using the waveform generators on the ADALM2000), and measure the gate and drain voltage of M5.</p>
@@ -822,7 +823,7 @@ The 101x phase curve can be used to estimate the **phase margin** for the 11x by
 <figure class="align-default" id="id33">
 <img alt="../../_images/Miller_OTA_pin_feedback.png" src="../../_images/Miller_OTA_pin_feedback.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.35 </span><span class="caption-text">The OTA is placed in DC feedback by using an active unity-gain buffer with a very low bandwidth</span><a class="headerlink" href="#id33" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.40 </span><span class="caption-text">The OTA is placed in DC feedback by using an active unity-gain buffer with a very low bandwidth</span><a class="headerlink" href="#id33" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>When using a very low bandwidth active unity-gain feedback path, the OTA is in open loop for frequencies higher than <span class="math notranslate nohighlight">\(A_{DC}/(2\pi R_{DC}C_{DC})\)</span>, where <span class="math notranslate nohighlight">\(A_{DC}\)</span> is the DC gain the OTA under test.</p>
@@ -830,19 +831,19 @@ The 101x phase curve can be used to estimate the **phase margin** for the 11x by
 <figure class="align-default" id="id34">
 <img alt="../../_images/open_loop_output_w_histogram2.png" src="../../_images/open_loop_output_w_histogram2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.36 </span><span class="caption-text">The output of the OTA when placed in DC feedback but AC open loop; we observe the output noise of the OTA</span><a class="headerlink" href="#id34" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.41 </span><span class="caption-text">The output of the OTA when placed in DC feedback but AC open loop; we observe the output noise of the OTA</span><a class="headerlink" href="#id34" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id35">
 <img alt="../../_images/open_loop_output1.png" src="../../_images/open_loop_output1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.37 </span><span class="caption-text">The output of the OTA when placed in DC feedback but AC open loop; we observe the output noise of the OTA at a different time scale</span><a class="headerlink" href="#id35" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.42 </span><span class="caption-text">The output of the OTA when placed in DC feedback but AC open loop; we observe the output noise of the OTA at a different time scale</span><a class="headerlink" href="#id35" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id36">
 <img alt="../../_images/open_loop_output_spectrum.png" src="../../_images/open_loop_output_spectrum.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.38 </span><span class="caption-text">The output of the OTA when placed in DC feedback but AC open loop; we observe the spectrum of the output noise of the OTA</span><a class="headerlink" href="#id36" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.43 </span><span class="caption-text">The output of the OTA when placed in DC feedback but AC open loop; we observe the spectrum of the output noise of the OTA</span><a class="headerlink" href="#id36" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This requires further analysis, but a rough analysis indicates that the noise is dominated by 1/f noise.</p>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -207,13 +207,14 @@
 </li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Programming the Chip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_chapter_simulations/LTspice_simulations.html">5. Spice Simulations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ordering/ordering.html">6. How to Order a MOSbius</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mosbius_crew/mosbius_crew.html">7. The MOSbius Crew</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../9_back_matter/acknowledgments.html">8. Acknowledgments</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../appendices/appendices.html">9. Appendices</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../app_pcb_test/pcb_test.html">9.1. Testing Your MOSbius PCB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../8_chapter_chip_design_details/chip_design_details.html">9.2. MOSbius Chip Design Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../app_adalm2000/adalm2000.html">9.3. ADALM2000 Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discussion/discussion.html">6. Discussion Forum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ordering/ordering.html">7. How to Order a MOSbius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mosbius_crew/mosbius_crew.html">8. The MOSbius Crew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_back_matter/acknowledgments.html">9. Acknowledgments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../appendices/appendices.html">10. Appendices</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../app_pcb_test/pcb_test.html">10.1. Testing Your MOSbius PCB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8_chapter_chip_design_details/chip_design_details.html">10.2. MOSbius Chip Design Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app_adalm2000/adalm2000.html">10.3. ADALM2000 Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -569,20 +570,20 @@ then ‘View SPICE Netlist’, then ‘Save As’.</p></li>
 <figure class="align-default" id="id6">
 <img alt="../_images/jumpers.gif" src="../_images/jumpers.gif" />
 <figcaption>
-<p><span class="caption-text">Location of the digital signal connections and jumpers.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Location of the digital signal connections and jumpers.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We configure the <strong>Pattern Generator</strong> function of the ADALM2000 to have two digital output channels: DIO 8 and 9 and upload the <em>clock</em> and the <em>bitstream</em> file to channel 8 and 9 respectively as shown below. The frequency for the clock waveform has to be twice the frequency for the bitstream waveform; we typically use <em>200kHz</em> for the frequency for <em>CLK</em> and <em>100kHz</em> for the frequency for <em>DATA</em>.</p>
 <figure class="align-default" id="id7">
 <img alt="../_images/pattern_generator_screenshot.png" src="../_images/pattern_generator_screenshot.png" />
 <figcaption>
-<p><span class="caption-text">Screenshot of the <em>Pattern Generator</em> screen of Scopy controlling the ADALM2000 after the bitstream and clock file have been read in for channels 9 and 8 respectively.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Screenshot of the <em>Pattern Generator</em> screen of Scopy controlling the ADALM2000 after the bitstream and clock file have been read in for channels 9 and 8 respectively.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id8">
 <img alt="../_images/pattern_generator_screenshot_zoom.png" src="../_images/pattern_generator_screenshot_zoom.png" />
 <figcaption>
-<p><span class="caption-text">Zoom in on the digital waveforms showing the alignment between the data and clock waveforms.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Zoom in on the digital waveforms showing the alignment between the data and clock waveforms.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>During programming the <code class="docutils literal notranslate"><span class="pre">EN</span></code> needs to be LOW; we leave it floating so the internal pull-down will hold it LOW; and we also disconnect the <code class="docutils literal notranslate"><span class="pre">1+</span></code> and <code class="docutils literal notranslate"><span class="pre">2+</span></code> scope inputs, or any other connections from the ADALM2000.</p>

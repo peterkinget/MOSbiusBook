@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -207,15 +207,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../6a_experiments/solutions.html">3.2. Solutions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../5_sw_support/MOSbiusTools.html">4. Programming the Chip Using the MOSBiusTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_sw_support/MOSbiusTools.html">4. Programming the Chip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_chapter_simulations/LTspice_simulations.html">5. Spice Simulations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ordering/ordering.html">6. How to Order a MOSbius</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../mosbius_crew/mosbius_crew.html">7. The MOSbius Crew</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../9_back_matter/acknowledgments.html">8. Acknowledgments</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../appendices/appendices.html">9. Appendices</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../app_pcb_test/pcb_test.html">9.1. Testing Your MOSbius PCB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../8_chapter_chip_design_details/chip_design_details.html">9.2. MOSbius Chip Design Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../app_adalm2000/adalm2000.html">9.3. ADALM2000 Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discussion/discussion.html">6. Discussion Forum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ordering/ordering.html">7. How to Order a MOSbius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mosbius_crew/mosbius_crew.html">8. The MOSbius Crew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_back_matter/acknowledgments.html">9. Acknowledgments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../appendices/appendices.html">10. Appendices</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../app_pcb_test/pcb_test.html">10.1. Testing Your MOSbius PCB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8_chapter_chip_design_details/chip_design_details.html">10.2. MOSbius Chip Design Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../app_adalm2000/adalm2000.html">10.3. ADALM2000 Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -439,13 +440,13 @@ document.write(`
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/iV_schematic_man_no_wave.svg"><img alt="../_images/iV_schematic_man_no_wave.svg" height="250px" src="../_images/iV_schematic_man_no_wave.svg" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.39 </span><span class="caption-text">Measurement setup for IDS-VDS measurements of an 2x nMOS device; with CH1 (1+ &amp; 1-) we measure the VDS and with CH2 (2+ &amp; 2-) we measure the current given that R1 is <span class="math notranslate nohighlight">\(100\Omega\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.44 </span><span class="caption-text">Measurement setup for IDS-VDS measurements of an 2x nMOS device; with CH1 (1+ &amp; 1-) we measure the VDS and with CH2 (2+ &amp; 2-) we measure the current given that R1 is <span class="math notranslate nohighlight">\(100\Omega\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id2">
 <img alt="../_images/iv_iDS_VDS_stimulus.png" src="../_images/iv_iDS_VDS_stimulus.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.40 </span><span class="caption-text">VGS (orange) and VDS (purple) waveforms used for the IDS-VDS measurements</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.45 </span><span class="caption-text">VGS (orange) and VDS (purple) waveforms used for the IDS-VDS measurements</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We performed nMOS IDS-VDS measurements for varying VGS by connecting the ADALM2000 waveform generator <code class="docutils literal notranslate"><span class="pre">W1</span></code> to the gate of the transistor under test and the drain to the waveform generator <code class="docutils literal notranslate"><span class="pre">W2</span></code> through a <span class="math notranslate nohighlight">\(100 \Omega\)</span> series resistor <span class="math notranslate nohighlight">\(R_1\)</span>. The scope channel <code class="docutils literal notranslate"><span class="pre">1</span></code> measures the drain to source voltage (VDS) and the <code class="docutils literal notranslate"><span class="pre">2</span></code> channel measures the voltage across the drain series resistor.</p>
@@ -453,7 +454,7 @@ document.write(`
 <figure class="align-default" id="id3">
 <img alt="../_images/nmos_2x_IDS_VDS_scope.png" src="../_images/nmos_2x_IDS_VDS_scope.png" />
 <figcaption>
-<p><span class="caption-text">IDS-VDS measurement of a 4x nMOS transistor with a <span class="math notranslate nohighlight">\(100\Omega\)</span> series resistor in the drain; CH1 is measuring the VDS voltage and CH2 is measuring the voltage across the drain series resistor</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.46 </span><span class="caption-text">IDS-VDS measurement of a 4x nMOS transistor with a <span class="math notranslate nohighlight">\(100\Omega\)</span> series resistor in the drain; CH1 is measuring the VDS voltage and CH2 is measuring the voltage across the drain series resistor</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This is a simple but relatively crude way to measure IDS-VDS characteristics. As the IDS increases, the voltage drop across the resistor <span class="math notranslate nohighlight">\(R_1\)</span> increases and thus the effective range for the VDS measurements reduces, so a small value of <span class="math notranslate nohighlight">\(R_1\)</span> is preferred; however, small <span class="math notranslate nohighlight">\(R_1\)</span> results in small current-to-voltage conversion and hence low current-measurement accuracy given the accuracy limit of the scope channels.</p>
@@ -463,7 +464,7 @@ document.write(`
 <figure class="align-default" id="id4">
 <img alt="../_images/nmos_2x_IDS_VGS_scope.png" src="../_images/nmos_2x_IDS_VGS_scope.png" />
 <figcaption>
-<p><span class="caption-text">IDS-VGS measurement for a 4x nMOS transistor</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.47 </span><span class="caption-text">IDS-VGS measurement for a 4x nMOS transistor</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Similarly IDS-VGS measurements can be easily performed by setting VDS to 2.5V and sweeping VGS from 0 to 2.5V with a triangular waveform.</p>
