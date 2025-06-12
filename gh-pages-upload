@@ -1,1 +1,4 @@
 ghp-import -n -p -c mosbius.org -f _build/html
+
+gh run list --workflow=pages-build-deployment --limit 1
+

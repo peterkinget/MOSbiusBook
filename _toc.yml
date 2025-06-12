@@ -39,6 +39,7 @@ chapters:
 #    - file: 6a_experiments/Lab_6_compensation_two_stage_OTA/two_stage_OTA_solution_PK
 - file: 5_sw_support/MOSbiusTools
 - file: 4_chapter_simulations/LTspice_simulations
+- file: discussion/discussion
 - file: ordering/ordering
 - file: mosbius_crew/mosbius_crew
 - file: 9_back_matter/acknowledgments

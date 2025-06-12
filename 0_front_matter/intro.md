@@ -14,7 +14,7 @@
 The MOSbius chip contains nMOS and pMOS devices as individual transistors, as
 well as in typical configurations like current mirrors, differential pairs, common source configuration, simple operational transconductance amplifiers or inverters. 
 
-```{figure} img/Mobius_platform_overview.png
+```{figure} img/mosbius_flow.png
 Overview of the MOSbius platform. Transistors and circuits on the MOSbius chip allow the student to create an electronic circuit that they can evaluate experimentally.
 ```
 
