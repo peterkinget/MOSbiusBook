@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.1.3. Lab 3: Differential Pair DC Response &#8212; MOSbius Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_PK';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.1.4. Lab 4: Differential Pair AC Response" href="../Lab_4_differential_pair_AC/differential_pair_AC_PK.html" />
+    <link rel="prev" title="3.1.2. Lab 2: Current Mirrors" href="../Lab_2_current_mirrors/current_mirrors_PK.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../0_front_matter/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/die.png" class="logo__image only-light" alt="MOSbius Book - Home"/>
+    <script>document.write(`<img src="../../_static/die.png" class="logo__image only-dark" alt="MOSbius Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../0_front_matter/intro.html">
+                    Welcome to the MOSbius Project
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../1_chapter_description/description.html">1. MOSbius Platform for MOS Circuit Labs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2_chapter_demonstrations/demonstrations.html">2. Demonstrations with the MOSbius Chip</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2_chapter_blinky/blinky.html">2.1. First Experiment: Blinky</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2_chapter_mosbius_555/mosbius_555.html">2.2. Building a ‘555’ with MOSbius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2_chapter_ring_oscillator/ring_oscillator.html">2.3. Ring Oscillator Experiments</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../2_chapter_ota/ota_experiments.html">2.4. Operational Transconductance Amplifier Experiments</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../2_chapter_ota/mota-se-p-16/mota-se-p-16.html">2.4.1. Two-Stage Miller-Compensated OTA with pMOS Input Stage</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../2_iv_characteristics/iv_characteristics.html">2.5. Transistor I-V Characteristics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../2_iv_characteristics/plotting_i_v_data_sims_nmos.html">Automated nMOS I-V Data vs Simulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../2_iv_characteristics/plotting_i_v_data_sims_pmos.html">Automated pMOS I-V Data vs Simulations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../experiments.html">3. Lab Experiments Manual</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../labs.html">3.1. Labs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Lab_1_introduction/introduction_PK.html">3.1.1. Lab 1: Basic Measurements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Lab_2_current_mirrors/current_mirrors_PK.html">3.1.2. Lab 2: Current Mirrors</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">3.1.3. Lab 3: Differential Pair DC Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Lab_4_differential_pair_AC/differential_pair_AC_PK.html">3.1.4. Lab 4: Differential Pair AC Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.html">3.1.5. Lab 5: One-stage OTA and Common-Source Amplifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Lab_6_compensation_two_stage_OTA/two_stage_OTA_PK.html">3.1.6. Lab 6: Frequency Compensation of a Two-Stage OTA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions.html">3.2. Solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_sw_support/MOSbiusTools.html">4. Programming the Chip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../5_chapter_simulations/LTspice_simulations.html">5. Spice Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../6_discussion/discussion.html">6. Discussion Forum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../7_ordering/ordering.html">7. How to Order a MOSbius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../8_mosbius_crew/mosbius_crew.html">8. The MOSbius Crew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../9_back_matter/acknowledgments.html">9. Acknowledgments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../10_appendices/appendices.html">10. Appendices</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../10_app_pcb_test/pcb_test.html">10.1. Testing Your MOSbius PCB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_chapter_chip_design_details/chip_design_details.html">10.2. MOSbius Chip Design Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_app_adalm2000/adalm2000.html">10.3. ADALM2000 Notes</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/peterkinget/MOSbiusBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/peterkinget/MOSbiusBook/issues/new?title=Issue%20on%20page%20%2F3a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_PK.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/3a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_PK.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 3: Differential Pair DC Response</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiments">Experiments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-circuit-and-check-the-bias-point">Build the Circuit and Check the Bias Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measure-the-dc-common-mode-response">Measure the DC Common-Mode Response</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measure-the-dc-differential-mode-response">Measure the DC Differential-Mode Response</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-differential-mode-response-for-different-bias-conditions">DC Differential-Mode Response for Different Bias Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-responses-for-a-single-ended-input-signal">DC Responses for a Single-Ended Input Signal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-differential-mode-response-for-different-input-common-mode-levels">DC Differential-Mode Response for Different Input Common-Mode Levels</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suggestions">Suggestions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-3-differential-pair-dc-response">
+<h1><span class="section-number">3.1.3. </span>Lab 3: Differential Pair DC Response<a class="headerlink" href="#lab-3-differential-pair-dc-response" title="Link to this heading">#</a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>There are a lot of experiments, it is OK if you cannot finish them all. Do them in the order listed below. It is OK if you cannot complete the experiments with different bias conditions and the subsequent experiments.</p>
+</div>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h2>
+<p>In this experiment, you will learn about differential signals and circuits through building and characterizing a differential pair. The differential pair amplifies differential input signals but rejects common-mode input signals. We will focus on the DC responses.</p>
+</section>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Review your course notes on differential signals and the theory of the operation of the differential pair.</p></li>
+<li><p>Review the experiments below and build up an understanding of what you should observe in the measurements. You can consider doing some circuit simulations to get familiar with the DC operation of a differential pair.</p></li>
+<li><p>Review the chip schematic and pin map to find where the relevant components are. In this lab we will use the 4x nMOS transistors and the nMOS current mirrors to build an nMOS differential pair.</p></li>
+</ul>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/mosbius_cm_nMOS4.png"><img alt="../../_images/mosbius_cm_nMOS4.png" src="../../_images/mosbius_cm_nMOS4.png" style="height: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Schematic of the MOSbius chip with the nMOS current mirror and the 4x nMOS differential-pair transistors highlighted</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>MOSbius Chip &amp; PCB</p></li>
+<li><p>Breadboard &amp; Wires</p></li>
+<li><p>Resistors: <span class="math notranslate nohighlight">\(4.7K\Omega\)</span> (several)</p></li>
+<li><p>ADALM2000 Active Learning Module (DC Power Supply, Oscilloscope, Waveform Generator)</p></li>
+</ul>
+</section>
+<section id="experiments">
+<h2>Experiments<a class="headerlink" href="#experiments" title="Link to this heading">#</a></h2>
+<section id="build-the-circuit-and-check-the-bias-point">
+<h3>Build the Circuit and Check the Bias Point<a class="headerlink" href="#build-the-circuit-and-check-the-bias-point" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/lab3_schematic_man.svg"><img alt="../../_images/lab3_schematic_man.svg" height="400px" src="../../_images/lab3_schematic_man.svg" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Schematic of the nMOS differential pair with a 2x <span class="math notranslate nohighlight">\(I_{REF}\)</span> current bias</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>The current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFN). Connect a current meter across I_REFN with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so <span class="math notranslate nohighlight">\(I_{REF}\)</span> is <span class="math notranslate nohighlight">\(100\mu A\)</span>; replace the current meter with a jumper. The I_REFN header is connected to pin 19 of the MOSbius chip on the PCB. See <em>Testing the Current Bias Potentiometers</em> in the <a class="reference internal" href="../../10_app_pcb_test/pcb_test.html"><span class="doc std std-doc">Appendix on Testing the MOSbius PCB</span></a></p></li>
+<li><p>For the initial experiments use the 2x output of the current mirror to bias the differential pair. So each transistor is biased with <span class="math notranslate nohighlight">\(100\mu A\)</span>. Note that you will change this in later experiments.</p></li>
+<li><p>The body<a class="footnote-reference brackets" href="#body" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> of transistors M1 and M2 needs to be connected to GND (VSS).</p></li>
+<li><p>Place the load resistors <span class="math notranslate nohighlight">\(R_L\)</span> on your breadboard. For the initial experiments <span class="math notranslate nohighlight">\(R_L\)</span> is <span class="math notranslate nohighlight">\(4.7K\Omega\)</span>. Measure your resistors with a multimeter and note their values. Ideally the two resistors should be identical.</p></li>
+<li><p>Verify the DC bias point:</p>
+<ul>
+<li><p>Apply the 2.5V power supply to the chip and bias <em>INp</em> and <em>INn</em> with <span class="math notranslate nohighlight">\(1.25V\)</span>.</p></li>
+<li><p>Measure and record the various node voltages.</p></li>
+<li><p>Review that the voltages make sense; e.g., estimate the currents through M1 and M2 by looking at the voltage drop across the <span class="math notranslate nohighlight">\(R_L\)</span> resistors; check the <span class="math notranslate nohighlight">\(V_{GS}\)</span> of M1, M2, MCM1; check the <span class="math notranslate nohighlight">\(V_{DS}\)</span> of MCM2.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="measure-the-dc-common-mode-response">
+<h3>Measure the DC Common-Mode Response<a class="headerlink" href="#measure-the-dc-common-mode-response" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tie the inputs <em>INp</em> and <em>INn</em> together and apply a <span class="math notranslate nohighlight">\(100Hz\)</span> triangle wave with a DC bias of <span class="math notranslate nohighlight">\(1.25V\)</span> and a peak-to-peak amplitude of <span class="math notranslate nohighlight">\(2.5Vpp\)</span> as the common-mode input <span class="math notranslate nohighlight">\(V_{CM}\)</span>. <strong>Verify the common-mode signal on the oscilloscope before applying it to your circuit. Do not apply signals above <span class="math notranslate nohighlight">\(2.5V\)</span> or below <span class="math notranslate nohighlight">\(0V\)</span> to the chip</strong></p></li>
+<li><p>Measure and save the DC transfer characteristic <span class="math notranslate nohighlight">\(V_{CMSRC}\)</span> vs <span class="math notranslate nohighlight">\(V_{CM}\)</span></p></li>
+<li><p>Measure and save the DC transfer characteristic <span class="math notranslate nohighlight">\(V_{OUTp}\)</span> vs <span class="math notranslate nohighlight">\(V_{CM}\)</span></p></li>
+<li><p>Measure and save the DC transfer characteristic (<span class="math notranslate nohighlight">\(V_{OUTp} - V_{OUTn}\)</span>) vs <span class="math notranslate nohighlight">\(V_{CM}\)</span></p></li>
+<li><p>Review your results:</p>
+<ul>
+<li><p>what is the common-mode gain from the input to the output common mode?</p></li>
+<li><p>what is the gain from the inputs to the <em>CMSRC</em>?</p></li>
+<li><p>what is the input common-mode range?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="measure-the-dc-differential-mode-response">
+<h3>Measure the DC Differential-Mode Response<a class="headerlink" href="#measure-the-dc-differential-mode-response" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Generate a differential input signal with a common-mode of <span class="math notranslate nohighlight">\(1.25V\)</span>; use the two generators <em>W1</em> and <em>W2</em> in the ADALM and generate a <span class="math notranslate nohighlight">\(100Hz\)</span> triangle wave with a DC bias of <span class="math notranslate nohighlight">\(1.25V\)</span> and a peak-to-peak amplitude of <span class="math notranslate nohighlight">\(2.5Vpp\)</span> (the waveform parameters will change in later experiments); set the phase of one of the generators to <span class="math notranslate nohighlight">\(0^o\)</span> and the other to <span class="math notranslate nohighlight">\(180^o\)</span>.</p></li>
+<li><p><strong>Verify the differential signal on the oscilloscope before applying it to your circuit. Do not apply signals above <span class="math notranslate nohighlight">\(2.5V\)</span> or below <span class="math notranslate nohighlight">\(0V\)</span> to the chip</strong>.</p></li>
+<li><p>Check <span class="math notranslate nohighlight">\(V_{OUTp}\)</span>, <span class="math notranslate nohighlight">\(V_{OUTn}\)</span>, <span class="math notranslate nohighlight">\(V_{CMSRC}\)</span>:</p>
+<ul>
+<li><p>do the waveforms make sense?</p></li>
+<li><p>does their maximum value correspond to the expected value?</p></li>
+<li><p>does their minimum value correspond to the expected value?</p></li>
+</ul>
+</li>
+<li><p>Measure and save the DC transfer characteristic (<span class="math notranslate nohighlight">\(V_{OUTp} - V_{OUTn}\)</span>) vs (<span class="math notranslate nohighlight">\(V_{INp} - V_{INn}\)</span>)</p>
+<ul>
+<li><p>note that the ADALM scope channels are differential; e.g., to measure (<span class="math notranslate nohighlight">\(V_{OUTp} - V_{OUTn}\)</span>) connect <em>2+</em> to <em>OUTp</em> and <em>2-</em> to <em>OUTn</em>.</p></li>
+</ul>
+</li>
+<li><p>Review your results:</p>
+<ul>
+<li><p>explain the shape of the response and its various regions.</p></li>
+<li><p>what is the differential-mode gain?</p></li>
+<li><p>what is the input range for linear differential-mode operation?</p></li>
+<li><p>what is the <span class="math notranslate nohighlight">\(g_m\)</span> of the differential pair?</p></li>
+</ul>
+</li>
+<li><p>Measure and save the DC transfer characteristic <span class="math notranslate nohighlight">\(V_{CMSRC}\)</span> vs (<span class="math notranslate nohighlight">\(V_{INp} - V_{INn}\)</span>)</p>
+<ul>
+<li><p>explain the shape of the response and its various regions</p></li>
+<li><p>can you link it to earlier measurements like the DC operating point or the common-mode response?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="dc-differential-mode-response-for-different-bias-conditions">
+<h3>DC Differential-Mode Response for Different Bias Conditions<a class="headerlink" href="#dc-differential-mode-response-for-different-bias-conditions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(100\mu A\)</span></p>
+<ul>
+<li><p>So far we have biased the differential-pair transistors M1/M2 each with <span class="math notranslate nohighlight">\(100\mu A\)</span>.</p></li>
+<li><p>Next we are going to apply different bias currents.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(200\mu A\)</span></p>
+<ul>
+<li><p>Change the bias current for M1 and M2 to <span class="math notranslate nohighlight">\(200\mu A\)</span> each by using the <em>4x</em> current mirror output.</p></li>
+<li><p>Change the <span class="math notranslate nohighlight">\(R_L\)</span> to <span class="math notranslate nohighlight">\(\frac{4.7}{2}K\Omega\)</span>; you can do this by placing two <span class="math notranslate nohighlight">\(4.7K\Omega\)</span> resistors in parallel to build <span class="math notranslate nohighlight">\(R_L\)</span>.</p></li>
+<li><p>Verify the bias point of the circuit.</p></li>
+<li><p>Measure and save the DC transfer characteristic (<span class="math notranslate nohighlight">\(V_{OUTp} - V_{OUTn}\)</span>) vs (<span class="math notranslate nohighlight">\(V_{INp} - V_{INn}\)</span>)</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(400\mu A\)</span></p>
+<ul>
+<li><p>Choose the appropriate current-mirror output and scale the <span class="math notranslate nohighlight">\(R_L\)</span> appropriately so that the DC voltage drop across <span class="math notranslate nohighlight">\(R_L\)</span> remains the same as for the earlier bias settings.</p></li>
+<li><p>Verify the bias point of the circuit.</p></li>
+<li><p>Measure and save the DC transfer characteristic (<span class="math notranslate nohighlight">\(V_{OUTp} - V_{OUTn}\)</span>) vs (<span class="math notranslate nohighlight">\(V_{INp} - V_{INn}\)</span>)</p></li>
+</ul>
+</li>
+<li><p>Review your results:</p>
+<ul>
+<li><p>For your report, plot the differential voltage transfer characteristic for the different bias currents and compare. Remember that the <span class="math notranslate nohighlight">\(V_{ov}\)</span> or <span class="math notranslate nohighlight">\((V_{GS}-V_{TH})\)</span> of the transistors, to the first order, scales with <span class="math notranslate nohighlight">\(\sqrt{I_{DS}}\)</span> in strong inversion.</p></li>
+<li><p>For your report, plot the (<span class="math notranslate nohighlight">\(I_{DS,1}-I_{DS,2}\)</span>) vs (<span class="math notranslate nohighlight">\(V_{INp} - V_{INn}\)</span>) for the different bias currents and compare.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="dc-responses-for-a-single-ended-input-signal">
+<h3>DC Responses for a Single-Ended Input Signal<a class="headerlink" href="#dc-responses-for-a-single-ended-input-signal" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use the differential pair with a <span class="math notranslate nohighlight">\(400\mu A\)</span> bias per transistor</p></li>
+<li><p>Differential input signal:</p>
+<ul>
+<li><p>Use a triangle-wave, <span class="math notranslate nohighlight">\(100Hz\)</span>, differential input signal with a DC offset of <span class="math notranslate nohighlight">\(1.25V\)</span> and a peak-to-peak amplitude of <span class="math notranslate nohighlight">\(500mVpp\)</span>, and measure the (<span class="math notranslate nohighlight">\(V_{OUTp} - V_{OUTn}\)</span>) vs (<span class="math notranslate nohighlight">\(V_{INp} - V_{INn}\)</span>) and the (<span class="math notranslate nohighlight">\(V_{CMSRC}\)</span>) vs (<span class="math notranslate nohighlight">\(V_{INp} - V_{INn}\)</span>). Note that the individual waveforms have a <span class="math notranslate nohighlight">\(250mVpp\)</span> amplitude. Save the waveforms.</p></li>
+</ul>
+</li>
+<li><p>Single-ended input signal:</p>
+<ul>
+<li><p>Connect <em>INn</em> to a fixed bias of <span class="math notranslate nohighlight">\(1.25V\)</span> and use a triangle-wave, <span class="math notranslate nohighlight">\(100Hz\)</span> signal with a DC offset of <span class="math notranslate nohighlight">\(1.25V\)</span> and a peak-to-peak amplitude of <span class="math notranslate nohighlight">\(500mVpp\)</span>; measure the (<span class="math notranslate nohighlight">\(V_{OUTp} - V_{OUTn}\)</span>) vs (<span class="math notranslate nohighlight">\(V_{INp} - V_{INn}\)</span>) and the (<span class="math notranslate nohighlight">\(V_{CMSRC}\)</span>) vs (<span class="math notranslate nohighlight">\(V_{INp} - V_{INn}\)</span>). Save the waveforms.</p></li>
+</ul>
+</li>
+<li><p>Review your results:</p>
+<ul>
+<li><p>Compare the differential output for the two input signals.</p></li>
+<li><p>Compare the waveforms at the <em>CMSRC</em> for the two input signals.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="dc-differential-mode-response-for-different-input-common-mode-levels">
+<h3>DC Differential-Mode Response for Different Input Common-Mode Levels<a class="headerlink" href="#dc-differential-mode-response-for-different-input-common-mode-levels" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Explore how the differential gain varies when changing the common-mode input voltage.</p></li>
+</ul>
+</section>
+</section>
+<section id="suggestions">
+<h2>Suggestions<a class="headerlink" href="#suggestions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Run simulations of the experiments to observe the difference between simulated circuits where the transistors are perfectly identical and real-world circuits where there are small manufacturing variations between ideally designed transistors.</p></li>
+<li><p>Determine the offset voltage of the differential pair.</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="body" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>In principle you should be able to connect the body of the deep n-well transistors to their source to avoid the body effect. However, we have observed some unexpected behavior when doing that and are still investigating the cause(s). Therefore we recommend to connect the body terminal to the VSS (the lowest potential in your circuit).</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./3a_experiments/Lab_3_differential_pair_DC"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Lab_2_current_mirrors/current_mirrors_PK.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.1.2. </span>Lab 2: Current Mirrors</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Lab_4_differential_pair_AC/differential_pair_AC_PK.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.1.4. </span>Lab 4: Differential Pair AC Response</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiments">Experiments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-circuit-and-check-the-bias-point">Build the Circuit and Check the Bias Point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measure-the-dc-common-mode-response">Measure the DC Common-Mode Response</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measure-the-dc-differential-mode-response">Measure the DC Differential-Mode Response</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-differential-mode-response-for-different-bias-conditions">DC Differential-Mode Response for Different Bias Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-responses-for-a-single-ended-input-signal">DC Responses for a Single-Ended Input Signal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dc-differential-mode-response-for-different-input-common-mode-levels">DC Differential-Mode Response for Different Input Common-Mode Levels</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suggestions">Suggestions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The MOSbius Crew
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
