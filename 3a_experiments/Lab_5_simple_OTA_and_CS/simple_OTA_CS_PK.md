@@ -37,7 +37,7 @@ The frequency response of the two amplifiers is measured to determine their smal
 Schematic of the one-stage pMOS OTA with a 2x $I_{REF}$ current bias. The OTA is loaded with $C_{L1}$ and is placed in negative DC feedback with $R_2$, $R_1$ and $C_{B1}$ and in AC feedback with $R_2$, $R_1$. The biasing of the input pin is not shown. 
 ```
 - Build the test circuit:
-    - The pMOS current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFP). Connect a current meter across I_REFP with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so $I_{REF}$ is $100\mu A$; replace the current meter with a jumper. The I_REFP header is connected to pin 68 of the MOSbius chip on the PCB. See *Testing the Current Bias Potentiometers* in the [Appendix on Testing the MOSbius PCB](../../app_pcb_test/pcb_test)
+    - The pMOS current mirror is biased using the 25K potentiometer provided on the PCB (close to I_REFP). Connect a current meter across I_REFP with the positive lead on the left and the negative lead on the right side of the header; adjust the potentiometer so $I_{REF}$ is $100\mu A$; replace the current meter with a jumper. The I_REFP header is connected to pin 68 of the MOSbius chip on the PCB. See *Testing the Current Bias Potentiometers* in the [Appendix on Testing the MOSbius PCB](../../10_app_pcb_test/pcb_test)
     - The OTA is internally connected to the current mirror with a 2X tail transistor M7 so it is biased with $200\mu A$. 
     - Use a $470pF$ capacitor as $C_{L1}$.
     - Use $R_1 = 100\Omega$ and $R_2 = 100K\Omega$ and $C_{B1} = 47\mu F$. 

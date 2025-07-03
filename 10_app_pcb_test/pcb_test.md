@@ -40,7 +40,7 @@ Push the PCB down and make sure that all pins are inserted properly, including t
 ## Connecting the Logic Signals
 ```{figure} img/testing/Slide5.png
 ```
-* You can now place jumpers to connect the logic signals to the chip. Figure shows the case for using the manual enable. See [Programming the Chip](../5_sw_support/MOSbiusTools.md).
+* You can now place jumpers to connect the logic signals to the chip. Figure shows the case for using the manual enable. See [Programming the Chip](../4_sw_support/MOSbiusTools.md).
 
 ## Testing the LDO
 

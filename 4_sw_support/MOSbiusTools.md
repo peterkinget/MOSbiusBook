@@ -47,7 +47,7 @@ There are `.json` file examples above and in
 
 ### From an LTspice Schematic Using `cir_to_connections`
 
-* create an LTspice schematic using the [MOSbius LTspice Symbol Library](../4_chapter_simulations/LTspice_simulations.md)
+* create an LTspice schematic using the [MOSbius LTspice Symbol Library](../5_chapter_simulations/LTspice_simulations.md)
 * save your design as a `.cir` file, e.g. `my_circuit.cir`. You obtain a `.cir`
   netlist for your LTSpice circuit by right clicking on the schematic,
   then 'View SPICE Netlist', then 'Save As'. 
