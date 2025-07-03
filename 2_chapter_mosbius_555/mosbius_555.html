@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2.2. Building a ‘555’ with MOSbius &#8212; MOSbius Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_chapter_mosbius_555/mosbius_555';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.3. Ring Oscillator Experiments" href="../2_chapter_ring_oscillator/ring_oscillator.html" />
+    <link rel="prev" title="2.1. First Experiment: Blinky" href="../2_chapter_blinky/blinky.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../0_front_matter/intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/die.png" class="logo__image only-light" alt="MOSbius Book - Home"/>
+    <script>document.write(`<img src="../_static/die.png" class="logo__image only-dark" alt="MOSbius Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../0_front_matter/intro.html">
+                    Welcome to the MOSbius Project
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_chapter_description/description.html">1. MOSbius Platform for MOS Circuit Labs</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../2_chapter_demonstrations/demonstrations.html">2. Demonstrations with the MOSbius Chip</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../2_chapter_blinky/blinky.html">2.1. First Experiment: Blinky</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. Building a ‘555’ with MOSbius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_chapter_ring_oscillator/ring_oscillator.html">2.3. Ring Oscillator Experiments</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2_chapter_ota/ota_experiments.html">2.4. Operational Transconductance Amplifier Experiments</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2_chapter_ota/mota-se-p-16/mota-se-p-16.html">2.4.1. Two-Stage Miller-Compensated OTA with pMOS Input Stage</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../2_iv_characteristics/iv_characteristics.html">2.5. Transistor I-V Characteristics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2_iv_characteristics/plotting_i_v_data_sims_nmos.html">Automated nMOS I-V Data vs Simulations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_iv_characteristics/plotting_i_v_data_sims_pmos.html">Automated pMOS I-V Data vs Simulations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3a_experiments/experiments.html">3. Lab Experiments Manual</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../3a_experiments/labs.html">3.1. Labs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_1_introduction/introduction_PK.html">3.1.1. Lab 1: Basic Measurements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_2_current_mirrors/current_mirrors_PK.html">3.1.2. Lab 2: Current Mirrors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_PK.html">3.1.3. Lab 3: Differential Pair DC Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_4_differential_pair_AC/differential_pair_AC_PK.html">3.1.4. Lab 4: Differential Pair AC Response</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.html">3.1.5. Lab 5: One-stage OTA and Common-Source Amplifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_6_compensation_two_stage_OTA/two_stage_OTA_PK.html">3.1.6. Lab 6: Frequency Compensation of a Two-Stage OTA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../3a_experiments/solutions.html">3.2. Solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_sw_support/MOSbiusTools.html">4. Programming the Chip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_chapter_simulations/LTspice_simulations.html">5. Spice Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6_discussion/discussion.html">6. Discussion Forum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_ordering/ordering.html">7. How to Order a MOSbius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8_mosbius_crew/mosbius_crew.html">8. The MOSbius Crew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_back_matter/acknowledgments.html">9. Acknowledgments</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_appendices/appendices.html">10. Appendices</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_app_pcb_test/pcb_test.html">10.1. Testing Your MOSbius PCB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_chapter_chip_design_details/chip_design_details.html">10.2. MOSbius Chip Design Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_app_adalm2000/adalm2000.html">10.3. ADALM2000 Notes</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/peterkinget/MOSbiusBook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/peterkinget/MOSbiusBook/issues/new?title=Issue%20on%20page%20%2F2_chapter_mosbius_555/mosbius_555.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2_chapter_mosbius_555/mosbius_555.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Building a ‘555’ with MOSbius</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">2.2.1. Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.2.2. Building a 555 with MOSbius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-timer-with-the-mosbius-555-in-astable-mode">2.2.3. Building a Timer with the MOSbius 555 in Astable Mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measured-results">2.2.4. Measured Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waveforms-f-2-16khz-c-22nf">Waveforms: f = 2.16kHz C = 22nF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waveforms-f-48-7khz-c-1nf">Waveforms: f = 48.7kHz C = 1nF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waveforms-f-241khz-c-0nf">Waveforms: f = 241kHz C = 0nF</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">2.2.5. Next Steps</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="building-a-555-with-mosbius">
+<h1><span class="section-number">2.2. </span>Building a ‘555’ with MOSbius<a class="headerlink" href="#building-a-555-with-mosbius" title="Link to this heading">#</a></h1>
+<section id="background">
+<h2><span class="section-number">2.2.1. </span>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>The ‘555’ is an iconic chip that is often used in entry-level electronic experiments. This <a class="reference external" href="https://en.wikipedia.org/wiki/555_timer_IC">Wikipedia article</a> has a detailed description. The original Signetics NE555 was a bipolar design, and later CMOS versions became available. The MOSbius chip has the necessary devices to create the 555 functionality. It offers an opportunity not only to build 555 projects, but dig into the internal operation of the 555 chip.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/NE555_Block_Diagram.png"><img alt="../_images/NE555_Block_Diagram.png" src="../_images/NE555_Block_Diagram.png" style="width: 414.0px; height: 300.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Functional block diagram of the 555 [<a class="reference external" href="https://en.wikipedia.org/wiki/555_timer_IC">Wikipedia</a>]</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/MOS_555_from_wikipedia.jpg"><img alt="../_images/MOS_555_from_wikipedia.jpg" src="../_images/MOS_555_from_wikipedia.jpg" style="width: 640.0px; height: 300.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">CMOS implementation for the 555 [<a class="reference external" href="https://en.wikipedia.org/wiki/555_timer_IC">Wikipedia</a>]</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id1">
+<h2><span class="section-number">2.2.2. </span>Building a 555 with MOSbius<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/MOSbius_555_v1_schematic.png"><img alt="../_images/MOSbius_555_v1_schematic.png" src="../_images/MOSbius_555_v1_schematic.png" style="width: 668.0px; height: 309.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Schematic for the MOSbius 555 implementation</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The 555 MOS schematic<a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> can be implemented in a straightforward manner. Care must be taken to use the correct sizes for various devices depending on their function. In this realization the S/R latch is implemented with 1x devices with the set and reset devices realized with 4x nMOS transistors. For the output inverters the 16x inverter pairs are used for good driving strength on <code class="docutils literal notranslate"><span class="pre">OUT</span></code>, however, they load the S/R latch output (bus05). All connections can be realized with the on-chip buses (<a class="reference download internal" download="" href="../_downloads/cfd7d1556e4a74570a07645bc0e6f96e/MOSbius_555_v1.json"><span class="xref download myst">connections file</span></a>) and the reference ladder (R1-R2-R3) is realized with off-chip 5K-5K-5K resistors. The terminals <code class="docutils literal notranslate"><span class="pre">biasn</span></code> (pin 19) and <code class="docutils literal notranslate"><span class="pre">biasp</span></code> (pin 68) are biased with 100<span class="math notranslate nohighlight">\(\mu A\)</span> using the potentiometers on the PCB to bias the OTA-nMOS and OTA_pMOS blocks and some additional current source devices.</p>
+</section>
+<section id="building-a-timer-with-the-mosbius-555-in-astable-mode">
+<h2><span class="section-number">2.2.3. </span>Building a Timer with the MOSbius 555 in Astable Mode<a class="headerlink" href="#building-a-timer-with-the-mosbius-555-in-astable-mode" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/555_Astable_Diagram.png"><img alt="../_images/555_Astable_Diagram.png" src="../_images/555_Astable_Diagram.png" style="width: 275.0px; height: 250.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Timer with the 555 operating in astable mode</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The timer using the 555 in astable mode can easily be implemented using the MOSbius 555.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/MOSbius_555_v1_relaxation_osc_TB_schematic.png"><img alt="../_images/MOSbius_555_v1_relaxation_osc_TB_schematic.png" src="../_images/MOSbius_555_v1_relaxation_osc_TB_schematic.png" style="width: 459.0px; height: 336.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Simulation schematic for a timer built with the MOSbius 555 operating in astable mode</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="measured-results">
+<h2><span class="section-number">2.2.4. </span>Measured Results<a class="headerlink" href="#measured-results" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/MOSbius_555.jpeg"><img alt="../_images/MOSbius_555.jpeg" src="../_images/MOSbius_555.jpeg" style="width: 888.75px; height: 637.25px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Picture of the test setup of the timer built with the MOSbius 555 operating in astable mode; the 5K-5K-5K ladder is above the blue label; the Raspberry Pi PICO microcontroller in the lower right corner programs the switch matrix on the MOSbius chip.</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We built the timer and evaluated the performance for different frequencies of operation. The R1/Rosc1 and R2/Rosc2 resistors were set to 10K<span class="math notranslate nohighlight">\(\Omega\)</span>  and the capacitor value was changed; the frequency was measured on the <code class="docutils literal notranslate"><span class="pre">OUT</span></code> node while no other probes where attached to avoid additional loading.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Cap [nF]</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f_{calc}\)</span> [kHz]</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(f_{meas}\)</span> [kHz]</p></th>
+<th class="head text-center"><p>Error [%]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>57.9</p></td>
+<td class="text-center"><p>0.821</p></td>
+<td class="text-center"><p>0.807</p></td>
+<td class="text-center"><p>1.7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>22.0</p></td>
+<td class="text-center"><p>2.160</p></td>
+<td class="text-center"><p>2.120</p></td>
+<td class="text-center"><p>1.9</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>10.3</p></td>
+<td class="text-center"><p>4.614</p></td>
+<td class="text-center"><p>4.320</p></td>
+<td class="text-center"><p>6.4</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>5.66</p></td>
+<td class="text-center"><p>8.397</p></td>
+<td class="text-center"><p>7.580</p></td>
+<td class="text-center"><p>9.7</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>0.976</p></td>
+<td class="text-center"><p>48.690</p></td>
+<td class="text-center"><p>33.700</p></td>
+<td class="text-center"><p>30.7</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>241</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>When operating up to a few kHz the frequency of operation is close to the value predicted based on the properties of the RC network: <span class="math notranslate nohighlight">\(f_{calc} = \frac{1}{\ln(2)(R_1 + 2 R_2) C}\)</span> [<a class="reference external" href="https://en.wikipedia.org/wiki/555_timer_IC">Wikipedia</a>]; we measured the actual resistor values (measured 10.1K<span class="math notranslate nohighlight">\(\Omega\)</span>) and capacitor values (see table) for the frequency calculation. The measured frequency is systematically lower due to the additional propagation delay through the 555.</p>
+<section id="waveforms-f-2-16khz-c-22nf">
+<h3>Waveforms: f = 2.16kHz C = 22nF<a class="headerlink" href="#waveforms-f-2-16khz-c-22nf" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id10">
+<img alt="../_images/scope_screenshot_22nF.bmp" src="../_images/scope_screenshot_22nF.bmp" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.16 </span><span class="caption-text">Waveforms for C=22nF with TRIG/THRES, OUT, CONT, and CONTp on channels 1 thru 4 respectively; due the loading by the 1:10 probes, the frequency is slightly lower then when only OUT is observed.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<img alt="../_images/scope_screenshot_out_bus05_22nF.bmp" src="../_images/scope_screenshot_out_bus05_22nF.bmp" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.17 </span><span class="caption-text">Measured waveforms for TRIG/THRES, OUT, CONTp, and the internal S/R latch output (bus05) on channels 1 through 4 respectively for C=22nF.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When the capacitor voltage (CH1, yellow) reaches the 1/3 VDD reference (CH3, blue), bus05 (CH4, red) and the output waveform (CH2, green) switch almost instantaneously. The 555 circuit does not add significant delay and the oscillation frequency is very close to the frequency predicted by the values of the R-C network.</p>
+<figure class="align-default" id="id12">
+<img alt="../_images/scope_screenshot_out_bus05_zoom_22nF.bmp" src="../_images/scope_screenshot_out_bus05_zoom_22nF.bmp" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.18 </span><span class="caption-text">Zooming in on the measured waveforms for TRIG/THRES, OUT, CONTp, and the internal S/R latch output (bus05) close to the transition; the delay between TRIG/THRES reaching CONTp and the S/R latch and OUT switching is very small relative to the period.</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="waveforms-f-48-7khz-c-1nf">
+<h3>Waveforms: f = 48.7kHz C = 1nF<a class="headerlink" href="#waveforms-f-48-7khz-c-1nf" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id13">
+<img alt="../_images/scope_screenshot_1nF.bmp" src="../_images/scope_screenshot_1nF.bmp" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.19 </span><span class="caption-text">Waveforms for C=1nF with TRIG/THRES, OUT, CONT, and CONTp on channels 1 thru 4 respectively; due to the propagation delay there is a slight overshoot on the capacitor voltage (TRIG/THRES) beyond CONT, and a significant undershoot below CONTp.</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id14">
+<img alt="../_images/scope_screenshot_out_bus05_1nF.bmp" src="../_images/scope_screenshot_out_bus05_1nF.bmp" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.20 </span><span class="caption-text">Measured waveforms for TRIG/THRES, OUT, CONTp, and the internal signal bus05 on channels 1 through 4 respectively for C=1nF.</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The capacitor voltage (CH1, yellow) goes below the 1/3 VDD reference (CH3, blue) because the S/R latch output’s (bus05) rise time is relatively large compared to the period, adding delay, which delays the switching of the output and the start of the discharge; hence, the undershoot on the capacitor voltage (CH1, yellow). The delay added by the 555 circuit reduces the oscillation frequency significantly.</p>
+<figure class="align-default" id="id15">
+<img alt="../_images/scope_screenshot_out_bus05_zoom_1nF.bmp" src="../_images/scope_screenshot_out_bus05_zoom_1nF.bmp" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.21 </span><span class="caption-text">Zooming in on the measured waveforms for TRIG/THRES, OUT, CONTp, and and the internal S/R latch output (bus05) close to the transition; the delay between TRIG/THRES reaching CONTp and the S/R latch output and OUT switching is quite significant compared to the period.</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="waveforms-f-241khz-c-0nf">
+<h3>Waveforms: f = 241kHz C = 0nF<a class="headerlink" href="#waveforms-f-241khz-c-0nf" title="Link to this heading">#</a></h3>
+<p>Note that when no capacitor is placed, the oscillation frequency goes to 241kHz but the waveforms look very different. As observed before in the current implementation the S/R latch output struggles to drive the output inverters when going high.</p>
+<p>But this experiment offers an indication of the absolute max. frequency this circuit can support. Practical uses with frequencies defined by the passive components will need to be significantly below 100kHz as the measured results in the table prove.</p>
+<figure class="align-default" id="id16">
+<img alt="../_images/scope_screenshot_0F.bmp" src="../_images/scope_screenshot_0F.bmp" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.22 </span><span class="caption-text">Waveforms when no external capacitor is used TRIG/THRES, OUT, CONT, and CONTp are on channels 1 thru 4 respectively; due the loading by the 1:10 probes, the frequency is lower then when only OUT is observed.</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="next-steps">
+<h2><span class="section-number">2.2.5. </span>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<p>Learners can now look for alternate implementations of the 555 functionality with MOSbius to get faster performance.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Connection resistors R4 and R5 of value 0.01<span class="math notranslate nohighlight">\(\Omega\)</span> are used in the schematic to avoid naming conflicts in the schematic but do not be implemented.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./2_chapter_mosbius_555"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../2_chapter_blinky/blinky.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.1. </span>First Experiment: Blinky</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../2_chapter_ring_oscillator/ring_oscillator.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Ring Oscillator Experiments</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">2.2.1. Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.2.2. Building a 555 with MOSbius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-timer-with-the-mosbius-555-in-astable-mode">2.2.3. Building a Timer with the MOSbius 555 in Astable Mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measured-results">2.2.4. Measured Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waveforms-f-2-16khz-c-22nf">Waveforms: f = 2.16kHz C = 22nF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waveforms-f-48-7khz-c-1nf">Waveforms: f = 48.7kHz C = 1nF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#waveforms-f-241khz-c-0nf">Waveforms: f = 241kHz C = 0nF</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">2.2.5. Next Steps</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The MOSbius Crew
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

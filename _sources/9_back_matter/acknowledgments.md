@@ -2,7 +2,7 @@
 
 ## The MOSbius Crew
 
-Many thanks to the [MOSbius Crew](../mosbius_crew/mosbius_crew.md) for their contributions, enthusiasm, and tireless energy.
+Many thanks to the [MOSbius Crew](../8_mosbius_crew/mosbius_crew.md) for their contributions, enthusiasm, and tireless energy.
 
  
 <!-- 

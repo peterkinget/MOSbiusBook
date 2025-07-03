@@ -40,7 +40,7 @@ Photo of the *blinky* setup using the on-chip connections; the external componen
 ```
 
 ```{tip}
-A step-by-step guide to learn how to program the MOSbius chip is provided in [Programming the Chip Using the MOSbiusTools](../5_sw_support/MOSbiusTools.md)
+A step-by-step guide to learn how to program the MOSbius chip is provided in [Programming the Chip Using the MOSbiusTools](../4_sw_support/MOSbiusTools.md)
 ```
 
 **Measurements:**

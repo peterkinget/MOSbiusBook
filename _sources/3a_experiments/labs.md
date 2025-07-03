@@ -1,0 +1,4 @@
+# Labs
+
+```{tableofcontents}
+```
