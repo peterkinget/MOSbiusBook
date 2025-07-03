@@ -1,10 +1,7 @@
 # Building a '555' with MOSbius
 
 ## Background
-The '555' is an iconic chip that is often used in entry-level electronic experiments. The MOSbius chip has the necessary devices to create the 555 functionality. It offers an opportunity not only to build 555 projects, but dig into the internal operation of the 555 chip. 
-
-The original Signetics NE555 was a bipolar design, and later CMOS versions became available. This [Wikipedia article](https://en.wikipedia.org/wiki/555_timer_IC) has a detailed description. 
-
+The '555' is an iconic chip that is often used in entry-level electronic experiments. This [Wikipedia article](https://en.wikipedia.org/wiki/555_timer_IC) has a detailed description. The original Signetics NE555 was a bipolar design, and later CMOS versions became available. The MOSbius chip has the necessary devices to create the 555 functionality. It offers an opportunity not only to build 555 projects, but dig into the internal operation of the 555 chip. 
 
 ```{figure} img/NE555_Block_Diagram.png
 ---
@@ -30,7 +27,7 @@ align: center
 Schematic for the MOSbius 555 implementation
 ```
 
-The 555 MOS schematic[^1] can be implemented in a straightforward manner. Care must be taken to use the correct sizes for various devices depending on their function. In this realization the S/R latch is implemented with 1x devices with the set and reset devices realized with 4x nMOS transistors. For the output inverters the 16x inverter pairs are used for good driving strength on `out`, however, they load the S/R latch output (bus05). All connections can be realized with the on-chip buses ([connections file](img/MOSbius_555_v1.json)) and the reference ladder (R1-R2-R3) is realized with off-chip 5K-5K-5K resistors. The terminals `biasn` (pin 19) and `biasp` (pin 68) are biased with 100$\mu A$ using the potentiometers on the PCB to bias the OTA-nMOS and OTA_pMOS blocks and some additional current source devices. 
+The 555 MOS schematic[^1] can be implemented in a straightforward manner. Care must be taken to use the correct sizes for various devices depending on their function. In this realization the S/R latch is implemented with 1x devices with the set and reset devices realized with 4x nMOS transistors. For the output inverters the 16x inverter pairs are used for good driving strength on `OUT`, however, they load the S/R latch output (bus05). All connections can be realized with the on-chip buses ([connections file](img/MOSbius_555_v1.json)) and the reference ladder (R1-R2-R3) is realized with off-chip 5K-5K-5K resistors. The terminals `biasn` (pin 19) and `biasp` (pin 68) are biased with 100$\mu A$ using the potentiometers on the PCB to bias the OTA-nMOS and OTA_pMOS blocks and some additional current source devices. 
 
 ## Building a Timer with the MOSbius 555 in Astable Mode
 
@@ -61,7 +58,7 @@ align: center
 Picture of the test setup of the timer built with the MOSbius 555 operating in astable mode; the 5K-5K-5K ladder is above the blue label; the Raspberry Pi PICO microcontroller in the lower right corner programs the switch matrix on the MOSbius chip.
 ```
 
-We built the timer and evaluated the performance for different frequencies of operation. The R1/Rosc1 and R2/Rosc2 resistors were set to 10K$\Omega$ (measured 10.1K$\Omega$) and the capacitor value was changed; the frequency was measured on the `out` node while no other probes where attached to avoid additional loading. 
+We built the timer and evaluated the performance for different frequencies of operation. The R1/Rosc1 and R2/Rosc2 resistors were set to 10K$\Omega$  and the capacitor value was changed; the frequency was measured on the `OUT` node while no other probes where attached to avoid additional loading. 
 
 
 | Cap [nF] | $f_{calc}$ [kHz] | $f_{meas}$ [kHz] | Error [%] |
@@ -73,7 +70,7 @@ We built the timer and evaluated the performance for different frequencies of op
 | 0.976    | 48.690           | 33.700           | 30.7   |
 | 0        |                  | 241              |           |
 
-When operating up to a few kHz the frequency of operation is close to the value predicted based on the properties of the RC network $f_{calc} = \frac{1}{\ln(2)(R_1 + 2 R_2) C}$ [[Wikipedia](https://en.wikipedia.org/wiki/555_timer_IC)], although the measured frequency is systematically lower due to the additional propagation delay through the 555. 
+When operating up to a few kHz the frequency of operation is close to the value predicted based on the properties of the RC network: $f_{calc} = \frac{1}{\ln(2)(R_1 + 2 R_2) C}$ [[Wikipedia](https://en.wikipedia.org/wiki/555_timer_IC)]; we measured the actual resistor values (measured 10.1K$\Omega$) and capacitor values (see table) for the frequency calculation. The measured frequency is systematically lower due to the additional propagation delay through the 555. 
 
 ### Waveforms: f = 2.16kHz C = 22nF
 
