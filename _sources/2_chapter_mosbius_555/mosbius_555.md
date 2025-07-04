@@ -1,4 +1,4 @@
-# Building a '555' with MOSbius
+# A '555' with MOSbius
 
 ## Background
 The '555' is an iconic chip that is often used in entry-level electronic experiments. This [Wikipedia article](https://en.wikipedia.org/wiki/555_timer_IC) has a detailed description. The original Signetics NE555 was a bipolar design, and later CMOS versions became available. The MOSbius chip has the necessary devices to create the 555 functionality. It offers an opportunity not only to build 555 projects, but dig into the internal operation of the 555 chip. 
