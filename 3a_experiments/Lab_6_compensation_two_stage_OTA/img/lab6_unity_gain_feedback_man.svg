@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" version="1.1" viewBox="0 0 725 667">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke-dasharray: 0 13.9;
+      }
+
+      .st0, .st1, .st2 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 9.3;
+        stroke-width: 7px;
+      }
+
+      .st2 {
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <line class="st2" x1="353.8" y1="131.9" x2="94.2" y2="131.9"/>
+  <line class="st2" x1="687.5" y1="206" x2="613.4" y2="206"/>
+  <line class="st2" x1="94.2" y1="280.2" x2="94.2" y2="131.9"/>
+  <line class="st2" x1="353.8" y1="280.2" x2="279.6" y2="280.2"/>
+  <line class="st2" x1="279.6" y1="465.6" x2="279.6" y2="280.2"/>
+  <line class="st2" x1="687.5" y1="465.6" x2="687.5" y2="206"/>
+  <line class="st2" x1="687.5" y1="465.6" x2="279.6" y2="465.6"/>
+  <line class="st2" x1="94.2" y1="613.9" x2="94.2" y2="465.6"/>
+  <g>
+    <line class="st2" x1="428" y1="57.7" x2="428" y2="354.4"/>
+    <line class="st2" x1="428" y1="131.9" x2="353.8" y2="131.9"/>
+    <line class="st2" x1="353.8" y1="280.2" x2="428" y2="280.2"/>
+    <line class="st2" x1="539.2" y1="206" x2="613.4" y2="206"/>
+    <line class="st2" x1="539.2" y1="150.4" x2="539.2" y2="261.7"/>
+    <line class="st2" x1="428" y1="57.7" x2="539.2" y2="150.4"/>
+    <line class="st2" x1="539.2" y1="261.7" x2="428" y2="354.4"/>
+    <line class="st2" x1="446.5" y1="131.9" x2="465" y2="131.9"/>
+    <line class="st2" x1="455.8" y1="122.6" x2="455.8" y2="141.2"/>
+    <line class="st2" x1="446.5" y1="280.2" x2="465" y2="280.2"/>
+    <rect class="st0" x="353.8" y="20.6" width="259.6" height="370.8"/>
+  </g>
+  <g>
+    <line class="st2" x1="57.1" y1="613.9" x2="131.3" y2="613.9"/>
+    <line class="st2" x1="57.1" y1="613.9" x2="94.2" y2="651"/>
+    <line class="st2" x1="131.3" y1="613.9" x2="94.2" y2="651"/>
+  </g>
+  <g>
+    <line class="st2" x1="87.8" y1="330" x2="124.8" y2="330"/>
+    <line class="st2" x1="50.7" y1="415" x2="87.8" y2="415"/>
+    <line class="st2" x1="87.8" y1="330" x2="87.8" y2="410"/>
+    <line class="st2" x1="94.2" y1="465.6" x2="94.2" y2="447.1"/>
+    <line class="st2" x1="94.2" y1="280.2" x2="94.2" y2="298.8"/>
+    <circle class="st1" cx="94.2" cy="372.9" r="74.2"/>
+  </g>
+</svg>

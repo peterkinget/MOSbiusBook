@@ -79,7 +79,7 @@ Schematic of the MOSbius chip; pin numbers correspond to the numbering in the sh
   - Put `EN` to HIGH to activate the switches
 #### Generating the Bitstream
 
-The chip can be programmed using the [MOSbiusTools](../5_sw_support/MOSbiusTools.md). 
+The chip can be programmed using the [MOSbiusTools](../4_sw_support/MOSbiusTools.md). 
 
 ## MOSbius Test PCB
 
@@ -111,7 +111,7 @@ The MOSbius PCB is a 'breakout' board that allows to connect the chip to a stand
   - If you want to control `EN` manually, then connect a jumper to connect `EM` to the chip; if you then connect a jumper at `EM_PU`, `EN` at the chip will go high enabling the switch matrix and the orange LED will light up; if you leave the `EM_PU` jumper open, `EN` at the chip will stay low and the on-chip switches in the switch matrix will remain open. 
 
 ### Testing the PCB Before Use
-See [Testing the PCB](../app_pcb_test/pcb_test.md)
+See [Testing the PCB](../10_app_pcb_test/pcb_test.md)
   
 ## Testbench
 The MOSbius chip can be measured using standard test equipment on a typical student lab bench. 

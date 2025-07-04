@@ -1,4 +1,4 @@
-# Ring Oscillator Experiments
+# Ring Oscillators
 ## Manual Connections
 We start with an experiment with *manual* connections. The inverter stages and transistor are connected with wires on the breadboard. The on-chip switch matrix is left *disabled* (keep `EM_PU` open). 
 
@@ -48,7 +48,7 @@ We build the 3-stage 16-16-8 ring-oscillator circuit shown in the following [LTs
 LTspice schematic for the 16-16-8 ring oscillator
 ```
 
-The programming is described in detail in the [Programming the Chip Using the MOSbiusTools chapter](../5_sw_support/MOSbiusTools.md). In brief, first we translate the schematic `cir` file to a connections json file or manually create a [connections json file](./img/connections_3stage_RO_8x_vdd_10_vss_9.json) that we then translate into a [bitstream](img/3stage_RO_8x_vdd_10_vss_9.txt) and [clock file](img/3stage_RO_8x_vdd_10_vss_9_clk.txt). We upload the bitstream into the MOSbius chip using the `Pattern Generator` function of the ADALM using channel 8 for the *CLK* and channel 9 for the *DATA*; we typically use *200kHz* for the frequency for *CLK* and *100kHz* for the frequency for *DATA*; during programming the `EN` needs to be LOW; we leave it floating so the internal pull-down will hold it LOW; and we also disconnect the `1+` and `2+` scope inputs. 
+The programming is described in detail in the [Programming the Chip Using the MOSbiusTools chapter](../4_sw_support/MOSbiusTools.md). In brief, first we translate the schematic `cir` file to a connections json file or manually create a [connections json file](./img/connections_3stage_RO_8x_vdd_10_vss_9.json) that we then translate into a [bitstream](img/3stage_RO_8x_vdd_10_vss_9.txt) and [clock file](img/3stage_RO_8x_vdd_10_vss_9_clk.txt). We upload the bitstream into the MOSbius chip using the `Pattern Generator` function of the ADALM using channel 8 for the *CLK* and channel 9 for the *DATA*; we typically use *200kHz* for the frequency for *CLK* and *100kHz* for the frequency for *DATA*; during programming the `EN` needs to be LOW; we leave it floating so the internal pull-down will hold it LOW; and we also disconnect the `1+` and `2+` scope inputs. 
 ![3stage_RO_ready_for_programming](img/3stage_RO_8x_ready_for_programming.jpeg)
 
 We then enable the connection matrix by asserting the `EN` signal. Notice that the red LED shows that the chip is powered and the orange LED shows the switch matrix is enabled.

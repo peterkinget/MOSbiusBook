@@ -8,47 +8,47 @@ options:
   numbered: 3
 chapters:
 - file: 1_chapter_description/description
-- file: 4_chapter_demonstrations/demonstrations
+- file: 2_chapter_demonstrations/demonstrations
   sections:
     - file: 2_chapter_blinky/blinky
+    - file: 2_chapter_mosbius_555/mosbius_555
     - file: 2_chapter_ring_oscillator/ring_oscillator
-    - file: 3_chapter_ota/ota_experiments
-      sections:
-       - file: 3_chapter_ota/mota-se-p-16/mota-se-p-16
-    - file: 6_iv_characteristics/iv_characteristics
+    - file: 2_chapter_ota/ota_experiments
+#      sections:
+#       - file: 2_chapter_ota/mota-se-p-16/mota-se-p-16
+    - file: 2_iv_characteristics/iv_characteristics
       sections: 
-      - file: 6_iv_characteristics/plotting_i_v_data_sims_nmos
-      - file: 6_iv_characteristics/plotting_i_v_data_sims_pmos
-- file: 6a_experiments/experiments
+      - file: 2_iv_characteristics/plotting_i_v_data_sims_nmos
+      - file: 2_iv_characteristics/plotting_i_v_data_sims_pmos
+- file: 3a_experiments/experiments
   sections:
-  - file: 6a_experiments/labs
+  - file: 3a_experiments/labs
     sections:
-    - file: 6a_experiments/Lab_1_introduction/introduction_PK
-    - file: 6a_experiments/Lab_2_current_mirrors/current_mirrors_PK
-    - file: 6a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_PK
-    - file: 6a_experiments/Lab_4_differential_pair_AC/differential_pair_AC_PK
-    - file: 6a_experiments/Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK
-    - file: 6a_experiments/Lab_6_compensation_two_stage_OTA/two_stage_OTA_PK
-  - file: 6a_experiments/solutions
+    - file: 3a_experiments/Lab_1_introduction/introduction_PK
+    - file: 3a_experiments/Lab_2_current_mirrors/current_mirrors_PK
+    - file: 3a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_PK
+    - file: 3a_experiments/Lab_4_differential_pair_AC/differential_pair_AC_PK
+    - file: 3a_experiments/Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK
+    - file: 3a_experiments/Lab_6_compensation_two_stage_OTA/two_stage_OTA_PK
+  - file: 3a_experiments/solutions
 #    sections:
-#    - file: 6a_experiments/Lab_1_introduction/introduction_solution_PK
-#    - file: 6a_experiments/Lab_2_current_mirrors/current_mirrors_solution_PK
-#    - file: 6a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_solution_PK
-#    - file: 6a_experiments/Lab_4_differential_pair_AC/differential_pair_AC_solution_PK
-#    - file: 6a_experiments/Lab_5_simple_OTA_and_CS/simple_OTA_CS_solution_PK
-#    - file: 6a_experiments/Lab_6_compensation_two_stage_OTA/two_stage_OTA_solution_PK
-- file: 5_sw_support/MOSbiusTools
-- file: 4_chapter_simulations/LTspice_simulations
-- file: discussion/discussion
-- file: ordering/ordering
-- file: mosbius_crew/mosbius_crew
+#    - file: 3a_experiments/Lab_1_introduction/introduction_solution_PK
+#    - file: 3a_experiments/Lab_2_current_mirrors/current_mirrors_solution_PK
+#    - file: 3a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_solution_PK
+#    - file: 3a_experiments/Lab_4_differential_pair_AC/differential_pair_AC_solution_PK
+#    - file: 3a_experiments/Lab_5_simple_OTA_and_CS/simple_OTA_CS_solution_PK
+#    - file: 3a_experiments/Lab_6_compensation_two_stage_OTA/two_stage_OTA_solution_PK
+- file: 4_sw_support/MOSbiusTools
+- file: 5_chapter_simulations/LTspice_simulations
+- file: 6_discussion/discussion
+- file: 7_ordering/ordering
+- file: 8_mosbius_crew/mosbius_crew
 - file: 9_back_matter/acknowledgments
-
-- file: appendices/appendices
+- file: 10_appendices/appendices
   sections:
-  - file: app_pcb_test/pcb_test
-  - file: 8_chapter_chip_design_details/chip_design_details
-  - file: app_adalm2000/adalm2000
+  - file: 10_app_pcb_test/pcb_test
+  - file: 10_chapter_chip_design_details/chip_design_details
+  - file: 10_app_adalm2000/adalm2000
 
 # - file: 10_to_do_list/to_do_list
 #   sections:

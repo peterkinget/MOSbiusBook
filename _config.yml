@@ -25,7 +25,7 @@ latex:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
-  - 6a_experiments/bib/experiments.bib
+  - 3a_experiments/bib/experiments.bib
 
 # Information about where the book exists on the web
 repository:
