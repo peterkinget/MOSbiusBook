@@ -1,9 +1,52 @@
 # Two-Stage Miller-Compensated OTA with pMOS Input Stage
 
-**Caveat:**
+```{note}
 This section is a work *in progress*. Many of the measurements presented here are relatively straightforward configurations. There are various methods to measure offset, DC gain, frequency response, noise, linearity, ... and it will be instructive to the student to explore some of these techniques. At this stage, we are often starting with simpler measurements not to overwhelm the student and to build some appreciation of the challenges involved in experimental characterization. 
+```
+<!-- >
+## Quick Navigation
 
+<div style="display: flex; flex-wrap: wrap; gap: 0.5em;">
+<a href="#schematic-design-and-operating-point" style="padding: 0.4em 0.8em; background-color: #007acc; color: white; text-decoration: none; border-radius: 5px;">Schematic & OP</a>
+<a href="#unity-gain-configuration" style="padding: 0.4em 0.8em; background-color: #007acc; color: white; text-decoration: none; border-radius: 5px;">Unity Gain</a>
+<a href="#non-inverting-configuration-with-11x-gain" style="padding: 0.4em 0.8em; background-color: #007acc; color: white; text-decoration: none; border-radius: 5px;">11x Gain</a>
+<a href="#measuring-offset-and-dc-gain" style="padding: 0.4em 0.8em; background-color: #007acc; color: white; text-decoration: none; border-radius: 5px;">Offset & DC Gain</a>
+<a href="#studying-the-frequency-response" style="padding: 0.4em 0.8em; background-color: #007acc; color: white; text-decoration: none; border-radius: 5px;">Frequency Response</a>
+<a href="#measuring-the-input-stage-transconductance" style="padding: 0.4em 0.8em; background-color: #007acc; color: white; text-decoration: none; border-radius: 5px;">Input Stage gm</a>
+<a href="#open-loop-measurement-with-low-frequency-ota-feedback" style="padding: 0.4em 0.8em; background-color: #007acc; color: white; text-decoration: none; border-radius: 5px;">Open-Loop Measurement</a>
+  
+</div>
+
+## Table of Contents
+<details>
+<summary style="font-size: 1.1em; font-weight: bold; cursor: pointer;">[click to expand]</summary>
+
+- [Schematic Design and Operating Point](#schematic-design-and-operating-point)
+- [Unity Gain Configuration](#unity-gain-configuration)
+    - [DC Ranges](#dc-ranges)
+        - [Gain and Offset from DC Sweep](#gain-and-offset-from-dc-sweep)
+    - [Frequency Response](#frequency-response)
+    - [Step Responses](#step-responses)
+- [Non-Inverting Configuration with 11x Gain](#non-inverting-configuration-with-11x-gain)
+    - [DC Transfer Characteristic](#dc-transfer-characteristic)
+    - [Frequency Response](#frequency-response-1)
+    - [Step Response](#step-response)
+- [Measuring Offset and DC Gain](#measuring-offset-and-dc-gain)
+    - [Offset Measurement](#offset-measurement)
+    - [DC Gain Measurement](#dc-gain-measurement)
+- [Studying the Frequency Response](#studying-the-frequency-response)
+    - [Measuring the Open-Loop Transfer Function](#measuring-the-open-loop-transfer-function)
+        - [DC Gain](#dc-gain)
+        - [Unity-Gain Frequency](#unity-gain-frequency)
+    - [The Effect of a Zero-Compensation Resistor](#the-effect-of-a-zero-compensation-resistor)
+- [Measuring the Input-Stage Transconductance](#measuring-the-input-stage-transconductance)
+    - [Additional Experiment Ideas](#additional-experiment-ideas)
+- [Open-Loop Measurement with Low-Frequency OTA Feedback](#open-loop-measurement-with-low-frequency-ota-feedback)
+
+</details>
+-->
 ## Schematic Design and Operating Point
+
 
 ```{figure} img/Miller_OTA_pin.png
 Simulation schematic of the two-stage Miller-compensated OTA including an external DC feedback for open-loop AC simulations
@@ -34,7 +77,10 @@ Here is an overview of the OTA design:
 
 We connect the $C_L$ between the output (BUS04) VSS (multiple pins can be chosen in the attached picture we used pin 29) and connect the series combination of $R_{comp}$ and $C_{comp}$ between the output (BUS04, pin29) and the input of the second stage (BUS03, pin28). 
 
-## Unity-Gain Configuration
+## Unity Gain Configuration
+<div style="text-align: right; margin-top: -1.5em;">
+    <a href="#quick-navigation" title="Back to top" style="font-size: 0.9em; text-decoration: none;">↑ Back to top</a>
+</div>
 
 We start of by putting the OTA in a unity gain configuration by connecting the output (BUS04, pin 29) to the negative input (pin 7).
 
@@ -126,6 +172,10 @@ For the negative step responses, the signal generator `W1` generates 200KHz squa
 As expected for the given phase margin, we again see some overshoot. The 100mV to 200mV step response scales linearly, however the higher amplitude step responses show the presence of slewing, although less than for positive steps. 
 
 ## Non-Inverting Configuration with 11x Gain
+<div style="text-align: right; margin-top: -1.5em;">
+    <a href="#quick-navigation" title="Back to top" style="font-size: 0.9em; text-decoration: none;">↑ Back to top</a>
+</div>
+
 We configure the OTA as a non-inverting 11x amplifier by connecting a 100K resistor between the output (BUS04) and the gate of M1 and a 10K resistor between the gate of M1 and a 1.25V DC bias; the bias is generated with a 20K potentiometer between VDD and VSS and a 47uF decoupling cap to VSS. 
 
 ### DC Transfer Characteristic
@@ -159,6 +209,9 @@ Measured step responses of the compensated and uncompensated amplifier in a 10x 
 ```
 
 ## Measuring Offset and DC Gain
+<div style="text-align: right; margin-top: -1.5em;">
+    <a href="#quick-navigation" title="Back to top" style="font-size: 0.9em; text-decoration: none;">↑ Back to top</a>
+</div>
 
 ```{figure} img/offset_dc_gain/Offset_DC_Gain_measurement.png
 
@@ -194,6 +247,9 @@ Measurement of 'out' (CH1) and 'B' (CH2) on the spectrum analyzer with a 100Hz i
 Using the spectrum analyzer, a better estimate of the ratio of $V_{out, AC} / V_{B, AC} $ can be obtained, and the OTA gain $A$ at 100Hz is estimated to be **68.6dB**. 
 
 ## Studying the Frequency Response
+<div style="text-align: right; margin-top: -1.5em;">
+    <a href="#quick-navigation" title="Back to top" style="font-size: 0.9em; text-decoration: none;">↑ Back to top</a>
+</div>
 
 ### Measuring the Open-Loop Transfer Function
 
@@ -249,6 +305,9 @@ The frequency response of the OTA configured as a 11x non-inverting amplifier wi
 Here we measure the effect of the zero-compensation resistor; we note an improvement in the phase response when the resistor is present. When the frequency is sufficiently above the 3dB frequency of the closed loop gain, we observe the open-loop phase response. The resistor improves the phase shift measurably. 
 
 ## Measuring the Input-Stage Transconductance
+<div style="text-align: right; margin-top: -1.5em;">
+    <a href="#quick-navigation" title="Back to top" style="font-size: 0.9em; text-decoration: none;">↑ Back to top</a>
+</div>
 
 The DC transfer characteristic of the input differential pair (M1, M2) requires the measurement of its differential output current w.r.t. a differential input voltage. We repurpose the second stage, M5, as a transresistance stage[^tia], by placing a 1K$\Omega$ resistor R1 from drain to gate. 
 ```{figure} img/Miller_OTA_gm_stage1.png
@@ -280,6 +339,9 @@ This experiment can now be expanded to measure responses to common-mode input si
 A more sophisticated transresistance amplifier can be constructed to try to improve measurement accuracy. Averaging the waveforms will improve measurement accuracy as well. 
 
 ## Open-Loop Measurement with Low-Frequency OTA Feedback
+<div style="text-align: right; margin-top: -1.5em;">
+    <a href="#quick-navigation" title="Back to top" style="font-size: 0.9em; text-decoration: none;">↑ Back to top</a>
+</div>
 
 ```{figure} img/Miller_OTA_pin_feedback.png
 The OTA is placed in DC feedback by using an active unity-gain buffer with a very low bandwidth 
@@ -298,9 +360,11 @@ The output of the OTA when placed in DC feedback but AC open loop; we observe th
 ```
 This requires further analysis, but a rough analysis indicates that the noise is dominated by 1/f noise. 
 
+<!-- ## To Do
+<div style="text-align: right; margin-top: -1.5em;">
+    <a href="#quick-navigation" title="Back to top" style="font-size: 0.9em; text-decoration: none;">↑ Back to top</a>
+</div>
 
-
-## To Do
 * Show the effect of zero compensation resistor
     * take unity-gain case since phase margin is largest there
 * Look at scaling of the step responses with amplitude via csv files
@@ -310,9 +374,9 @@ This requires further analysis, but a rough analysis indicates that the noise is
     * or the feedback resistor value
 * Why are the DC sweeps off?
 * Do an inverting configuration
-* Lower frequency --> fu of 100KHz
+* Lower frequency for fu of 100KHz
 * More comparison to simulation
-* Non-linearity measurements -- distortion
+* Non-linearity measurements -- distortion -->
 
 
 [^source]: The ADALM2000 waveform generator is based on a 12-bit DAC; it is always best to generate as large a voltage as possible to avoid any effects of quantization noise; as we are trying to measure very large gains, we need very small input signals that would be limited by the quantization noise of the DAC; the analog input attenuator allows for larger waveform test signals to be used. 
