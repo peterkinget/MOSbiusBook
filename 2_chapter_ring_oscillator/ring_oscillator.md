@@ -1,4 +1,4 @@
-# Ring Oscillator Experiments
+# Ring Oscillators
 ## Manual Connections
 We start with an experiment with *manual* connections. The inverter stages and transistor are connected with wires on the breadboard. The on-chip switch matrix is left *disabled* (keep `EM_PU` open). 
 

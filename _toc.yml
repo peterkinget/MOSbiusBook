@@ -14,8 +14,8 @@ chapters:
     - file: 2_chapter_mosbius_555/mosbius_555
     - file: 2_chapter_ring_oscillator/ring_oscillator
     - file: 2_chapter_ota/ota_experiments
-      sections:
-       - file: 2_chapter_ota/mota-se-p-16/mota-se-p-16
+#      sections:
+#       - file: 2_chapter_ota/mota-se-p-16/mota-se-p-16
     - file: 2_iv_characteristics/iv_characteristics
       sections: 
       - file: 2_iv_characteristics/plotting_i_v_data_sims_nmos

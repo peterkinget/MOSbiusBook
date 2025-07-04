@@ -10,7 +10,8 @@ This section of the manual focuses on lab experiments for senior undergraduates 
 
 **Experiments**
 
-*NOTE:* The experiments described here do not require using the on-chip switch matrix and only use external wiring. This simplifies the logistics of running the labs. 
+```{note} The experiments described here do not require using the on-chip switch matrix and only use external wiring. This simplifies the logistics of running the labs. 
+```
 
 ```{tableofcontents}
 ```
