@@ -4,7 +4,7 @@ The MOSbius platform offers the MOSbius chip, an adapter PCB to place the chip o
 
 ## MOSbius Chip
 ### Description
-```{figure} img/block_diagram_pcb_v2.png
+```{figure} img/MOSbius_schematic_updated.png
 :height: 700px
 Schematic of the MOSbius chip; pin numbers correspond to the numbering in the shift-register bitstream and the PCB labels
 ```
@@ -64,7 +64,8 @@ Schematic of the MOSbius chip; pin numbers correspond to the numbering in the sh
       after asserting `EN` to HIGH, the respective 15$\Omega$ transmission-gate
       switches are activated. 
 
-#### Programming the On-Chip Memory for the Switch Matrix
+- The chip can be programmed using the [MOSbiusTools](../4_sw_support/MOSbiusTools.md). 
+<!-- #### Programming the On-Chip Memory for the Switch Matrix
 - The on-chip memory is configured as a shift register with 650 stages
 - On every 'falling' edge of the `CLK` a data bit from `DATA` is read in
 - To program the connections:
@@ -78,22 +79,26 @@ Schematic of the MOSbius chip; pin numbers correspond to the numbering in the sh
     - and so on for the remaining pins and remaining `BUS3` through `BUS10`
   - Put `EN` to HIGH to activate the switches
 #### Generating the Bitstream
+--> 
 
-The chip can be programmed using the [MOSbiusTools](../4_sw_support/MOSbiusTools.md). 
 
 ## MOSbius Test PCB
 
 ### Description
-The MOSbius PCB is a 'breakout' board that allows to connect the chip to a standard solderless breadboard. All the pins of the chip are routed to pins on the breadboard so that external connections and external components can be connected to the circuit.
+The MOSbius PCB is a 'breakout' board that allows to connect the chip to a standard solderless breadboard. All the pins of the chip are routed to pins on the breadboard so that external connections and external components can be connected to the circuit. 
 
-```{figure} img/MobiusPCB_v3_2024_3d_fullboard_ray_ortho.png
-3D Render of the MOSbius chip on the MOSbius break-out PCB inserted in a solderless breadboard.
-```
 [Schematic](img/Schematic_MobiusPCB_v3_2024.pdf) and [PCB Silk/Labels](img/pcb_f_silk_etc.pdf), [PCB Top Wires](img/pcb_f_cu.pdf), [PCB Bottom Wires](img/pcb_b_cu.pdf)
 
+```{figure} img/MOSbiusPCB_v3_2024_with_power.png
+3D Render of the MOSbius chip on the MOSbius break-out PCB inserted in a solderless breadboard.
+```
+
+
+### Testing the PCB Before Use
+[Testing the PCB](../10_app_pcb_test/pcb_test.md) has images showing the various functions on the PCB. 
+
 ### Using the PCB
-- Inserting the MOSbius Chip:
-  - The chip is inserted in the socket. Pin 1 is in the upper left corner of the socket. 
+
 - Power Supply:
   - The MOSbius chip **always needs to be powered by 2.5V** to reverse bias the pad ESD protection diodes. All `GND` on the PCB are connected, but make sure to connect it correctly to your external power supply. 
   - You can apply a 2.5V supply to the `V+` pin on the top of the PCB; the PCB contains a protection circuit against supply voltages larger than 2.5V. The power supply is connected to the breadboard power rails as well. The 2.5V supply can be supplied from there also. 
@@ -110,8 +115,7 @@ The MOSbius PCB is a 'breakout' board that allows to connect the chip to a stand
 - Manual Enable:
   - If you want to control `EN` manually, then connect a jumper to connect `EM` to the chip; if you then connect a jumper at `EM_PU`, `EN` at the chip will go high enabling the switch matrix and the orange LED will light up; if you leave the `EM_PU` jumper open, `EN` at the chip will stay low and the on-chip switches in the switch matrix will remain open. 
 
-### Testing the PCB Before Use
-See [Testing the PCB](../10_app_pcb_test/pcb_test.md)
+
   
 ## Testbench
 The MOSbius chip can be measured using standard test equipment on a typical student lab bench. 

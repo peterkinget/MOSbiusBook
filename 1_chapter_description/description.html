@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -414,17 +414,13 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mosbius-chip">1.1. MOSbius Chip</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">1.1.1. Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-chip-switch-matrix">1.1.2. On-Chip Switch Matrix</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-the-on-chip-memory-for-the-switch-matrix">Programming the On-Chip Memory for the Switch Matrix</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-the-bitstream">Generating the Bitstream</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-chip-switch-matrix">1.1.2. On-Chip Switch Matrix</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mosbius-test-pcb">1.2. MOSbius Test PCB</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2.1. Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-pcb">1.2.2. Using the PCB</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-pcb-before-use">1.2.3. Testing the PCB Before Use</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-pcb-before-use">1.2.2. Testing the PCB Before Use</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-pcb">1.2.3. Using the PCB</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testbench">1.3. Testbench</a></li>
@@ -447,7 +443,7 @@ document.write(`
 <section id="description">
 <h3><span class="section-number">1.1.1. </span>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="id4">
-<a class="reference internal image-reference" href="../_images/block_diagram_pcb_v2.png"><img alt="../_images/block_diagram_pcb_v2.png" src="../_images/block_diagram_pcb_v2.png" style="height: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/MOSbius_schematic_updated.png"><img alt="../_images/MOSbius_schematic_updated.png" src="../_images/MOSbius_schematic_updated.png" style="height: 700px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Schematic of the MOSbius chip; pin numbers correspond to the numbering in the shift-register bitstream and the PCB labels</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
@@ -557,34 +553,23 @@ after asserting <code class="docutils literal notranslate"><span class="pre">EN<
 switches are activated.</p></li>
 </ul>
 </li>
+<li><p>The chip can be programmed using the <a class="reference internal" href="../4_sw_support/MOSbiusTools.html"><span class="std std-doc">MOSbiusTools</span></a>.</p></li>
 </ul>
-<section id="programming-the-on-chip-memory-for-the-switch-matrix">
-<h4>Programming the On-Chip Memory for the Switch Matrix<a class="headerlink" href="#programming-the-on-chip-memory-for-the-switch-matrix" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>The on-chip memory is configured as a shift register with 650 stages</p></li>
-<li><p>On every ‘falling’ edge of the <code class="docutils literal notranslate"><span class="pre">CLK</span></code> a data bit from <code class="docutils literal notranslate"><span class="pre">DATA</span></code> is read in</p></li>
-<li><p>To program the connections:</p>
-<ul>
-<li><p>Put <code class="docutils literal notranslate"><span class="pre">EN</span></code> to LOW</p></li>
-<li><p>Stream in 650 bits via <code class="docutils literal notranslate"><span class="pre">DATA</span></code> and <code class="docutils literal notranslate"><span class="pre">CLK</span></code></p>
-<ul>
-<li><p>bit 1 sets the connection between <code class="docutils literal notranslate"><span class="pre">BUS1</span></code> and pin <code class="docutils literal notranslate"><span class="pre">TBD</span></code></p></li>
-<li><p>bit 2 sets the connection between <code class="docutils literal notranslate"><span class="pre">BUS1</span></code> and pin <code class="docutils literal notranslate"><span class="pre">TBD</span></code></p></li>
-<li><p>and so on</p></li>
-<li><p>bit 66 sets the connection between <code class="docutils literal notranslate"><span class="pre">BUS2</span></code> and pin <code class="docutils literal notranslate"><span class="pre">TBD</span></code></p></li>
-<li><p>bit 67 sets the connection between <code class="docutils literal notranslate"><span class="pre">BUS2</span></code> and pin <code class="docutils literal notranslate"><span class="pre">TBD</span></code></p></li>
-<li><p>and so on for the remaining pins and remaining <code class="docutils literal notranslate"><span class="pre">BUS3</span></code> through <code class="docutils literal notranslate"><span class="pre">BUS10</span></code></p></li>
-</ul>
-</li>
-<li><p>Put <code class="docutils literal notranslate"><span class="pre">EN</span></code> to HIGH to activate the switches</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="generating-the-bitstream">
-<h4>Generating the Bitstream<a class="headerlink" href="#generating-the-bitstream" title="Link to this heading">#</a></h4>
-<p>The chip can be programmed using the <a class="reference internal" href="../4_sw_support/MOSbiusTools.html"><span class="std std-doc">MOSbiusTools</span></a>.</p>
-</section>
+<!-- #### Programming the On-Chip Memory for the Switch Matrix
+- The on-chip memory is configured as a shift register with 650 stages
+- On every 'falling' edge of the `CLK` a data bit from `DATA` is read in
+- To program the connections:
+  - Put `EN` to LOW
+  - Stream in 650 bits via `DATA` and `CLK`
+    - bit 1 sets the connection between `BUS1` and pin `TBD`
+    - bit 2 sets the connection between `BUS1` and pin `TBD`
+    - and so on
+    - bit 66 sets the connection between `BUS2` and pin `TBD`
+    - bit 67 sets the connection between `BUS2` and pin `TBD`
+    - and so on for the remaining pins and remaining `BUS3` through `BUS10`
+  - Put `EN` to HIGH to activate the switches
+#### Generating the Bitstream
+--> 
 </section>
 </section>
 <section id="mosbius-test-pcb">
@@ -592,22 +577,21 @@ switches are activated.</p></li>
 <section id="id2">
 <h3><span class="section-number">1.2.1. </span>Description<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>The MOSbius PCB is a ‘breakout’ board that allows to connect the chip to a standard solderless breadboard. All the pins of the chip are routed to pins on the breadboard so that external connections and external components can be connected to the circuit.</p>
+<p><a class="reference download internal" download="" href="../_downloads/ac771f2707c5e971224518cae215ab5f/Schematic_MobiusPCB_v3_2024.pdf"><span class="xref download myst">Schematic</span></a> and <a class="reference download internal" download="" href="../_downloads/7c01a9ca71946e6175076d9594fa0a8e/pcb_f_silk_etc.pdf"><span class="xref download myst">PCB Silk/Labels</span></a>, <a class="reference download internal" download="" href="../_downloads/3c723659d65bac4e7581459e0f821655/pcb_f_cu.pdf"><span class="xref download myst">PCB Top Wires</span></a>, <a class="reference download internal" download="" href="../_downloads/52af3205c8bbf5708a031b93ce7019b1/pcb_b_cu.pdf"><span class="xref download myst">PCB Bottom Wires</span></a></p>
 <figure class="align-default" id="id5">
-<img alt="../_images/MobiusPCB_v3_2024_3d_fullboard_ray_ortho.png" src="../_images/MobiusPCB_v3_2024_3d_fullboard_ray_ortho.png" />
+<img alt="../_images/MOSbiusPCB_v3_2024_with_power.png" src="../_images/MOSbiusPCB_v3_2024_with_power.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">3D Render of the MOSbius chip on the MOSbius break-out PCB inserted in a solderless breadboard.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p><a class="reference download internal" download="" href="../_downloads/ac771f2707c5e971224518cae215ab5f/Schematic_MobiusPCB_v3_2024.pdf"><span class="xref download myst">Schematic</span></a> and <a class="reference download internal" download="" href="../_downloads/7c01a9ca71946e6175076d9594fa0a8e/pcb_f_silk_etc.pdf"><span class="xref download myst">PCB Silk/Labels</span></a>, <a class="reference download internal" download="" href="../_downloads/3c723659d65bac4e7581459e0f821655/pcb_f_cu.pdf"><span class="xref download myst">PCB Top Wires</span></a>, <a class="reference download internal" download="" href="../_downloads/52af3205c8bbf5708a031b93ce7019b1/pcb_b_cu.pdf"><span class="xref download myst">PCB Bottom Wires</span></a></p>
+</section>
+<section id="testing-the-pcb-before-use">
+<h3><span class="section-number">1.2.2. </span>Testing the PCB Before Use<a class="headerlink" href="#testing-the-pcb-before-use" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="../10_app_pcb_test/pcb_test.html"><span class="std std-doc">Testing the PCB</span></a> has images showing the various functions on the PCB.</p>
 </section>
 <section id="using-the-pcb">
-<h3><span class="section-number">1.2.2. </span>Using the PCB<a class="headerlink" href="#using-the-pcb" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.2.3. </span>Using the PCB<a class="headerlink" href="#using-the-pcb" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Inserting the MOSbius Chip:</p>
-<ul>
-<li><p>The chip is inserted in the socket. Pin 1 is in the upper left corner of the socket.</p></li>
-</ul>
-</li>
 <li><p>Power Supply:</p>
 <ul>
 <li><p>The MOSbius chip <strong>always needs to be powered by 2.5V</strong> to reverse bias the pad ESD protection diodes. All <code class="docutils literal notranslate"><span class="pre">GND</span></code> on the PCB are connected, but make sure to connect it correctly to your external power supply.</p></li>
@@ -636,10 +620,6 @@ switches are activated.</p></li>
 </ul>
 </li>
 </ul>
-</section>
-<section id="testing-the-pcb-before-use">
-<h3><span class="section-number">1.2.3. </span>Testing the PCB Before Use<a class="headerlink" href="#testing-the-pcb-before-use" title="Link to this heading">#</a></h3>
-<p>See <a class="reference internal" href="../10_app_pcb_test/pcb_test.html"><span class="std std-doc">Testing the PCB</span></a></p>
 </section>
 </section>
 <section id="testbench">
@@ -726,17 +706,13 @@ switches are activated.</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mosbius-chip">1.1. MOSbius Chip</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">1.1.1. Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-chip-switch-matrix">1.1.2. On-Chip Switch Matrix</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-the-on-chip-memory-for-the-switch-matrix">Programming the On-Chip Memory for the Switch Matrix</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-the-bitstream">Generating the Bitstream</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-chip-switch-matrix">1.1.2. On-Chip Switch Matrix</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mosbius-test-pcb">1.2. MOSbius Test PCB</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2.1. Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-pcb">1.2.2. Using the PCB</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-pcb-before-use">1.2.3. Testing the PCB Before Use</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-pcb-before-use">1.2.2. Testing the PCB Before Use</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-pcb">1.2.3. Using the PCB</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testbench">1.3. Testbench</a></li>
