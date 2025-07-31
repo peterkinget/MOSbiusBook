@@ -14,7 +14,6 @@ source ../venv-jupyterbook/bin/activate.csh
 
 - compile the book:
 ```
-cd mosbiusbook
 jupyter-book build . 
 ```
 - check the result

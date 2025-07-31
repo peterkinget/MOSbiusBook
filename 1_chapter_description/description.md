@@ -4,7 +4,7 @@ The MOSbius platform offers the MOSbius chip, an adapter PCB to place the chip o
 
 ## MOSbius Chip
 ### Description
-```{figure} img/block_diagram_pcb_v2.png
+```{figure} img/MOSbius_schematic_updated.png
 :height: 700px
 Schematic of the MOSbius chip; pin numbers correspond to the numbering in the shift-register bitstream and the PCB labels
 ```
