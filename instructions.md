@@ -14,9 +14,9 @@ source ../venv-jupyterbook/bin/activate.csh
 
 - compile the book:
 ```
-jupyter-book build . 
+jupyter-book clean . ; jupyter-book build . 
 ```
-- check the result
+- check the result 
 ```
 open _build/html/index.html
 ```

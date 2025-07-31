@@ -41,4 +41,4 @@ html:
 
 sphinx:
   config:  
-    html_extra_path: ["555.html", "crew.html", "blinky.html", "ordering.html", "labs.html", "programming.html"]
+    html_extra_path: ["555.html", "crew.html", "blinky.html", "description.html", "discussions.html", "ordering.html", "labs.html", "demos.html", "programming.html"]
