@@ -21,9 +21,10 @@ The solution pages (`3a_experiments/Lab_*/*solution*.md`, incl. `old/`
 drafts, and the measurement results they use) are in this **public** repo,
 so anyone can read them on GitHub. Plan:
 
-- Create a private repo for the solutions, owned by a free GitHub
-  organization so instructors can get **read-only** access (a personal
-  account's private repo can only give collaborators write access)
+- Create a private repo for the solutions in the `mosbiuschip`
+  organization, so instructors can get the **Read** role (a personal
+  account's private repo can only give collaborators write access).
+  Do not enable GitHub Pages on it: Pages sites are public.
 - Move the solution files and their images/results there; remove them from
   this repo; decide whether to purge them from this repo's git history
   (`git filter-repo` + force-push: rewrites every commit hash)
