@@ -1,3 +1,14 @@
+# Jupyter Book build output (the site is published from the gh-pages branch)
+_build/
+
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+venv_jupyterbook/
+
+# Editor backups and Office lock files
+*~
+~$*
+
+# macOS
 .DS_Store
-_build
-**/.DS_Store

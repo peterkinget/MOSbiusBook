@@ -1,3 +1,7 @@
-jupyter-book
+# Jupyter Book 2.x is a different tool; this book uses 1.x
+jupyter-book>=1.0,<2
+ghp-import
 matplotlib
 numpy
+# read LTspice .raw/.log files in 2_iv_characteristics notebooks
+PyLTSpice
