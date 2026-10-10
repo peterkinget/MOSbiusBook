@@ -50,10 +50,3 @@ chapters:
   - file: 10_chapter_chip_design_details/chip_design_details
   - file: 10_app_adalm2000/adalm2000
 
-# - file: 10_to_do_list/to_do_list
-#   sections:
-#   - file: 3_chapter_ota/mota-single-ended/mota-single-ended
-#     sections:
-#     - file: 3_chapter_ota/mota-single-ended/user-notebook
-#     - file: 3_chapter_ota/mota-single-ended/designer-notebook
-
