@@ -26,8 +26,8 @@ Source: git@github.com:peterkinget/MOSbiusBook.git, branch `main`.
 Done 2026-10-10: clone, cleanup, venv, build checked against the live site,
 default branch set to `main`, old branches resolved.
 
-1. Owner publishes (or asks the agent to) per `WORKFLOW.md` and checks
-   mosbius.org and a few short links.
+1. [done 2026-10-10] Published from the new clone (gh-pages 3c2edd1);
+   mosbius.org and the short links checked.
 2. Rename the iCloud folder `~/BOX/JupyterBook/mosbiusbook` to
    `mosbiusbook_ARCHIVE_do_not_edit`.
 3. Set up the Mac mini per `WORKFLOW.md`.
