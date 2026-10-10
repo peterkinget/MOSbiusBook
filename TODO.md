@@ -36,8 +36,6 @@ Reader-reported problems go to GitHub Issues.
 
 ## Build warnings
 
-- `2_chapter_ota/ota_experiments.md:237`: link to
-  `measuring-offset-and-dc-gain`, which does not exist
 - `3a_experiments/solutions.md`: table of contents with no pages (the
   solution pages are commented out in `_toc.yml`)
 
