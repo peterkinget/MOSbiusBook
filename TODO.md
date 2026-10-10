@@ -15,6 +15,23 @@ Reader-reported problems go to GitHub Issues.
 - First experiment: blinky? (the suggestion to start with blinky or the ring
   oscillator is commented out in `3a_experiments/experiments.md`)
 
+## Solutions for instructors
+
+The solution pages (`3a_experiments/Lab_*/*solution*.md`, incl. `old/`
+drafts, and the measurement results they use) are in this **public** repo,
+so anyone can read them on GitHub. Plan:
+
+- Create a private repo for the solutions, owned by a free GitHub
+  organization so instructors can get **read-only** access (a personal
+  account's private repo can only give collaborators write access)
+- Move the solution files and their images/results there; remove them from
+  this repo; decide whether to purge them from this repo's git history
+  (`git filter-repo` + force-push: rewrites every commit hash)
+- Make the solutions readable for instructors: GitHub does not render MyST
+  (`{figure}` etc.), so add a built PDF/HTML or instructions to build it
+- Replace the empty table of contents on `3a_experiments/solutions.md` with
+  how instructors can request access (fixes the build warning)
+
 ## Improvements to existing pages
 
 - Blinky: describe/show building it with manual connections (the page says
