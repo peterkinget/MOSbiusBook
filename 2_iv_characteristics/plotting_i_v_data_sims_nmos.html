@@ -14,45 +14,48 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -60,44 +63,37 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '2_iv_characteristics/plotting_i_v_data_sims_nmos';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Automated pMOS I-V Data vs Simulations" href="plotting_i_v_data_sims_pmos.html" />
     <link rel="prev" title="2.5. Transistor I-V Characteristics" href="iv_characteristics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
+  <body data-default-mode="">
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
-  
-  
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -105,7 +101,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -113,10 +108,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
   </div>
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -125,7 +169,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +185,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../0_front_matter/intro.html">
   
@@ -153,21 +200,17 @@
     
     
     <img src="../_static/die.png" class="logo__image only-light" alt="MOSbius Book - Home"/>
-    <script>document.write(`<img src="../_static/die.png" class="logo__image only-dark" alt="MOSbius Book - Home"/>`);</script>
+    <img src="../_static/die.png" class="logo__image only-dark pst-js-only" alt="MOSbius Book - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -180,20 +223,20 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../1_chapter_description/description.html">1. MOSbius Platform for MOS Circuit Labs</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../2_chapter_demonstrations/demonstrations.html">2. Demonstrations with the MOSbius Chip</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../2_chapter_demonstrations/demonstrations.html">2. Demonstrations with the MOSbius Chip</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../2_chapter_blinky/blinky.html">2.1. First Experiment: Blinky</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2_chapter_mosbius_555/mosbius_555.html">2.2. A ‘555’ with MOSbius</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2_chapter_ring_oscillator/ring_oscillator.html">2.3. Ring Oscillators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2_chapter_ota/ota_experiments.html">2.4. Operational Transconductance Amplifiers</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="iv_characteristics.html">2.5. Transistor I-V Characteristics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="iv_characteristics.html">2.5. Transistor I-V Characteristics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Automated nMOS I-V Data vs Simulations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plotting_i_v_data_sims_pmos.html">Automated pMOS I-V Data vs Simulations</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../3a_experiments/experiments.html">3. Lab Experiments Manual</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../3a_experiments/labs.html">3.1. Labs</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3a_experiments/experiments.html">3. Lab Experiments Manual</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../3a_experiments/labs.html">3.1. Labs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_1_introduction/introduction_PK.html">3.1.1. Lab 1: Basic Measurements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_2_current_mirrors/current_mirrors_PK.html">3.1.2. Lab 2: Current Mirrors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_3_differential_pair_DC/differential_pair_DC_PK.html">3.1.3. Lab 3: Differential Pair DC Response</a></li>
@@ -201,22 +244,22 @@
 <li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_5_simple_OTA_and_CS/simple_OTA_CS_PK.html">3.1.5. Lab 5: One-stage OTA and Common-Source Amplifier</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../3a_experiments/Lab_6_compensation_two_stage_OTA/two_stage_OTA_PK.html">3.1.6. Lab 6: Frequency Compensation of a Two-Stage OTA</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../3a_experiments/solutions.html">3.2. Solutions</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_sw_support/MOSbiusTools.html">4. Programming the Chip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../5_chapter_simulations/LTspice_simulations.html">5. Spice Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../6_discussion/discussion.html">6. Discussion Forum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../7_ordering/ordering.html">7. How to Order a MOSbius</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../8_mosbius_crew/mosbius_crew.html">8. The MOSbius Crew</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_back_matter/acknowledgments.html">9. Acknowledgments</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../10_appendices/appendices.html">10. Appendices</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_appendices/appendices.html">10. Appendices</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../10_app_pcb_test/pcb_test.html">10.1. Testing Your MOSbius PCB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../10_chapter_chip_design_details/chip_design_details.html">10.2. MOSbius Chip Design Details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../10_app_adalm2000/adalm2000.html">10.3. ADALM2000 Notes</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -225,14 +268,19 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -241,14 +289,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -357,7 +405,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -371,27 +419,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -411,7 +451,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nmos-1x-diode-connected-devices">nMOS 1x Diode-Connected Devices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-the-simulation-data">Collecting the Simulation Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-the-measurement-data">Collecting the Measurement Data</a></li>
@@ -443,50 +483,50 @@ document.write(`
 <h1>Automated nMOS I-V Data vs Simulations<a class="headerlink" href="#automated-nmos-i-v-data-vs-simulations" title="Link to this heading">#</a></h1>
 <p><strong>Caveat:</strong> This is a preliminary example to illustrate the opportunity of measuring I-V characteristics. Some comparison is included to the simulated results, but given an public-domain model card is used that is not really optimized for this technology, the matching is not expected to be very good. Some basic analysis was done to try to make simulations match measurements, but it is very limited and incomplete.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="c1"># plt.rcParams[&#39;figure.figsize&#39;] = [8.0, 8.0]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="c1"># plt.rcParams['figure.figsize'] = [8.0, 8.0]</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
-<span class="kn">import</span> <span class="nn">pickle</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="kn">import</span> <span class="nn">PyLTSpice</span> <span class="k">as</span> <span class="nn">pyLT</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">PyLTSpice</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pyLT</span>
 
-<span class="kn">import</span> <span class="nn">itertools</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">])</span> 
-<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">))</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">])</span> 
+<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">'v'</span><span class="p">,</span> <span class="s1">'+'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
 </details>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'-o'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-        <span class="n">VGS</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;VGS&quot;</span><span class="p">]</span>
+        <span class="n">VGS</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">"VGS"</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;VDS&quot;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;IDS&quot;</span><span class="p">])</span><span class="o">*</span><span class="mi">1000</span><span class="o">/</span><span class="n">R_meas</span><span class="p">,</span> <span class="n">marker</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">"VDS"</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">"IDS"</span><span class="p">])</span><span class="o">*</span><span class="mi">1000</span><span class="o">/</span><span class="n">R_meas</span><span class="p">,</span> <span class="n">marker</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;VDS&quot;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;IDS&quot;</span><span class="p">])</span><span class="o">*</span><span class="mi">1000</span><span class="o">/</span><span class="n">R_meas</span><span class="p">,</span> <span class="n">marker</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;VDS [V]&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;IDS [mA]&quot;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">"VDS"</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">"IDS"</span><span class="p">])</span><span class="o">*</span><span class="mi">1000</span><span class="o">/</span><span class="n">R_meas</span><span class="p">,</span> <span class="n">marker</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"VDS [V]"</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"IDS [mA]"</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">plot_data_collection</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_data_collection</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">set_name</span> <span class="ow">in</span> <span class="n">data_collection</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">set_name</span><span class="p">])</span>
 </pre></div>
@@ -500,14 +540,14 @@ document.write(`
 <section id="collecting-the-simulation-data">
 <h3>Collecting the Simulation Data<a class="headerlink" href="#collecting-the-simulation-data" title="Link to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_filenames</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;sims/nmos_IV_4x_1x_diode_IDS_VGS.raw&quot;</span> <span class="p">]</span>
-<span class="n">log_filenames</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;sims/nmos_IV_4x_1x_diode_IDS_VGS.log&quot;</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_filenames</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">"sims/nmos_IV_4x_1x_diode_IDS_VGS.raw"</span> <span class="p">]</span>
+<span class="n">log_filenames</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">"sims/nmos_IV_4x_1x_diode_IDS_VGS.log"</span> <span class="p">]</span>
 <span class="n">LTR</span> <span class="o">=</span> <span class="n">pyLT</span><span class="o">.</span><span class="n">RawRead</span><span class="p">(</span><span class="n">sim_filenames</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">LTL</span> <span class="o">=</span> <span class="n">pyLT</span><span class="o">.</span><span class="n">LTSpiceLogReader</span><span class="p">(</span><span class="n">log_filenames</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="c1"># step_values = LTL.stepset[LTL.get_step_vars()[0]]</span>
@@ -518,15 +558,15 @@ document.write(`
 </details>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_1x_diode_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sim&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;VGS&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}}}</span>
-<span class="n">sim_1x_diode_data</span><span class="p">[</span><span class="s1">&#39;sim&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;VDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LTR</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="s2">&quot;vgs&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_wave</span><span class="p">()</span>
-<span class="n">sim_1x_diode_data</span><span class="p">[</span><span class="s1">&#39;sim&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;IDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LTR</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="s2">&quot;Ix(x8:IN)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_wave</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_1x_diode_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'sim'</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="s1">'VGS'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}}}</span>
+<span class="n">sim_1x_diode_data</span><span class="p">[</span><span class="s1">'sim'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'VDS'</span><span class="p">]</span> <span class="o">=</span> <span class="n">LTR</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="s2">"vgs"</span><span class="p">)</span><span class="o">.</span><span class="n">get_wave</span><span class="p">()</span>
+<span class="n">sim_1x_diode_data</span><span class="p">[</span><span class="s1">'sim'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'IDS'</span><span class="p">]</span> <span class="o">=</span> <span class="n">LTR</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="s2">"Ix(x8:IN)"</span><span class="p">)</span><span class="o">.</span><span class="n">get_wave</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -536,20 +576,20 @@ document.write(`
 <section id="collecting-the-measurement-data">
 <h3>Collecting the Measurement Data<a class="headerlink" href="#collecting-the-measurement-data" title="Link to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span>
-<span class="c1"># filename = &#39;nMOS_CM_ids_vds_pm2v5_range.pickle&#39;</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;nMOS_CM_diodes_ids_vds_pm2v5_range.pickle&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="s1">'./'</span>
+<span class="c1"># filename = 'nMOS_CM_ids_vds_pm2v5_range.pickle'</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">'nMOS_CM_diodes_ids_vds_pm2v5_range.pickle'</span>
 <span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> does not exist -- DATA NOT LOADED&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> does not exist -- DATA NOT LOADED"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">dbfile_read</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">dbfile_read</span><span class="p">:</span>
         <span class="n">data_collection_diode</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">dbfile_read</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -557,10 +597,10 @@ document.write(`
 </details>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_collection</span> <span class="o">=</span> <span class="n">data_collection_diode</span>
@@ -570,7 +610,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;nMOS_CM1_diode&#39;, &#39;nMOS_CMlarge_diode&#39;])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys(['nMOS_CM1_diode', 'nMOS_CMlarge_diode'])
 </pre></div>
 </div>
 </div>
@@ -586,32 +626,32 @@ document.write(`
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">])</span> 
-<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">])</span> 
+<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">'v'</span><span class="p">,</span> <span class="s1">'+'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">))</span> 
 
 <span class="n">sim_scaling</span> <span class="o">=</span> <span class="n">model_scaling</span>
 <span class="n">no_meas</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_collection</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_collection</span><span class="p">):</span>
-    <span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
+    <span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
 <span class="c1"># ax.get_legend().remove()</span>
-<span class="c1"># plot_data(ax, sim_1x_diode_data[&#39;sim&#39;], marker=next(markers), color=next(colors), name=&quot;sim&quot;, R_meas=1)</span>
-<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">sim_1x_diode_data</span><span class="p">[</span><span class="s1">&#39;sim&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;sim_x_</span><span class="si">{</span><span class="n">sim_scaling</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sim_scaling</span><span class="p">)</span>
+<span class="c1"># plot_data(ax, sim_1x_diode_data['sim'], marker=next(markers), color=next(colors), name="sim", R_meas=1)</span>
+<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">sim_1x_diode_data</span><span class="p">[</span><span class="s1">'sim'</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">'sim_x_</span><span class="si">{</span><span class="n">sim_scaling</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sim_scaling</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;nMOS Diodes: Measurement vs Simulation&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'nMOS Diodes: Measurement vs Simulation'</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/044bc62c25398d0fbc82b4a9acf017eeca8d9cfb9cba7370b214ba8fb64788e8.png" src="../_images/044bc62c25398d0fbc82b4a9acf017eeca8d9cfb9cba7370b214ba8fb64788e8.png" />
+<img alt="../_images/3a9f250f6d048403bc3ed7c85ed27372a5d2ad4a147db24abf64a85003ba93e2.png" src="../_images/3a9f250f6d048403bc3ed7c85ed27372a5d2ad4a147db24abf64a85003ba93e2.png" />
 </div>
 </div>
 <p><strong>Observations</strong>:</p>
@@ -629,14 +669,14 @@ document.write(`
 <section id="id1">
 <h3>Collecting the Simulation Data<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_filenames</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;sims/nmos_IV_4x_1x_IDS_VDS.raw&quot;</span> <span class="p">]</span>
-<span class="n">log_filenames</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;sims/nmos_IV_4x_1x_IDS_VDS.log&quot;</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_filenames</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">"sims/nmos_IV_4x_1x_IDS_VDS.raw"</span> <span class="p">]</span>
+<span class="n">log_filenames</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">"sims/nmos_IV_4x_1x_IDS_VDS.log"</span> <span class="p">]</span>
 <span class="n">LTR</span> <span class="o">=</span> <span class="n">pyLT</span><span class="o">.</span><span class="n">RawRead</span><span class="p">(</span><span class="n">sim_filenames</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">LTL</span> <span class="o">=</span> <span class="n">pyLT</span><span class="o">.</span><span class="n">LTSpiceLogReader</span><span class="p">(</span><span class="n">log_filenames</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">step_values</span> <span class="o">=</span> <span class="n">LTL</span><span class="o">.</span><span class="n">stepset</span><span class="p">[</span><span class="n">LTL</span><span class="o">.</span><span class="n">get_step_vars</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span>
@@ -653,23 +693,23 @@ document.write(`
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spice_device_names</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;1x&#39;</span><span class="p">:</span> <span class="s1">&#39;Ix(x8:out1)&#39;</span><span class="p">}</span> <span class="c1"># there is only need for one sim at this point since the scaling is perfect</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spice_device_names</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'1x'</span><span class="p">:</span> <span class="s1">'Ix(x8:out1)'</span><span class="p">}</span> <span class="c1"># there is only need for one sim at this point since the scaling is perfect</span>
 </pre></div>
 </div>
 </div>
 </details>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_cm_data</span> <span class="o">=</span> <span class="p">{}</span>
@@ -677,9 +717,9 @@ document.write(`
     <span class="n">sim_cm_data</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">LTR</span><span class="o">.</span><span class="n">get_steps</span><span class="p">():</span>
         <span class="n">sim_cm_data</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">step</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">sim_cm_data</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">step</span><span class="p">][</span><span class="s1">&#39;VGS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">step_values</span><span class="p">[</span><span class="n">step</span><span class="p">]</span>
-        <span class="n">sim_cm_data</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">step</span><span class="p">][</span><span class="s1">&#39;VDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LTR</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="s2">&quot;vds&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_wave</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
-        <span class="n">sim_cm_data</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">step</span><span class="p">][</span><span class="s1">&#39;IDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LTR</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="n">trace_name</span><span class="p">)</span><span class="o">.</span><span class="n">get_wave</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
+        <span class="n">sim_cm_data</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">step</span><span class="p">][</span><span class="s1">'VGS'</span><span class="p">]</span> <span class="o">=</span> <span class="n">step_values</span><span class="p">[</span><span class="n">step</span><span class="p">]</span>
+        <span class="n">sim_cm_data</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">step</span><span class="p">][</span><span class="s1">'VDS'</span><span class="p">]</span> <span class="o">=</span> <span class="n">LTR</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="s2">"vds"</span><span class="p">)</span><span class="o">.</span><span class="n">get_wave</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
+        <span class="n">sim_cm_data</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">step</span><span class="p">][</span><span class="s1">'IDS'</span><span class="p">]</span> <span class="o">=</span> <span class="n">LTR</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="n">trace_name</span><span class="p">)</span><span class="o">.</span><span class="n">get_wave</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -689,19 +729,19 @@ document.write(`
 <section id="id2">
 <h3>Collecting the Measurement Data<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;nMOS_CM_ids_vds_pm2v5_range.pickle&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="s1">'./'</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">'nMOS_CM_ids_vds_pm2v5_range.pickle'</span>
 <span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> does not exist -- DATA NOT LOADED&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> does not exist -- DATA NOT LOADED"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">dbfile_read</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">dbfile_read</span><span class="p">:</span>
         <span class="n">data_collection_cm</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">dbfile_read</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -709,10 +749,10 @@ document.write(`
 </details>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_collection</span> <span class="o">=</span> <span class="n">data_collection_cm</span>
@@ -722,7 +762,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;nMOS_CM_1x&#39;, &#39;nMOS_CM_2x&#39;, &#39;nMOS_CM_4x&#39;, &#39;nMOS_CM_8x&#39;])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys(['nMOS_CM_1x', 'nMOS_CM_2x', 'nMOS_CM_4x', 'nMOS_CM_8x'])
 </pre></div>
 </div>
 </div>
@@ -738,44 +778,44 @@ document.write(`
 <section id="ids-vds-measurement-vs-simulation">
 <h3>IDS-VDS Measurement vs Simulation<a class="headerlink" href="#ids-vds-measurement-vs-simulation" title="Link to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">])</span> 
-<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">])</span> 
+<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">'v'</span><span class="p">,</span> <span class="s1">'+'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">))</span> 
 
 <span class="n">sim_scaling</span> <span class="o">=</span> <span class="n">model_scaling</span> <span class="o">*</span> <span class="mi">1</span>
 <span class="n">name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_collection</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
-<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">sim_cm_data</span><span class="p">[</span><span class="s1">&#39;1x&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;sim_x_</span><span class="si">{</span><span class="n">sim_scaling</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sim_scaling</span><span class="p">)</span>
+<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
+<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">sim_cm_data</span><span class="p">[</span><span class="s1">'1x'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">'sim_x_</span><span class="si">{</span><span class="n">sim_scaling</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sim_scaling</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f811f1a80df49c346dd2dfb8f5710efdc3e37bdbeeb47bad8276c885b807a6b7.png" src="../_images/f811f1a80df49c346dd2dfb8f5710efdc3e37bdbeeb47bad8276c885b807a6b7.png" />
+<img alt="../_images/f60f59f282f3c58d9d9df547e288c04e52b2ed3aff30ce4bf647a3234cdc1970.png" src="../_images/f60f59f282f3c58d9d9df547e288c04e52b2ed3aff30ce4bf647a3234cdc1970.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">])</span> 
-<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">])</span> 
+<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">'v'</span><span class="p">,</span> <span class="s1">'+'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">))</span> 
 
 <span class="n">sim_scaling</span> <span class="o">=</span> <span class="n">model_scaling</span> <span class="o">*</span> <span class="mi">2</span>
 <span class="n">name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_collection</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
-<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">sim_cm_data</span><span class="p">[</span><span class="s1">&#39;1x&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;sim_x_</span><span class="si">{</span><span class="n">sim_scaling</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sim_scaling</span><span class="p">)</span>
+<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
+<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">sim_cm_data</span><span class="p">[</span><span class="s1">'1x'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">'sim_x_</span><span class="si">{</span><span class="n">sim_scaling</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sim_scaling</span><span class="p">)</span>
 <span class="c1"># ax.get_legend().remove()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
@@ -783,24 +823,24 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ec3acd08f801308bd04e4a4cfaa3fd94df147dc2d29b6f2aaa5c34e1759235f9.png" src="../_images/ec3acd08f801308bd04e4a4cfaa3fd94df147dc2d29b6f2aaa5c34e1759235f9.png" />
+<img alt="../_images/c6196b08e7a6bcc649d3ac8448f57454335bd2e7aec97abb6dd565889151f62a.png" src="../_images/c6196b08e7a6bcc649d3ac8448f57454335bd2e7aec97abb6dd565889151f62a.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">])</span> 
-<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">])</span> 
+<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">'v'</span><span class="p">,</span> <span class="s1">'+'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">))</span> 
 
 <span class="n">sim_scaling</span> <span class="o">=</span> <span class="n">model_scaling</span> <span class="o">*</span> <span class="mi">8</span>
 <span class="n">name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_collection</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
-<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">sim_cm_data</span><span class="p">[</span><span class="s1">&#39;1x&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;sim_x_</span><span class="si">{</span><span class="n">sim_scaling</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sim_scaling</span><span class="p">)</span>
+<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
+<span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">sim_cm_data</span><span class="p">[</span><span class="s1">'1x'</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">'sim_x_</span><span class="si">{</span><span class="n">sim_scaling</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sim_scaling</span><span class="p">)</span>
 <span class="c1"># ax.get_legend().remove()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
@@ -808,7 +848,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e559e94f2645005db5a83b9ae1e30126658219cb8e174f8007662ff8f32da619.png" src="../_images/e559e94f2645005db5a83b9ae1e30126658219cb8e174f8007662ff8f32da619.png" />
+<img alt="../_images/b9f8e91bb2de5102b35ba87f1fa6472f7e31f1804e3beee75637b3746be363b6.png" src="../_images/b9f8e91bb2de5102b35ba87f1fa6472f7e31f1804e3beee75637b3746be363b6.png" />
 </div>
 </div>
 <p><strong>Observations:</strong></p>
@@ -821,27 +861,27 @@ document.write(`
 <h3>Current Mirror Scaling<a class="headerlink" href="#current-mirror-scaling" title="Link to this heading">#</a></h3>
 <p>In an ideal current mirror the IDS-VDS characteristic scales with the mirror factor. here we plot the ‘normalized’ currents, so e.g. for the 8x device we plot IDS/8, and so on. To the first order, the characteristics should overlap. (In the layout good practices were applied to get accurate current mirror factors.)</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">])</span> 
-<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">])</span> 
+<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">'v'</span><span class="p">,</span> <span class="s1">'+'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">))</span> 
 
 <span class="n">no_meas</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_collection</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_collection</span><span class="p">):</span>
-    <span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="n">index</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Current Mirror Outputs Scaled to 1x Equivalent&#39;</span><span class="p">)</span>
+    <span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="n">index</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Current Mirror Outputs Scaled to 1x Equivalent'</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/35d5e86f8a9b854e77de8b72b8cd915b8e28af55a8e09029f2e7c1e5fcc727d2.png" src="../_images/35d5e86f8a9b854e77de8b72b8cd915b8e28af55a8e09029f2e7c1e5fcc727d2.png" />
+<img alt="../_images/3987deb7747dc7442539f3b0f479cacd6e2fa55802d4e58cb1c1fa9e22e469b5.png" src="../_images/3987deb7747dc7442539f3b0f479cacd6e2fa55802d4e58cb1c1fa9e22e469b5.png" />
 </div>
 </div>
 <p><strong>Observations:</strong></p>
@@ -853,29 +893,29 @@ document.write(`
 <h4>Looking at Parasitic Resistance<a class="headerlink" href="#looking-at-parasitic-resistance" title="Link to this heading">#</a></h4>
 <p>In the linear region, especially for the larger devices, the IDS-VDS characteristic measurement is sensitive to possible series resistance since the <span class="math notranslate nohighlight">\(R_{ds}\)</span> of the devices becomes small. We notice that as the VGS increases (and thus the <span class="math notranslate nohighlight">\(R_{ds}\)</span> reduces), the IDS does not increase in the linear region, seeming to indicate the presence of a parasitic series resistor. Here we estimate the value of those resistors.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">])</span> 
-<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">])</span> 
+<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">'v'</span><span class="p">,</span> <span class="s1">'+'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">))</span> 
 
 <span class="n">no_meas</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_collection</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_collection</span><span class="p">):</span>
-    <span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="n">index</span><span class="p">)</span>
+    <span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span><span class="o">+</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="n">index</span><span class="p">)</span>
 
-<span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">])</span> 
-<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">))</span> 
+<span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">])</span> 
+<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">'v'</span><span class="p">,</span> <span class="s1">'+'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">))</span> 
 <span class="k">for</span> <span class="n">res</span><span class="p">,</span> <span class="n">dev_scale</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">308</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">176</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">92</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">54</span><span class="p">,</span> <span class="mi">8</span><span class="p">)]:</span>
     <span class="n">vds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
     <span class="n">ids_r</span> <span class="o">=</span> <span class="n">vds</span><span class="o">/</span><span class="n">res</span><span class="o">/</span><span class="n">dev_scale</span><span class="o">*</span><span class="mi">1000</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vds</span><span class="p">,</span> <span class="n">ids_r</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dev_scale</span><span class="si">}</span><span class="s1">x --&gt; </span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s1"> Ohm&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vds</span><span class="p">,</span> <span class="n">ids_r</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">dev_scale</span><span class="si">}</span><span class="s1">x --&gt; </span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s1"> Ohm'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Current Mirror Outputs Scaled to 1x Equivalent </span><span class="se">\n</span><span class="s1"> and Resistors&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Current Mirror Outputs Scaled to 1x Equivalent </span><span class="se">\n</span><span class="s1"> and Resistors'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">))</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -884,18 +924,18 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/79cca824438d983151e36277fc4146e3c2763a29d6323105284df077bff93043.png" src="../_images/79cca824438d983151e36277fc4146e3c2763a29d6323105284df077bff93043.png" />
+<img alt="../_images/185cdf89505c0ee97661a06b42780f2a64feaf0908e8f6a5b2b7962581110fc2.png" src="../_images/185cdf89505c0ee97661a06b42780f2a64feaf0908e8f6a5b2b7962581110fc2.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">])</span> 
-<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'m'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'k'</span><span class="p">])</span> 
+<span class="n">markers</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">((</span><span class="s1">'v'</span><span class="p">,</span> <span class="s1">'+'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">))</span> 
 
 <span class="n">no_meas</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_collection</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">no_meas</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -903,16 +943,16 @@ document.write(`
     <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
     <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
     <span class="n">marker</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">markers</span><span class="p">)</span>
-    <span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
+    <span class="n">plot_data</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data_collection</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="o">+</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">R_meas</span><span class="o">=</span><span class="mi">94</span><span class="p">)</span>
     <span class="n">res</span><span class="p">,</span> <span class="n">dev_scale</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">308</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">176</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">92</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">54</span><span class="p">,</span> <span class="mi">8</span><span class="p">)][</span><span class="n">index</span><span class="p">]</span>
     <span class="n">vds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
     <span class="n">ids_r</span> <span class="o">=</span> <span class="n">vds</span><span class="o">/</span><span class="n">res</span><span class="o">*</span><span class="mi">1000</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vds</span><span class="p">,</span> <span class="n">ids_r</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dev_scale</span><span class="si">}</span><span class="s1">x --&gt; </span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s1"> Ohm&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vds</span><span class="p">,</span> <span class="n">ids_r</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">dev_scale</span><span class="si">}</span><span class="s1">x --&gt; </span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s1"> Ohm'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
     <span class="c1"># ax.set_ylim((0, 2.5))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Current Mirror Outputs and Resistors&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">'Current Mirror Outputs and Resistors'</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
@@ -920,7 +960,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/9864aed8fab3c29401302028ef9e1f5f11904d936bede66b2d58604e2bf08ba2.png" src="../_images/9864aed8fab3c29401302028ef9e1f5f11904d936bede66b2d58604e2bf08ba2.png" />
+<img alt="../_images/224d7fa0fabddb2cb7c03d5d3bf1b10934228f01ae83a03be7a0d7b841d0a06d.png" src="../_images/224d7fa0fabddb2cb7c03d5d3bf1b10934228f01ae83a03be7a0d7b841d0a06d.png" />
 </div>
 </div>
 <p><strong>Observations:</strong></p>
@@ -960,7 +1000,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -988,15 +1028,17 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nmos-1x-diode-connected-devices">nMOS 1x Diode-Connected Devices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-the-simulation-data">Collecting the Simulation Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-the-measurement-data">Collecting the Measurement Data</a></li>
@@ -1037,7 +1079,7 @@ By The MOSbius Crew
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2025-2026.
       <br/>
     
   </p>
@@ -1061,8 +1103,8 @@ By The MOSbius Crew
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
