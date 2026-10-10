@@ -298,6 +298,7 @@ Measured step response of the uncompensated amplifier (purple) in a 10x non-inve
 Measured step responses of the compensated and uncompensated amplifier in a 10x non-inverting configuration for a 20, 50 and 100mVpp input signal around a 1.25V common mode
 ```
 
+(measuring-offset-and-dc-gain)=
 ## Measuring Offset and DC Gain
 
 ```{figure} img/offset_dc_gain/Offset_DC_Gain_measurement.png
