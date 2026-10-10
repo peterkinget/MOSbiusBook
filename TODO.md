@@ -33,6 +33,17 @@ so anyone can read them on GitHub. Plan:
 - Replace the empty table of contents on `3a_experiments/solutions.md` with
   how instructors can request access (fixes the build warning)
 
+## Move the book repo to the mosbiuschip organization (eventually)
+
+`peterkinget/MOSbiusBook` -> `mosbiuschip/MOSbiusBook` (GitHub: Settings ->
+Transfer). GitHub redirects the old repo URLs. Afterwards:
+
+- Check Settings -> Pages: source `gh-pages`, custom domain `mosbius.org`,
+  HTTPS on; then check mosbius.org and the short links
+- Update `repository: url` in `_config.yml` (repo and issue buttons)
+- Update the URLs in `WORKFLOW.md` and `AGENTS.md`
+- On each Mac: `git remote set-url origin git@github.com:mosbiuschip/MOSbiusBook.git`
+
 ## Improvements to existing pages
 
 - Blinky: describe/show building it with manual connections (the page says
