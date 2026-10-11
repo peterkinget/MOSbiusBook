@@ -1,0 +1,9 @@
+/* Archived content: shown muted, e.g. the old ordering information */
+div.archived {
+  color: var(--pst-color-text-muted);
+  opacity: 0.75;
+  border-left: none;
+}
+div.archived a {
+  color: var(--pst-color-text-muted);
+}
