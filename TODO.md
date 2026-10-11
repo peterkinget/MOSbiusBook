@@ -9,6 +9,12 @@ Reader-reported problems go to GitHub Issues.
 - Acknowledge CeMiD (a center at UCLA) for supporting the fabrication of
   MOSbius Toggle (V2): add to `9_back_matter/acknowledgments.md`, and
   possibly mention it in the Toggle (V2) part of section 1.4 (chip family)
+- Review the MOSbius Slack channels for more material to put on the website
+  (e.g. experiments, measurement results, photos, demos, tools, and news),
+  starting with #mosbius-toggle-v2-180nm, #mosbius-twist-v3-gf180mcu,
+  #mosbius-pll-chipathon2025-students, #mosbius-experiments,
+  #mosbius-kit-tester, and #mosbius-documentation; list candidates for review
+  before adding anything (Slack content is internal until approved)
 - Review the 2026-10-10 website update, then tag it (`site-...` /
   `site-...-html`) and add the row to the table in `WORKFLOW.md`
 
