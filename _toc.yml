@@ -42,6 +42,7 @@ chapters:
 - file: 5_chapter_simulations/LTspice_simulations
 - file: 6_discussion/discussion
 - file: 7_ordering/ordering
+- file: 7_news/news
 - file: 8_mosbius_crew/mosbius_crew
 - file: 9_back_matter/acknowledgments
 - file: 10_appendices/appendices

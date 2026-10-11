@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: MOSbius Book
+title: MOSbius
 author: The MOSbius Crew
 copyright: "2025-2026"
 logo: die.png
@@ -40,4 +40,4 @@ html:
 
 sphinx:
   config:  
-    html_extra_path: ["555.html", "crew.html", "blinky.html", "description.html", "discussions.html", "ordering.html", "labs.html", "demos.html", "programming.html"]
+    html_extra_path: ["555.html", "crew.html", "blinky.html", "description.html", "discussions.html", "ordering.html", "labs.html", "demos.html", "programming.html", "news.html", "chips.html", "_extra"]

@@ -1,8 +1,8 @@
 # MOSbius Platform for MOS Circuit Labs
 
-The MOSbius platform offers the MOSbius chip, an adapter PCB to place the chip on a solderless breadboard, and software tools to program the chip and process the measurement results. An LTspice library is also provided to run circuit simulations. The platform allows the (student) designer to experiment with and learn about MOS circuits in a uniquely hands-on environment. 
+The MOSbius platform offers the MOSbius chips, adapter PCBs to place a chip on a solderless breadboard, and software tools to program the chip and process the measurement results. An LTspice library is also provided to run circuit simulations. The platform allows the (student) designer to experiment with and learn about MOS circuits in a uniquely hands-on environment. 
 
-## MOSbius Chip
+## MOSbius Twist Classic Chip
 ### Description
 ```{figure} img/MOSbius_schematic_updated.png
 :height: 700px
@@ -82,9 +82,9 @@ Schematic of the MOSbius chip; pin numbers correspond to the numbering in the sh
 --> 
 
 
-## MOSbius Test PCB
+### Test PCB
 
-### Description
+#### Description
 The MOSbius PCB is a 'breakout' board that allows to connect the chip to a standard solderless breadboard. All the pins of the chip are routed to pins on the breadboard so that external connections and external components can be connected to the circuit. 
 
 [Schematic](img/Schematic_MobiusPCB_v3_2024.pdf) and [PCB Silk/Labels](img/pcb_f_silk_etc.pdf), [PCB Top Wires](img/pcb_f_cu.pdf), [PCB Bottom Wires](img/pcb_b_cu.pdf)
@@ -94,10 +94,10 @@ The MOSbius PCB is a 'breakout' board that allows to connect the chip to a stand
 ```
 
 
-### Testing the PCB Before Use
+#### Testing the PCB Before Use
 [Testing the PCB](../10_app_pcb_test/pcb_test.md) has images showing the various functions on the PCB. 
 
-### Using the PCB
+#### Using the PCB
 
 - Power Supply:
   - The MOSbius chip **always needs to be powered by 2.5V** to reverse bias the pad ESD protection diodes. All `GND` on the PCB are connected, but make sure to connect it correctly to your external power supply. 
@@ -122,6 +122,58 @@ The MOSbius chip can be measured using standard test equipment on a typical stud
 
 We recommend the use of USB-based instrumentation since it allows the student to do the experiments in their dorm room or at home. For many of the experiment demonstrations shown here we use the [ADALM 2000 Active Learning Module](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html), but other modules can be used as well. 
 
+
+(chip-family)=
+## The MOSbius Chip Family
+
+This website documents the **MOSbius Twist Classic (V1)** chip, which is now sold out (Summer 2026). Two new MOSbius chips are on their way:
+
+- **MOSbius Twist (V3)** is the new baseline chip. It is designed to be pin-compatible with Twist Classic (V1), so the experiments on this website will carry over. **Coming soon, stay tuned!**
+- **MOSbius Toggle (V2)** is an advanced chip for more complex experiments. Samples are available for collaborators who want to help develop experiments and materials; email [Peter Kinget](mailto:pk171+mosbius@columbia.edu) if you are interested.
+
+Follow the [News](../7_news/news.md) for updates.
+
+|                | Twist Classic (V1)                 | Twist (V3)                              | Toggle (V2)                                  |
+| ---            | ---                                | ---                                     | ---                                          |
+| Level          | baseline                           | baseline                                | advanced                                     |
+| Technology     | 65nm CMOS, 2.5V devices            | GF180MCU, 3.3V                          | 180nm CMOS, 3.3V                             |
+| Package        | 68-pin PLCC on an adapter PCB      | chip-on-board and adapter PCB.          | 100-pin QGN on adapter PCB.                  |
+| Compatibility  |                                    | compatible with Twist Classic (V1)      | new pinout                                   |
+| Availability   | sold out                           | coming soon, stay tuned                 | samples for collaborators                    |
+
+### MOSbius Twist (V3)
+
+Twist (V3) is the new baseline MOSbius chip. It was fabricated in the GF180MCU technology on the first [wafer.space](https://wafer.space) run, operates from 3.3V, and is designed to be pin-compatible with Twist Classic (V1). The die is mounted directly on a small chip-on-board (CoB) PCB that plugs into a breadboard adapter. 
+
+```{figure} img/chip_family/twist_v3_die_and_cob.jpg
+
+The MOSbius Twist (V3) chip: die photo (left), and the die mounted with chip-on-board packaging (right)
+```
+
+```{figure} img/chip_family/twist_v3_adapter_pcb.jpg
+:height: 300px
+
+The CoB-to-breadboard adapter PCB for Twist (V3)
+```
+
+### MOSbius Toggle (V2)
+
+Toggle (V2) is an advanced MOSbius chip in a 180nm CMOS technology, packaged in a 100-pin QFN package. It adds programmable transistor sizes and switched buses driven by an on-chip non-overlapping clock generator, so that circuits such as switched-capacitor amplifiers can be built and programmed on the chip. Samples are available for collaborators who want to help develop experiments and materials; email [Peter Kinget](mailto:pk171+mosbius@columbia.edu) if you are interested.
+
+```{figure} img/chip_family/toggle_v2_chip_and_breadboard.jpg
+
+The MOSbius Toggle (V2) chip: layout and die photo (left), and a Toggle (V2) chip on its PCB, programmed as a single-stage switched-capacitor amplifier (right)
+```
+
+```{figure} img/chip_family/toggle_v2_sc_amp_schematic.jpg
+
+Schematic of a two-stage switched-capacitor amplifier built with the switched buses of Toggle (V2)
+```
+
+```{figure} img/chip_family/toggle_v2_sc_amp_waveforms.jpg
+
+Measured input, output, and clock waveforms of a switched-capacitor amplifier on Toggle (V2)
+```
 
 [^pulldown]: The MOSbius chip has a pulldown resistor on the `EN` pin. 
 [^ldo]: The LDO chip does not see a decoupling capacitor until you connect `LDOO` to `V+`. If you want to test out the LDO before connecting it, make sure to place some external decoupling capacitance on `LDOO`. 

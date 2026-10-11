@@ -11,6 +11,14 @@
 
 # Welcome to the MOSbius Project
 
+```{admonition} What's new
+- New MOSbius chips: 
+  - [Twist (V3)](chip-family) is coming soon, stay tuned; 
+  - [Toggle (V2)](chip-family) samples are available for collaborators. 
+  - Twist Classic (V1) is sold out.
+- [News & Publications](../7_news/news.md): read about MOSbius in *IEEE Spectrum* and the *IEEE Solid-State Circuits Magazine*, and watch the video interview with Matt Venn.
+```
+
 The MOSbius chip contains nMOS and pMOS devices as individual transistors, as
 well as in typical configurations like current mirrors, differential pairs, common source configuration, simple operational transconductance amplifiers or inverters. 
 
@@ -34,7 +42,7 @@ We will describe the operation of the MOSbius chip and show examples of experime
 
 
 **Project Status:**
-- the project is still in full development and new materials are still under development. If you are interested in ordering MOSbius kits, review [the ordering page](../7_ordering/ordering).
+- the project is still in full development and new materials are still under development. The materials on this website use the MOSbius Twist Classic (V1) chip, which is now sold out; the pin-compatible MOSbius Twist (V3) is coming soon, stay tuned. See [The MOSbius Chip Family](chip-family) for the availability of the MOSbius chips.
 - If you find an error or have suggestions, please [open an issue on Github](https://github.com/peterkinget/MOSbiusBook/issues/new) or email [Peter Kinget](mailto:pk171+mosbius@columbia.edu).
 
 **Table of Contents**

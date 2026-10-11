@@ -1,4 +1,4 @@
-# Programming the Chip 
+# Programming MOSbius
 
 At this point, there are two documented flows on how to program the on-chip switch matrix on the MOSbius chip using the *CLK, DATA,* and *EN* pins:
 
