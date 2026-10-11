@@ -1,8 +1,16 @@
-# MOSbius Book To-Do List
+# MOSbius Website To-Do List
 
 Not published (only files in `_toc.yml` are built). Keep short `TBD` notes in
 the pages where the gap is, and list them here so none get forgotten.
 Reader-reported problems go to GitHub Issues.
+
+## Next (planned for 2026-10-11)
+
+- Acknowledge CeMiD (a center at UCLA) for supporting the fabrication of
+  MOSbius Toggle (V2): add to `9_back_matter/acknowledgments.md`, and
+  possibly mention it in the Toggle (V2) part of section 1.4 (chip family)
+- Review the 2026-10-10 website update, then tag it (`site-...` /
+  `site-...-html`) and add the row to the table in `WORKFLOW.md`
 
 ## New chapters and experiments
 
