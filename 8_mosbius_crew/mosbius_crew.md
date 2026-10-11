@@ -16,9 +16,9 @@
     - [Xianglin Pu](https://www.linkedin.com/in/xianglinpu/), [Jingru Li](https://www.linkedin.com/in/jl-jingru-li/), [Qizhe Wu](https://www.linkedin.com/in/qizhe-wu-589a05324/), [Yuntao Guo](https://www.linkedin.com/in/yuntaoguo/), [Jingde Hu](https://www.linkedin.com/in/jingde-hu/), and [Andrew Chon](https://www.linkedin.com/in/andrewwchonn/)
     designed the chip in 180nm CMOS in Spring 2025: Xianglin Pu also designed the _Toggle_ PCB and, with Jingde Hu, brought up and tested the chip.
     - [Jianxun Zhu](https://www.linkedin.com/in/coiughdpjlpse797eloa) developed the _Toggle_ LTspice library and Raspberry Pi Pico programming flow.
-- _MOSbius PLL_
-    - [Andrew Chon](https://www.linkedin.com/in/andrewwchonn/), [Xianglin Pu](https://www.linkedin.com/in/xianglinpu/), and [Qizhe Wu](https://www.linkedin.com/in/qizhe-wu-589a05324/)
-    designed the chip in GF180MCU during the Summer 2025 IEEE SSCS Chipathon, mentored by Kumar Lakshmikumar and Jianxun Zhu.
 - _MOSbius Twist_ (aka V3)
     - [Andrew Chon](https://www.linkedin.com/in/andrewwchonn/), [Jianxun Zhu](https://www.linkedin.com/in/coiughdpjlpse797eloa), [Luighi Viton-Zorrilla](https://www.linkedin.com/in/luighiviton/), and [Xianglin Pu](https://www.linkedin.com/in/xianglinpu/)
     designed the chip in GF180MCU in Fall 2025 for the first wafer.space run. Nico de la Cruz designed the first version of the _Twist_ adapter PCB.
+- _MOSbius PLL_
+    - [Andrew Chon](https://www.linkedin.com/in/andrewwchonn/), [Xianglin Pu](https://www.linkedin.com/in/xianglinpu/), and [Qizhe Wu](https://www.linkedin.com/in/qizhe-wu-589a05324/)
+    designed the chip in GF180MCU during the Summer 2025 IEEE SSCS Chipathon, mentored by Kumar Lakshmikumar and Jianxun Zhu.
